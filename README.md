@@ -1,228 +1,48 @@
-# [Material Kit 2 PRO React](http://demos.creative-tim.com/material-kit-pro-react/#/?ref=readme-mkpr) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/material-kit-pro-react&text=Check%20Material%20kit%202%20Pro%React%20made%20by%20@CreativeTim%20#webdesign%20#kit%20#materialdesign%20#react%20https://www.creative-tim.com/product/material-kit-pro-react)
+# LINGSSOFT 홈페이지
 
-![version](https://img.shields.io/badge/version-2.1.1-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/ct-material-kit-pro-react.svg)](https://github.com/creativetimofficial/ct-material-kit-pro-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/ct-material-kit-pro-react.svg)](https://github.com/creativetimofficial/ct-material-kit-pro-react/issues?q=is%3Aissue+is%3Aclosed)
+LINGSSOFT 공식 홈페이지(템플릿 기반)
 
-![Image](https://s3.amazonaws.com/creativetim_bucket/products/89/original/material-kit-2-pro-react.jpg)
+## 개요
+이 저장소는 Creative Tim의 Material Kit 템플릿을 기반으로 제작된 LINGSSOFT 공식 홈페이지입니다. 템플릿은 유료로 구매하여 사용 중이며, 템플릿 소스 및 디자인 파일은 Creative Tim의 저작권이 적용됩니다.
 
-Material Kit 2 PRO React is our newest premium MUI Design System based on React. Its amazing design is inspired by Material Design and contains all the components you need for your development. If you’re a developer looking to create good-looking websites, rich with features, and highly customisable, here is your match.
+## 빠른 시작
+- 권장 Node.js 버전: 20 이상
+- 패키지 매니저: npm (프로젝트는 package-lock.json을 사용합니다)
 
-_Fully Coded Elements_
-Material Kit 2 PRO React is built with over 100 frontend individual elements, like buttons, inputs, navbars, alerts or cards, giving you the freedom of choosing and combining. All components can take variations in color, which you can easily modify using MUI styled() API and sx prop. You will save a lot of time going from prototyping to full-functional code because all elements are implemented.
+설치 및 개발 서버 실행:
+```bash
+# 클린 설치 (CI/빌드용 권장)
+npm ci
 
-This Premium MUI & React template is coming with pre-built design blocks, so the development process is seamless,
-switching from our pages to the real website is very easy to be done.
-View all components here. (https://www.creative-tim.com/learning-lab/react/alerts/material-kit/)
-
-_Documentation built by Developers_
-Each element is well presented in very complex documentation.
-You can read more about the documentation here (https://www.creative-tim.com/learning-lab/react/overview/material-kit/).
-
-_Example Pages_
-If you want to get inspiration or just show something directly to your clients, you can jump-start your development with our pre-built example pages. You will be able to quickly set up the basic structure for your web project.
-
-View example pages here. (https://demos.creative-tim.com/material-kit-pro-react/#/pages/landing-pages/coworking)
-
-**HELPFUL LINKS**
-
-- View [Github Repository](https://github.com/creativetimofficial/ct-material-kit-pro-react)
-- Check [FAQ Page](https://www.creative-tim.com/faq)
-
-#### Special thanks
-
-During the development of this dashboard, we have used many existing resources from awesome developers. We want to thank them for providing their tools open source:
-
-- [MUI](https://mui.com/) - The React UI library for faster and easier web development.
-- [React Flatpickr](https://github.com/haoxins/react-flatpickr) - Useful library used to select date.
-- [React Copy to Clipboard](https://github.com/nkbt/react-copy-to-clipboard) - Useful library used for copying data to the clipboard.
-- [React Countup](https://github.com/glennreyes/react-countup) - A lightweight React component that can be used to quickly create animations that display numerical data in a more interesting way.
-- [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter) - Syntax highlighting component for react with prismjs or highlightjs ast using inline styles.
-- [Rellax](https://dixonandmoe.com/rellax/) - Rellax is a buttery smooth, super lightweight, vanilla javascript parallax library.
-- [SwiperJS](https://swiperjs.com/) - Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior.
-- [TypedJS](https://github.com/mattboldt/typed.js/) - A JavaScript Typing Animation Library.
-- [ChromaJS](https://gka.github.io/chroma.js/) - A small-ish zero-dependency JavaScript library for all kinds of color conversions and color scales.
-- [UUID](https://github.com/uuidjs/uuid) - JavaScript library for generating random id numbers.
-
-Let us know your thoughts below. And good luck with development!
-
-## Table of Contents
-
-- [Versions](#versions)
-- [Demo](#demo)
-- [Quick Start](#quick-start)
-- [Documentation](#documentation)
-- [File Structure](#file-structure)
-- [Browser Support](#browser-support)
-- [Resources](#resources)
-- [Reporting Issues](#reporting-issues)
-- [Technical Support or Questions](#technical-support-or-questions)
-- [Licensing](#licensing)
-- [Useful Links](#useful-links)
-
-## Versions
-
-[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-kit-pro-react?ref=readme-mkpr)
-
-| React |
-| ----- |
-
-| [![Material Kit 2 PRO React](https://s3.amazonaws.com/creativetim_bucket/products/89/thumb/material-kit-2-pro-react.jpg)](http://demos.creative-tim.com/material-kit-pro-react/#/?ref=readme-mkpr)
-
-## Demo
-
-- [Sign in page](https://demos.creative-tim.com/material-kit-pro-react/#/authentication/sign-in/basic?ref=readme-mkrp)
-- [Sign up page](https://demos.creative-tim.com/material-kit-pro-react/#/authentication/sign-up/cover?ref=readme-mkrp)
-- [About us page](https://demos.creative-tim.com/material-kit-pro-react/#/pages/company/about-us?ref=readme-mkrp)
-- [Pricing page](https://demos.creative-tim.com/material-kit-pro-react/#/pages/company/pricing?ref=readme-mkrp)
-- [Page headers](https://demos.creative-tim.com/material-kit-pro-react/#/sections/page-sections/page-headers?ref=readme-mkrp)
-
-[View More](https://demos.creative-tim.com/material-kit-pro-react/#/?ref=readme-mkp).
-
-## Quick start
-
-Quick start options:
-
-- Buy from [Creative Tim](https://www.creative-tim.com/product/material-kit-pro-react?ref=readme-mkpr).
-
-## Terminal Commands
-
-1. Download and Install NodeJs LTS version from [NodeJs Official Page](https://nodejs.org/en/download/).
-2. Navigate to the root ./ directory of the product and run `yarn install` or `npm install` to install our local dependencies.
-
-## Documentation
-
-The documentation for the Material Kit is hosted at our [website](https://www.creative-tim.com/learning-lab/react/overview/material-kit/?ref=readme-mkpr).
-
-### What's included
-
-Within the download you'll find the following directories and files:
-
-```
-material-kit-2-pro-react
-    ├── public
-    │   ├── apple-icon.png
-    │   ├── favicon.png
-    │   ├── index.html
-    │   ├── manifest.json
-    │   └── robots.txt
-    ├── src
-    │   ├── assets
-    │   │   ├── images
-    │   │   ├── theme
-    │   │   │   ├── base
-    │   │   │   ├── components
-    │   │   │   ├── functions
-    │   │   └── └── index.js
-    │   ├── components
-    │   │   ├── MKAlert
-    │   │   ├── MKAvatar
-    │   │   ├── MKBadge
-    │   │   ├── MKBox
-    │   │   ├── MKButton
-    │   │   ├── MKDatePicker
-    │   │   ├── MKInput
-    │   │   ├── MKPagination
-    │   │   ├── MKProgress
-    │   │   ├── MKSnackbar
-    │   │   ├── MKSocialButton
-    │   │   └── MKTypography
-    │   ├── examples
-    │   │   ├── Breadcrumbs
-    │   │   ├── Cards
-    │   │   ├── Footer
-    │   │   ├── Navbars
-    │   │   └── Tables
-    │   ├── layouts
-    │   │   ├── authentication
-    │   │   │    ├── reset-password
-    │   │   │    ├── sign-in
-    │   │   │    └── sign-up
-    │   │   ├── pages
-    │   │   │    ├── apps
-    │   │   │    ├── blogs
-    │   │   │    ├── company
-    │   │   │    ├── extra
-    │   │   │    ├── landing-pages
-    │   │   │    ├── presentation
-    │   │   │    └── support
-    │   │   ├── sections
-    │   │   │    ├── attention-catchers
-    │   │   │    ├── components
-    │   │   │    ├── elements
-    │   │   │    ├── input-areas
-    │   │   │    ├── input-navigation
-    │   │   └──  └── page-sections
-    │   ├── pages
-    │   │   ├── Apps
-    │   │   ├── Authentication
-    │   │   ├── Blogs
-    │   │   ├── Company
-    │   │   ├── Extra
-    │   │   ├── LandingPages
-    │   │   ├── Presentation
-    │   │   └── Support
-    │   ├── App.js
-    │   ├── index.js
-    │   ├── footer.routes.js
-    │   └── routes.js
-    ├── .eslintrc.json
-    ├── .prettierrc.json
-    ├── CHANGELOG.md
-    ├── ISSUE_TEMPLATE.md
-    ├── jsconfig.json
-    ├── package.json
-    └── README.md
+# 개발 서버
+npm start
 ```
 
-## Browser Support
+빌드(배포용):
+```bash
+npm run build
+# 빌드 결과는 build/ 폴더에 생성됩니다
+```
 
-At present, we officially aim to support the last two versions of the following browsers:
+간단한 정적 서빙(로컬 테스트):
+```bash
+# serve 패키지가 없다면 전역 설치 없이 실행
+npx serve -s build -l 3002
+```
 
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
+## 환경 변수
+- 민감값 및 환경별 설정은 `.env`에 두고 `.env.example`로 문서화하세요.
+- `.env` 파일은 레포지토리에 커밋하지 마세요(기본적으로 .gitignore에 포함).
 
-## Resources
+## 라이선스 및 주의사항
+- 이 프로젝트는 Creative Tim의 프리미엄 템플릿(구매 기반)을 사용합니다. 구매한 라이선스(예: Freelancer)는 소스 파일을 수정하여 본인의 프로젝트에 사용할 수 있으나, 템플릿 파일 자체를 재배포하거나 템플릿 형태로 판매하는 행위는 금지됩니다.
+- 팀 사용(접근 권한 범위)이나 재배포 계획이 있다면 라이선스 티어(Startup / Company / Enterprise) 업그레이드를 검토하세요.
+- 상세 조건은 다음 링크에서 확인하세요: https://www.creative-tim.com/license
 
-- [Live Preview](https://demos.creative-tim.com/material-kit-pro-react/#/?ref=readme-mkpr)
-- [Buy Page](https://www.creative-tim.com/product/material-kit-pro-react?ref=readme-mkpr)
-- Documentation is [here](https://www.creative-tim.com/learning-lab/react/overview/material-kit/?ref=readme-mkpr)
-- [License Agreement](https://www.creative-tim.com/license?ref=readme-mkpr)
-- [Support](https://www.creative-tim.com/contact-us?ref=readme-mkpr)
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/ct-material-kit-pro-react/issues)
+## 권장 유지보수 작업
+1. 정기적으로 `npm audit`를 실행해 보안 취약점을 점검하세요.
+2. 장기적으로는 `react-scripts` 기반(CRA)에서 Vite 같은 최신 번들러로 마이그레이션을 검토하면 개발 속도 및 번들 크기 개선에 도움이 됩니다.
+3. `homepage` 필드와 배포 경로가 일치하는지 확인하세요(현재 package.json의 homepage: https://www.lingssoft.com).
 
-## Reporting Issues
-
-We use GitHub Issues as the official bug tracker for the Material Kit 2 PRO React. Here are some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the Material Kit 2 PRO React. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/material-kit-pro-react?ref=readme-mkpr).
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
-
-## Technical Support or Questions
-
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us?ref=readme-mkpr) instead of opening an issue.
-
-## Licensing
-
-- Copyright 2024 [Creative Tim](https://www.creative-tim.com?ref=readme-mkpr)
-- Creative Tim [license](https://www.creative-tim.com/license?ref=readme-mkpr)
-
-## Useful Links
-
-- [More products](https://www.creative-tim.com/templates?ref=readme-mkpr) from Creative Tim
-
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-mkpr) from Creative Tim
-
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=readme-mkpr) (earn money)
-
-##### Social Media
-
-Twitter: <https://twitter.com/CreativeTim>
-
-Facebook: <https://www.facebook.com/CreativeTim>
-
-Dribbble: <https://dribbble.com/creativetim>
-
-Google+: <https://plus.google.com/+CreativetimPage>
-
-Instagram: <https://instagram.com/creativetimofficial>
+## Docker / CI 참고
+- 이미 Dockerfile / docker-compose가 있다면, CI에서는 `node:20`으로 명시하고 `npm ci` + `npm run build`를 실행하세요.

@@ -1,17 +1,17 @@
 {
-  "name": "material-kit-2-pro-react",
-  "version": "2.1.1",
+  "name": "LINGSSOFT Homepage",
+  "version": "1.0.0",
   "private": true,
-  "author": "Creative Tim",
-  "license": "See license in https://www.creative-tim.com/license",
-  "description": "React version of Material Kit 2 PRO by Creative Tim",
-  "homepage": "https://demos.creative-tim.com/material-kit-pro-react/#/",
+  "author": "LINGS-nenji",
+  "license": "See license in Freelancer License",
+  "description": "LINGSSOFT 공식 홈페이지 - AI, 보안, 교육 솔루션 전문 기업",
+  "homepage": "https://www.lingssoft.com",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/ct-material-kit-pro-react/issues"
+    "url": "https://www.lingssoft.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/ct-material-kit-pro-react.git"
+    "url": "git+https://github.com/LINGS-nenji?tab=repositories"
   },
   "dependencies": {
     "@emotion/cache": "11.13.1",
