@@ -1,0 +1,84 @@
+{
+  "name": "material-kit-2-pro-react",
+  "version": "2.1.1",
+  "private": true,
+  "author": "Creative Tim",
+  "license": "See license in https://www.creative-tim.com/license",
+  "description": "React version of Material Kit 2 PRO by Creative Tim",
+  "homepage": "https://demos.creative-tim.com/material-kit-pro-react/#/",
+  "bugs": {
+    "url": "https://github.com/creativetimofficial/ct-material-kit-pro-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativetimofficial/ct-material-kit-pro-react.git"
+  },
+  "dependencies": {
+    "@emotion/cache": "11.13.1",
+    "@emotion/react": "11.13.0",
+    "@emotion/styled": "11.13.0",
+    "@mui/icons-material": "5.16.7",
+    "@mui/material": "5.16.7",
+    "@mui/styled-engine": "5.16.6",
+    "@testing-library/jest-dom": "6.4.8",
+    "@testing-library/react": "16.0.0",
+    "@testing-library/user-event": "14.5.2",
+    "ajv": "^8.17.1",
+    "chroma-js": "2.6.0",
+    "flatpickr": "4.6.13",
+    "prop-types": "15.8.1",
+    "react": "18.3.1",
+    "react-copy-to-clipboard": "5.1.0",
+    "react-countup": "6.5.3",
+    "react-dom": "18.3.1",
+    "react-flatpickr": "3.10.13",
+    "react-router-dom": "6.26.1",
+    "react-scripts": "5.0.1",
+    "react-syntax-highlighter": "15.5.0",
+    "rellax": "1.12.1",
+    "swiper": "9.2.0",
+    "typed.js": "2.1.0",
+    "uuid": "9.0.0",
+    "web-vitals": "4.2.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src",
+    "prettify": "prettier --write ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "eslint": "8.38.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsx-a11y": "6.9.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.35.0",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "prettier": "2.8.7"
+  },
+  "overrides": {
+    "svgo": "3.0.2"
+  }
+}
