@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "LINGSSOFT Launch (chrome:3002)",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:3002",
+      "webRoot": "${workspaceFolder}/src",
+      "preLaunchTask": "npm: start",
+      "breakOnLoad": true
+    }
+  ]
+}
