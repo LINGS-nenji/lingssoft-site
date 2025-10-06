@@ -28,6 +28,7 @@ import Presentation from "layouts/pages/presentation";
 
 // Material Kit 2 PRO React routes
 import routes from "routes";
+import Header from "components/Header";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -54,6 +55,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Header />
       <Routes>
         {getRoutes(routes)}
         <Route path="/presentation" element={<Presentation />} />

@@ -1,0 +1,14 @@
+{
+  "menu": {
+    "home": "Home",
+    "business": "Business",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "company": "Company",
+    "about": "About",
+    "history": "History",
+    "values": "Core Values",
+    "contact": "Contact"
+  },
+  "site": { "title": "LINGSSOFT" }
+}

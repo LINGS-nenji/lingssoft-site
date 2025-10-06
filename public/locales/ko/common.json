@@ -1,0 +1,14 @@
+{
+  "menu": {
+    "home": "홈",
+    "business": "사업소개",
+    "solutions": "솔루션",
+    "pricing": "가격",
+    "company": "회사소개",
+    "about": "회사소개",
+    "history": "연혁",
+    "values": "핵심가치",
+    "contact": "문의하기"
+  },
+  "site": { "title": "LINGSSOFT" }
+}

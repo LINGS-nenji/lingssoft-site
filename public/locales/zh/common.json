@@ -1,0 +1,14 @@
+{
+  "menu": {
+    "home": "首页",
+    "business": "业务介绍",
+    "solutions": "解决方案",
+    "pricing": "定价",
+    "company": "公司介绍",
+    "about": "关于我们",
+    "history": "历史沿革",
+    "values": "核心价值",
+    "contact": "联系我们"
+  },
+  "site": { "title": "LINGSSOFT" }
+}

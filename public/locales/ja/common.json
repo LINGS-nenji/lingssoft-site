@@ -1,0 +1,14 @@
+{
+  "menu": {
+    "home": "ホーム",
+    "business": "事業紹介",
+    "solutions": "ソリューション",
+    "pricing": "価格",
+    "company": "会社情報",
+    "about": "会社概要",
+    "history": "沿革",
+    "values": "コアバリュー",
+    "contact": "お問い合わせ"
+  },
+  "site": { "title": "LINGSSOFT" }
+}
