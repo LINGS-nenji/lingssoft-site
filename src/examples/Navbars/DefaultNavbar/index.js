@@ -15,6 +15,7 @@ Coded by www.creative-tim.com
 */
 
 import { Fragment, useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -35,6 +36,7 @@ import MuiLink from "@mui/material/Link";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
+import LanguageSwitcher from "components/LanguageSwitcher";
 
 // Material Kit 2 PRO React examples
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
@@ -44,7 +46,7 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 import breakpoints from "assets/theme/base/breakpoints";
 
 function DefaultNavbar({
-  brand = "LINGSSOFT",
+  brand,
   routes,
   transparent = false,
   light = false,
@@ -62,6 +64,11 @@ function DefaultNavbar({
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
+  const { t } = useTranslation("common");
+  const brandLabel = brand || t("site.title");
+
+  const getLabel = (item) =>
+    item && item.translationKey ? t(item.translationKey) : item && item.name ? item.name : "";
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
@@ -90,28 +97,34 @@ function DefaultNavbar({
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
-  const renderNavbarItems = routes.map(({ name, icon, href, route, collapse }) => (
-    <DefaultNavbarDropdown
-      key={name}
-      name={name}
-      icon={icon}
-      href={href}
-      route={route}
-      collapse={Boolean(collapse)}
-      onMouseEnter={({ currentTarget }) => {
-        if (collapse) {
-          setDropdown(currentTarget);
-          setDropdownEl(currentTarget);
-          setDropdownName(name);
-        }
-      }}
-      onMouseLeave={() => collapse && setDropdown(null)}
-      light={light}
-    />
-  ));
+  const renderNavbarItems = routes.map((item) => {
+    const { name, icon, href, route, collapse } = item;
+    const displayName = getLabel(item);
+
+    return (
+      <DefaultNavbarDropdown
+        key={name || displayName}
+        name={displayName}
+        icon={icon}
+        href={href}
+        route={route}
+        collapse={Boolean(collapse)}
+        onMouseEnter={({ currentTarget }) => {
+          if (collapse) {
+            setDropdown(currentTarget);
+            setDropdownEl(currentTarget);
+            setDropdownName(name);
+          }
+        }}
+        onMouseLeave={() => collapse && setDropdown(null)}
+        light={light}
+      />
+    );
+  });
 
   // Render the routes on the dropdown menu
-  const renderRoutes = routes.map(({ name, collapse, columns, rowsPerColumn }) => {
+  const renderRoutes = routes.map((routeItem) => {
+    const { name, collapse, columns, rowsPerColumn } = routeItem;
     let template;
 
     // Render the dropdown menu that should be display as columns
@@ -147,7 +160,7 @@ function DefaultNavbar({
                       px={0.5}
                       mt={index !== 0 ? 2 : 0}
                     >
-                      {col.name}
+                      {getLabel(col)}
                     </MKTypography>
                     {col.collapse.map((item) => (
                       <MKTypography
@@ -176,7 +189,7 @@ function DefaultNavbar({
                           },
                         })}
                       >
-                        {item.name}
+                        {getLabel(item)}
                       </MKTypography>
                     ))}
                   </Fragment>
@@ -258,7 +271,7 @@ function DefaultNavbar({
           >
             {item.description ? (
               <MKBox>
-                {item.name}
+                {getLabel(item)}
                 <MKTypography
                   display="block"
                   variant="button"
@@ -270,7 +283,7 @@ function DefaultNavbar({
                 </MKTypography>
               </MKBox>
             ) : (
-              item.name
+              getLabel(item)
             )}
             {item.collapse && (
               <Icon
@@ -390,7 +403,7 @@ function DefaultNavbar({
                   >
                     {item.description ? (
                       <MKBox>
-                        {item.name}
+                        {getLabel(item)}
                         <MKTypography
                           display="block"
                           variant="button"
@@ -402,7 +415,7 @@ function DefaultNavbar({
                         </MKTypography>
                       </MKBox>
                     ) : (
-                      item.name
+                      getLabel(item)
                     )}
                     {item.collapse && (
                       <Icon
@@ -486,7 +499,7 @@ function DefaultNavbar({
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
             <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-              {brand}
+              {brandLabel}
             </MKTypography>
           </MKBox>
           <MKBox
@@ -497,7 +510,8 @@ function DefaultNavbar({
           >
             {renderNavbarItems}
           </MKBox>
-          <MKBox ml={{ xs: "auto", lg: 0 }}>
+          <MKBox ml={{ xs: "auto", lg: 0 }} display="flex" alignItems="center" gap={1.5}>
+            <LanguageSwitcher />
             {action &&
               (action.type === "internal" ? (
                 <MKButton

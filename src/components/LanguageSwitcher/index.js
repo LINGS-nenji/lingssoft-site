@@ -1,4 +1,7 @@
 import React from "react";
+import FormControl from "@mui/material/FormControl";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
 import i18n from "../../i18n";
 
 const langs = [
@@ -20,12 +23,24 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <select onChange={change} value={i18n.language || "ko"}>
-      {langs.map((l) => (
-        <option key={l.code} value={l.code}>
-          {l.label}
-        </option>
-      ))}
-    </select>
+    <FormControl size="small" sx={{ minWidth: 120 }}>
+      <Select
+        value={i18n.language || "ko"}
+        onChange={change}
+        displayEmpty
+        sx={{
+          fontSize: 14,
+          height: 36,
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          "& .MuiSelect-select": { py: 0.5, pl: 1.5 },
+        }}
+      >
+        {langs.map((l) => (
+          <MenuItem key={l.code} value={l.code}>
+            {l.label}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 }

@@ -14,6 +14,7 @@ Coded by www.creative-tim.com
 */
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -34,14 +35,20 @@ import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarD
 
 function DefaultNavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");
+  const { t } = useTranslation("common");
+  const getLabel = (item) =>
+    item && item.translationKey ? t(item.translationKey) : item && item.name ? item.name : "";
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
 
-  const renderNavbarItems = routes.map(
-    ({ name, icon, collapse: routeCollapses, href, route, collapse: navCollapse }) => (
+  const renderNavbarItems = routes.map((item) => {
+    const { name, icon, collapse: routeCollapses, href, route, collapse: navCollapse } = item;
+    const displayName = getLabel(item);
+
+    return (
       <DefaultNavbarDropdown
-        key={name}
-        name={name}
+        key={name || displayName}
+        name={displayName}
         icon={icon}
         collapseStatus={name === collapse}
         onClick={() => handleSetCollapse(name)}
@@ -63,7 +70,7 @@ function DefaultNavbarMobile({ routes, open }) {
                       py={1}
                       px={0.5}
                     >
-                      {item.name}
+                      {getLabel(item)}
                     </MKTypography>
                     {item.collapse.map((el) => (
                       <MKTypography
@@ -92,7 +99,7 @@ function DefaultNavbarMobile({ routes, open }) {
                           },
                         })}
                       >
-                        {el.name}
+                        {getLabel(el)}
                       </MKTypography>
                     ))}
                   </>
@@ -128,7 +135,7 @@ function DefaultNavbarMobile({ routes, open }) {
                       fontWeight="bold"
                       textTransform="capitalize"
                     >
-                      {item.name}
+                      {getLabel(item)}
                     </MKTypography>
                     <MKTypography
                       display="block"
@@ -145,8 +152,8 @@ function DefaultNavbarMobile({ routes, open }) {
             ))}
         </MKBox>
       </DefaultNavbarDropdown>
-    )
-  );
+    );
+  });
 
   return (
     <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
