@@ -100,27 +100,29 @@ import Typography from "layouts/sections/elements/typography";
 
 const routes = [
   {
-    name: "사업소개",
+    name: "first",
+    translationKey: "menu.business",
     icon: <Icon>dashboard</Icon>,
     collapse: [
       {
-        name: "가격",
+        translationKey: "menu.pricing",
         route: "/pages/company/pricing",
         component: <Pricing />,
       },
     ],
   },
   {
-    name: "회사소개",
+    name: "second",
+    translationKey: "menu.company",
     icon: <Icon>contacts</Icon>,
     collapse: [
       {
-        name: "회사소개",
+        translationKey: "menu.about",
         route: "/pages/company/about-us",
         component: <AboutUs />,
       },
       {
-        name: "문의하기",
+        translationKey: "menu.contact",
         route: "/pages/support/contact-us",
         component: <ContactUs />,
       },
