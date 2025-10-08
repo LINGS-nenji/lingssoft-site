@@ -100,6 +100,33 @@ import Typography from "layouts/sections/elements/typography";
 
 const routes = [
   {
+    name: "사업소개",
+    icon: <Icon>dashboard</Icon>,
+    collapse: [
+      {
+        name: "pricing",
+        route: "/pages/company/pricing",
+        component: <Pricing />,
+      },
+    ],
+  },
+  {
+    name: "회사소개",
+    icon: <Icon>contacts</Icon>,
+    collapse: [
+      {
+        name: "about us",
+        route: "/pages/company/about-us",
+        component: <AboutUs />,
+      },
+      {
+        name: "contact us",
+        route: "/pages/support/contact-us",
+        component: <ContactUs />,
+      },
+    ],
+  },
+  {
     name: "pages",
     icon: <Icon>dashboard</Icon>,
     columns: 3,
