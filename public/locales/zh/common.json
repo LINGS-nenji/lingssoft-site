@@ -10,5 +10,9 @@
     "values": "核心价值",
     "contact": "联系我们"
   },
-  "site": { "title": "LINGSSOFT" }
+  "site": { "title": "LINGSSOFT" },
+  "theme": {
+    "light": "亮色模式",
+    "dark": "暗色模式"
+  }
 }

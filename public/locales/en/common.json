@@ -10,5 +10,9 @@
     "values": "Core Values",
     "contact": "Contact"
   },
-  "site": { "title": "LINGSSOFT" }
+  "site": { "title": "LINGSSOFT" },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  }
 }

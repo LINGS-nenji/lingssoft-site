@@ -37,6 +37,7 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 import LanguageSwitcher from "components/LanguageSwitcher";
+import ThemeSwitcher from "components/ThemeSwitcher";
 
 // Material Kit 2 PRO React examples
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
@@ -485,10 +486,20 @@ function DefaultNavbar({
         position={relative ? "relative" : "absolute"}
         left={0}
         zIndex={3}
-        sx={({ palette: { transparent: transparentColor, white }, functions: { rgba } }) => ({
-          backgroundColor: transparent ? transparentColor.main : rgba(white.main, 0.8),
-          backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
-        })}
+        sx={({ palette, functions: { rgba } }) => {
+          const { transparent: transparentColor, white, background } = palette;
+          const baseBg =
+            palette.mode === "dark" ? rgba(background.paper, 0.92) : rgba(white.main, 0.8);
+
+          return {
+            backgroundColor: transparent ? transparentColor.main : baseBg,
+            backdropFilter: transparent
+              ? "none"
+              : palette.mode === "dark"
+              ? "saturate(160%) blur(20px)"
+              : "saturate(200%) blur(30px)",
+          };
+        }}
       >
         <MKBox display="flex" justifyContent="space-between" alignItems="center">
           <MKBox
@@ -512,6 +523,7 @@ function DefaultNavbar({
           </MKBox>
           <MKBox ml={{ xs: "auto", lg: 0 }} display="flex" alignItems="center" gap={1.5}>
             <LanguageSwitcher />
+            <ThemeSwitcher />
             {action &&
               (action.type === "internal" ? (
                 <MKButton

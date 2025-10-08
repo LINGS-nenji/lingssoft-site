@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
@@ -23,20 +23,25 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
 // Material Kit 2 PRO React themes
-import theme from "assets/theme";
+import { buildTheme } from "assets/theme";
 import Presentation from "layouts/pages/presentation";
 
 // Material Kit 2 PRO React routes
 import routes from "routes";
 // import Header from "components/Header";
+import { useThemeMode } from "context/ThemeModeContext";
 
 export default function App() {
   const { pathname } = useLocation();
+  const { mode } = useThemeMode();
+  const appTheme = useMemo(() => buildTheme(mode), [mode]);
 
   // Setting page scroll to 0 when changing the route
   useEffect(() => {
     document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
+    if (document.scrollingElement) {
+      document.scrollingElement.scrollTop = 0;
+    }
   }, [pathname]);
 
   const getRoutes = (allRoutes) =>
@@ -53,7 +58,7 @@ export default function App() {
     });
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={appTheme}>
       <CssBaseline />
       {/* <Header /> */}
       <Routes>

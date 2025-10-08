@@ -10,5 +10,9 @@
     "values": "コアバリュー",
     "contact": "お問い合わせ"
   },
-  "site": { "title": "LINGSSOFT" }
+  "site": { "title": "LINGSSOFT" },
+  "theme": {
+    "light": "ライトモード",
+    "dark": "ダークモード"
+  }
 }

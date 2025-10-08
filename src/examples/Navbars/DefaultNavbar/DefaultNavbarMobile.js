@@ -29,6 +29,8 @@ import MuiLink from "@mui/material/Link";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import LanguageSwitcher from "components/LanguageSwitcher";
+import ThemeSwitcher from "components/ThemeSwitcher";
 
 // Material Kit 2 PRO React examples
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
@@ -158,6 +160,10 @@ function DefaultNavbarMobile({ routes, open }) {
   return (
     <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
       <MKBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
+        <MKBox px={2} pb={1.5} display="flex" flexWrap="wrap" gap={1}>
+          <LanguageSwitcher />
+          <ThemeSwitcher />
+        </MKBox>
         {renderNavbarItems}
       </MKBox>
     </Collapse>

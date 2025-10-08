@@ -10,5 +10,9 @@
     "values": "핵심가치",
     "contact": "문의하기"
   },
-  "site": { "title": "LINGSSOFT" }
+  "site": { "title": "LINGSSOFT" },
+  "theme": {
+    "light": "라이트 모드",
+    "dark": "다크 모드"
+  }
 }

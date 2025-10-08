@@ -85,9 +85,8 @@ import dialogContentText from "assets/theme/components/dialog/dialogContentText"
 import dialogActions from "assets/theme/components/dialog/dialogActions";
 import swiper from "assets/theme/components/swiper";
 
-export default createTheme({
+const baseThemeConfig = {
   breakpoints: { ...breakpoints },
-  palette: { ...colors },
   typography: { ...typography },
   boxShadows: { ...boxShadows },
   borders: { ...borders },
@@ -98,7 +97,6 @@ export default createTheme({
     pxToRem,
     rgba,
   },
-
   components: {
     MuiCssBaseline: {
       styleOverrides: {
@@ -157,4 +155,132 @@ export default createTheme({
     MuiDialogContentText: { ...dialogContentText },
     MuiDialogActions: { ...dialogActions },
   },
-});
+};
+
+const buildPalette = (mode = "light") => {
+  const isDark = mode === "dark";
+
+  if (isDark) {
+    return {
+      ...colors,
+      mode,
+      background: {
+        ...(colors.background || {}),
+        default: "#0c111f",
+        paper: "#161b2b",
+      },
+      text: {
+        ...(colors.text || {}),
+        main: "#e1e6ff",
+        focus: "#ffffff",
+        primary: "#ffffff",
+        secondary: "#b9c1e6",
+      },
+      primary: {
+        main: "#5c7cfa",
+        focus: "#4263eb",
+      },
+      secondary: {
+        main: "#49516f",
+        focus: "#343a55",
+      },
+      info: {
+        main: "#4db5ff",
+        focus: "#1971c2",
+      },
+      success: {
+        main: "#51cf66",
+        focus: "#40c057",
+      },
+      warning: {
+        main: "#fcc419",
+        focus: "#fab005",
+      },
+      error: {
+        main: "#ff6b6b",
+        focus: "#fa5252",
+      },
+      light: {
+        main: "#20263b",
+        focus: "#1b2033",
+      },
+      dark: {
+        main: "#f1f4ff",
+        focus: "#dce2ff",
+      },
+      grey: {
+        100: "#1a2133",
+        200: "#232a3f",
+        300: "#2c334c",
+        400: "#3a425e",
+        500: "#4a5373",
+        600: "#637092",
+        700: "#8491b9",
+        800: "#aeb9e0",
+        900: "#d7dff8",
+      },
+      gradients: {
+        ...colors.gradients,
+        primary: {
+          main: "#5c7cfa",
+          state: "#364fc7",
+        },
+        secondary: {
+          main: "#30354c",
+          state: "#1f2233",
+        },
+        info: {
+          main: "#4db5ff",
+          state: "#1a6ad8",
+        },
+        success: {
+          main: "#51cf66",
+          state: "#2b8a3e",
+        },
+        warning: {
+          main: "#fcc419",
+          state: "#e0a100",
+        },
+        error: {
+          main: "#ff6b6b",
+          state: "#d62828",
+        },
+        light: {
+          main: "#2b3247",
+          state: "#1d2438",
+        },
+        dark: {
+          main: "#101322",
+          state: "#05060d",
+        },
+      },
+    };
+  }
+
+  return {
+    ...colors,
+    mode,
+    background: {
+      ...(colors.background || {}),
+      default: colors.background?.default || "#f0f2f5",
+      paper: "#ffffff",
+    },
+    text: {
+      ...(colors.text || {}),
+      main: colors.text?.main || "#7b809a",
+      focus: colors.text?.focus || colors.text?.main || "#7b809a",
+      primary: colors.dark?.main || "#344767",
+      secondary: colors.text?.main || "#7b809a",
+    },
+  };
+};
+
+export const buildTheme = (mode = "light") =>
+  createTheme({
+    ...baseThemeConfig,
+    palette: buildPalette(mode),
+  });
+
+const theme = buildTheme();
+
+export default theme;

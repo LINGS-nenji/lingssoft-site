@@ -2,32 +2,28 @@ import React from "react";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import i18n from "../../i18n";
+import { useTranslation } from "react-i18next";
+import { useThemeMode } from "context/ThemeModeContext";
 
-const langs = [
-  { code: "ko", label: "한국어" },
-  { code: "en", label: "EN" },
-  { code: "ja", label: "日本語" },
-  { code: "zh", label: "中文" },
+const options = [
+  { value: "light", labelKey: "theme.light" },
+  { value: "dark", labelKey: "theme.dark" },
 ];
 
-export default function LanguageSwitcher() {
-  const change = (e) => {
-    const lng = e.target.value;
-    const path = window.location.pathname;
-    const parts = path.split("/").filter(Boolean);
-    if (langs.some((l) => l.code === parts[0])) parts.shift();
-    const newPath = `/${lng}/${parts.join("/")}`;
-    i18n.changeLanguage(lng);
-    window.location.href = newPath || `/${lng}/`;
+export default function ThemeSwitcher() {
+  const { mode, setMode } = useThemeMode();
+  const { t } = useTranslation("common");
+
+  const handleChange = (event) => {
+    const selectedMode = event.target.value;
+    setMode(selectedMode);
   };
 
   return (
-    <FormControl size="small" sx={{ minWidth: 120 }}>
+    <FormControl size="small" sx={{ minWidth: 140 }}>
       <Select
-        value={i18n.language || "ko"}
-        onChange={change}
-        displayEmpty
+        value={mode}
+        onChange={handleChange}
         variant="outlined"
         sx={(theme) => ({
           fontSize: 14,
@@ -63,9 +59,9 @@ export default function LanguageSwitcher() {
           },
         }}
       >
-        {langs.map((l) => (
-          <MenuItem key={l.code} value={l.code}>
-            {l.label}
+        {options.map((option) => (
+          <MenuItem key={option.value} value={option.value}>
+            {t(option.labelKey)}
           </MenuItem>
         ))}
       </Select>
