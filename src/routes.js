@@ -104,7 +104,7 @@ const routes = [
     icon: <Icon>dashboard</Icon>,
     collapse: [
       {
-        name: "pricing",
+        name: "가격",
         route: "/pages/company/pricing",
         component: <Pricing />,
       },
@@ -115,12 +115,12 @@ const routes = [
     icon: <Icon>contacts</Icon>,
     collapse: [
       {
-        name: "about us",
+        name: "회사소개",
         route: "/pages/company/about-us",
         component: <AboutUs />,
       },
       {
-        name: "contact us",
+        name: "문의하기",
         route: "/pages/support/contact-us",
         component: <ContactUs />,
       },
