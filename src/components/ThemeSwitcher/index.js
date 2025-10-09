@@ -20,21 +20,23 @@ export default function ThemeSwitcher() {
   };
 
   return (
-    <FormControl size="small" sx={{ minWidth: 140 }}>
+    <FormControl size="small" sx={{ minWidth: 110, maxWidth: 150 }}>
       <Select
         value={mode}
         onChange={handleChange}
         variant="outlined"
         sx={(theme) => ({
-          fontSize: 14,
-          height: 36,
+          fontSize: 13,
+          fontWeight: 600,
+          height: 34,
+          borderRadius: theme.shape.borderRadius,
           backgroundColor:
             theme.palette.mode === "dark"
-              ? theme.palette.background.paper
+              ? theme.palette.grey[900]
               : "rgba(255, 255, 255, 0.9)",
           color:
-            theme.palette.mode === "dark" ? theme.palette.common.white : theme.palette.text.main,
-          "& .MuiSelect-select": { py: 0.5, pl: 1.5 },
+            theme.palette.mode === "dark" ? theme.palette.grey[100] : theme.palette.text.primary,
+          "& .MuiSelect-select": { py: 0.5, pl: 1.25, fontWeight: 600 },
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor:
               theme.palette.mode === "dark" ? theme.palette.grey[700] : "rgba(255, 255, 255, 0.6)",
@@ -45,7 +47,7 @@ export default function ThemeSwitcher() {
           },
           "& .MuiSelect-icon": {
             color:
-              theme.palette.mode === "dark" ? theme.palette.common.white : theme.palette.text.main,
+              theme.palette.mode === "dark" ? theme.palette.grey[100] : theme.palette.text.primary,
           },
         })}
         MenuProps={{
@@ -53,14 +55,14 @@ export default function ThemeSwitcher() {
             sx: (theme) => ({
               backgroundColor:
                 theme.palette.mode === "dark"
-                  ? theme.palette.background.paper
+                  ? theme.palette.grey[900]
                   : theme.palette.background.default,
             }),
           },
         }}
       >
         {options.map((option) => (
-          <MenuItem key={option.value} value={option.value}>
+          <MenuItem key={option.value} value={option.value} sx={{ fontSize: 13, fontWeight: 600 }}>
             {t(option.labelKey)}
           </MenuItem>
         ))}
