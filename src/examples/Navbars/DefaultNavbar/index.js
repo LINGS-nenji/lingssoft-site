@@ -96,7 +96,9 @@ function DefaultNavbar({
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
-  const renderNavbarItems = routes.map((item) => {
+  const visibleRoutes = routes.filter(({ hidden }) => !hidden);
+
+  const renderNavbarItems = visibleRoutes.map((item) => {
     const { name, icon, href, route, collapse } = item;
     const displayName = getLabel(item);
 
@@ -122,7 +124,7 @@ function DefaultNavbar({
   });
 
   // Render the routes on the dropdown menu
-  const renderRoutes = routes.map((routeItem) => {
+  const renderRoutes = visibleRoutes.map((routeItem) => {
     const { name, collapse, columns, rowsPerColumn } = routeItem;
     let template;
 
@@ -350,7 +352,7 @@ function DefaultNavbar({
   );
 
   // Render routes that are nested inside the dropdown menu routes
-  const renderNestedRoutes = routes.map(({ collapse, columns }) =>
+  const renderNestedRoutes = visibleRoutes.map(({ collapse, columns }) =>
     collapse && !columns
       ? collapse.map(({ name: parentName, collapse: nestedCollapse }) => {
           let template;

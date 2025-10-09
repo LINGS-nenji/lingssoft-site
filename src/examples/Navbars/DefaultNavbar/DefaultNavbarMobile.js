@@ -43,7 +43,9 @@ function DefaultNavbarMobile({ routes, open }) {
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
 
-  const renderNavbarItems = routes.map((item) => {
+  const visibleRoutes = routes.filter(({ hidden }) => !hidden);
+
+  const renderNavbarItems = visibleRoutes.map((item) => {
     const { name, icon, collapse: routeCollapses, href, route, collapse: navCollapse } = item;
     const displayName = getLabel(item);
 
