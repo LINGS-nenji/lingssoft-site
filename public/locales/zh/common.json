@@ -8,7 +8,15 @@
     "about": "关于我们",
     "history": "历史沿革",
     "values": "核心价值",
-    "contact": "联系我们"
+    "helpnsupport": "帮助与支持",
+    "contact": "联系我们",
+    "knowledge": "知识中心",
+    "customdev": "定制开发",
+    "sponsor": "赞助",
+    "legal": "法律信息",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "license": "许可协议"
   },
   "site": { "title": "LINGSSOFT" },
   "theme": {

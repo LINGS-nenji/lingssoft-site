@@ -38,37 +38,35 @@ export default {
   ],
   menus: [
     {
-      name: "company",
+      name: "사업소개",
       items: [
-        { name: "about us", href: "https://www.creative-tim.com/presentation" },
-        { name: "freebies", href: "https://www.creative-tim.com/templates/free" },
-        { name: "premium tools", href: "https://www.creative-tim.com/templates/premium" },
-        { name: "blog", href: "https://www.creative-tim.com/blog" },
+        { name: "가격", route: "/pages/company/pricing" },
+        { name: "솔루션", route: "/pages/company/pricing" },
       ],
     },
     {
-      name: "resources",
+      name: "회사소개",
       items: [
-        { name: "illustrations", href: "https://iradesign.io/" },
-        { name: "bits & snippets", href: "https://www.creative-tim.com/bits" },
-        { name: "affiliate program", href: "https://www.creative-tim.com/affiliates/new" },
+        { name: "회사소개", route: "/pages/company/about-us" },
+        { name: "연혁", route: "/pages/company/about-us" },
+        { name: "핵심가치", route: "/pages/company/about-us" },
       ],
     },
     {
-      name: "help & support",
+      name: "도움말 및 지원",
       items: [
-        { name: "contact us", href: "https://www.creative-tim.com/contact-us" },
-        { name: "knowledge center", href: "https://www.creative-tim.com/knowledge-center" },
-        { name: "custom development", href: "https://services.creative-tim.com/" },
-        { name: "sponsorships", href: "https://www.creative-tim.com/sponsorships" },
+        { name: "문의하기", href: "/pages/support/contact-us" },
+        { name: "지식센터", href: "https://www.creative-tim.com/knowledge-center" },
+        { name: "맞춤형 개발", href: "https://services.creative-tim.com/" },
+        { name: "후원", href: "https://www.creative-tim.com/sponsorships" },
       ],
     },
     {
-      name: "legal",
+      name: "법적책임",
       items: [
-        { name: "terms & conditions", href: "https://www.creative-tim.com/terms" },
-        { name: "privacy policy", href: "https://www.creative-tim.com/privacy" },
-        { name: "licenses (EULA)", href: "https://www.creative-tim.com/license" },
+        { name: "이용약관", href: "https://www.creative-tim.com/terms" },
+        { name: "개인정보처리방침", href: "https://www.creative-tim.com/privacy" },
+        { name: "라이센스", href: "https://www.creative-tim.com/license" },
       ],
     },
   ],

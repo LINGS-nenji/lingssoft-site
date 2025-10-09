@@ -8,7 +8,15 @@
     "about": "会社概要",
     "history": "沿革",
     "values": "コアバリュー",
-    "contact": "お問い合わせ"
+    "helpnsupport": "ヘルプとサポート",
+    "contact": "お問い合わせ",
+    "knowledge": "ナレッジセンター",
+    "customdev": "カスタム開発",
+    "sponsor": "スポンサーシップ",
+    "legal": "法務情報",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "license": "ライセンス"
   },
   "site": { "title": "LINGSSOFT" },
   "theme": {

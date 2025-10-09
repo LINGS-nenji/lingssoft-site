@@ -8,7 +8,15 @@
     "about": "회사소개",
     "history": "연혁",
     "values": "핵심가치",
-    "contact": "문의하기"
+    "helpnsupport": "도움말 및 지원",
+    "contact": "문의하기",
+    "knowledge": "지식센터",
+    "customdev": "맞춤형개발",
+    "sponsor": "후원",
+    "legal": "법적책임",
+    "terms": "이용약관",
+    "privacy": "개인정보처리방침",
+    "license": "라이센스"
   },
   "site": { "title": "LINGSSOFT" },
   "theme": {

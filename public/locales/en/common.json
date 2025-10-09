@@ -8,7 +8,15 @@
     "about": "About",
     "history": "History",
     "values": "Core Values",
-    "contact": "Contact"
+    "helpnsupport": "Help & Support",
+    "contact": "Contact",
+    "knowledge": "Knowledge Center",
+    "customdev": "Custom Development",
+    "sponsor": "Sponsorships",
+    "legal": "Legal",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "license": "Licenses (EULA)"
   },
   "site": { "title": "LINGSSOFT" },
   "theme": {

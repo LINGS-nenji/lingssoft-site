@@ -105,6 +105,11 @@ const routes = [
     icon: <Icon>dashboard</Icon>,
     collapse: [
       {
+        translationKey: "menu.solutions",
+        route: "/pages/company/pricing",
+        component: <Pricing />,
+      },
+      {
         translationKey: "menu.pricing",
         route: "/pages/company/pricing",
         component: <Pricing />,
@@ -122,9 +127,14 @@ const routes = [
         component: <AboutUs />,
       },
       {
-        translationKey: "menu.contact",
-        route: "/pages/support/contact-us",
-        component: <ContactUs />,
+        translationKey: "menu.history",
+        route: "/pages/company/about-us",
+        component: <AboutUs />,
+      },
+      {
+        translationKey: "menu.values",
+        route: "/pages/company/about-us",
+        component: <AboutUs />,
       },
     ],
   },
