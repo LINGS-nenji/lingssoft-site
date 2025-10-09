@@ -14,7 +14,7 @@ const date = new Date().getFullYear();
 
 export default {
   brand: {
-    name: "LINGSSOFT",
+    translationKey: "site.title",
     image: logoCT,
     route: "/",
   },
@@ -38,35 +38,75 @@ export default {
   ],
   menus: [
     {
-      name: "사업소개",
+      name: "first",
+      translationKey: "menu.business",
       items: [
-        { name: "가격", route: "/pages/company/pricing" },
-        { name: "솔루션", route: "/pages/company/pricing" },
+        {
+          translationKey: "menu.solutions",
+          route: "#",
+        },
+        {
+          translationKey: "menu.pricing",
+          route: "/pages/company/pricing",
+        },
       ],
     },
     {
-      name: "회사소개",
+      name: "second",
+      translationKey: "menu.company",
       items: [
-        { name: "회사소개", route: "/pages/company/about-us" },
-        { name: "연혁", route: "/pages/company/about-us" },
-        { name: "핵심가치", route: "/pages/company/about-us" },
+        {
+          translationKey: "menu.about",
+          route: "/pages/company/about-us",
+        },
+        {
+          translationKey: "menu.history",
+          route: "#",
+        },
+        {
+          translationKey: "menu.values",
+          route: "#",
+        },
       ],
     },
     {
-      name: "도움말 및 지원",
+      name: "third",
+      translationKey: "menu.helpnsupport",
       items: [
-        { name: "문의하기", href: "/pages/support/contact-us" },
-        { name: "지식센터", href: "https://www.creative-tim.com/knowledge-center" },
-        { name: "맞춤형 개발", href: "https://services.creative-tim.com/" },
-        { name: "후원", href: "https://www.creative-tim.com/sponsorships" },
+        {
+          translationKey: "menu.contact",
+          route: "/pages/support/contact-us",
+        },
+        {
+          translationKey: "menu.knowledge",
+          route: "/pages/support/help-center",
+        },
+        {
+          translationKey: "menu.customdev",
+          route: "#",
+        },
+        {
+          translationKey: "menu.sponsor",
+          route: "#",
+        },
       ],
     },
     {
-      name: "법적책임",
+      name: "fourth",
+      translationKey: "menu.legal",
       items: [
-        { name: "이용약관", href: "https://www.creative-tim.com/terms" },
-        { name: "개인정보처리방침", href: "https://www.creative-tim.com/privacy" },
-        { name: "라이센스", href: "https://www.creative-tim.com/license" },
+        {
+          translationKey: "menu.terms",
+          route: "#",
+        },
+        {
+          translationKey: "menu.privacy",
+          route: "/pages/support/privacy",
+        },
+        {
+          translationKey: "menu.license",
+          route: "#",
+        },
       ],
     },
   ],

@@ -106,7 +106,7 @@ const routes = [
     collapse: [
       {
         translationKey: "menu.solutions",
-        route: "/pages/company/pricing",
+        route: "#",
         component: <Pricing />,
       },
       {
@@ -128,12 +128,12 @@ const routes = [
       },
       {
         translationKey: "menu.history",
-        route: "/pages/company/about-us",
+        route: "#",
         component: <AboutUs />,
       },
       {
         translationKey: "menu.values",
-        route: "/pages/company/about-us",
+        route: "#",
         component: <AboutUs />,
       },
     ],

@@ -16,6 +16,9 @@ Coded by www.creative-tim.com
 // react-router-dom components
 import { Link } from "react-router-dom";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
@@ -29,6 +32,12 @@ import MKTypography from "components/MKTypography";
 
 function DefaultFooter({ content }) {
   const { brand, socials, menus, copyright } = content;
+  const { t } = useTranslation("common");
+
+  const getLabel = (item, fallback) =>
+    item && item.translationKey ? t(item.translationKey) : fallback;
+
+  const brandLabel = getLabel(brand, brand.name);
 
   return (
     <MKBox component="footer">
@@ -37,9 +46,9 @@ function DefaultFooter({ content }) {
           <Grid item xs={12} md={3} sx={{ ml: "auto", mb: 3 }}>
             <MKBox>
               <Link to={brand.route}>
-                <MKBox component="img" src={brand.image} alt={brand.name} maxWidth="2rem" mb={2} />
+                <MKBox component="img" src={brand.image} alt={brandLabel} maxWidth="2rem" mb={2} />
               </Link>
-              <MKTypography variant="h6">{brand.name}</MKTypography>
+              <MKTypography variant="h6">{brandLabel}</MKTypography>
             </MKBox>
             <MKBox display="flex" alignItems="center" mt={3}>
               {socials.map(({ icon, link }, key) => (
@@ -59,48 +68,57 @@ function DefaultFooter({ content }) {
               ))}
             </MKBox>
           </Grid>
-          {menus.map(({ name: title, items }) => (
-            <Grid key={title} item xs={6} md={2} sx={{ mb: 3 }}>
-              <MKTypography
-                display="block"
-                variant="button"
-                fontWeight="bold"
-                textTransform="capitalize"
-                mb={1}
-              >
-                {title}
-              </MKTypography>
-              <MKBox component="ul" p={0} m={0} sx={{ listStyle: "none" }}>
-                {items.map(({ name, route, href }) => (
-                  <MKBox key={name} component="li" p={0} m={0} lineHeight={1.25}>
-                    {href ? (
-                      <MKTypography
-                        component="a"
-                        href={href}
-                        target="_blank"
-                        rel="noreferrer"
-                        variant="button"
-                        fontWeight="regular"
-                        textTransform="capitalize"
-                      >
-                        {name}
-                      </MKTypography>
-                    ) : (
-                      <MKTypography
-                        component={Link}
-                        to={route}
-                        variant="button"
-                        fontWeight="regular"
-                        textTransform="capitalize"
-                      >
-                        {name}
-                      </MKTypography>
-                    )}
-                  </MKBox>
-                ))}
-              </MKBox>
-            </Grid>
-          ))}
+          {menus.map(({ name: title, translationKey, items }) => {
+            const displayTitle = translationKey ? t(translationKey) : title;
+
+            return (
+              <Grid key={translationKey || title} item xs={6} md={2} sx={{ mb: 3 }}>
+                <MKTypography
+                  display="block"
+                  variant="button"
+                  fontWeight="bold"
+                  textTransform="capitalize"
+                  mb={1}
+                >
+                  {displayTitle}
+                </MKTypography>
+                <MKBox component="ul" p={0} m={0} sx={{ listStyle: "none" }}>
+                  {items.map(({ name, translationKey: itemKey, route, href }) => {
+                    const itemLabel = itemKey ? t(itemKey) : name;
+                    const key = itemKey || `${name}-${href || route}`;
+
+                    return (
+                      <MKBox key={key} component="li" p={0} m={0} lineHeight={1.25}>
+                        {href ? (
+                          <MKTypography
+                            component="a"
+                            href={href}
+                            target="_blank"
+                            rel="noreferrer"
+                            variant="button"
+                            fontWeight="regular"
+                            textTransform="capitalize"
+                          >
+                            {itemLabel}
+                          </MKTypography>
+                        ) : (
+                          <MKTypography
+                            component={Link}
+                            to={route}
+                            variant="button"
+                            fontWeight="regular"
+                            textTransform="capitalize"
+                          >
+                            {itemLabel}
+                          </MKTypography>
+                        )}
+                      </MKBox>
+                    );
+                  })}
+                </MKBox>
+              </Grid>
+            );
+          })}
           <Grid item xs={12} sx={{ textAlign: "center", my: 3 }}>
             {copyright}
           </Grid>

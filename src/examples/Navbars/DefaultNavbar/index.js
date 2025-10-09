@@ -35,7 +35,6 @@ import MuiLink from "@mui/material/Link";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
 import LanguageSwitcher from "components/LanguageSwitcher";
 import ThemeSwitcher from "components/ThemeSwitcher";
 
@@ -51,7 +50,6 @@ function DefaultNavbar({
   routes,
   transparent = false,
   light = false,
-  action = false,
   sticky = false,
   relative = false,
   center = false,
@@ -524,38 +522,6 @@ function DefaultNavbar({
           <MKBox ml={{ xs: "auto", lg: 0 }} display="flex" alignItems="center" gap={1.5}>
             <LanguageSwitcher />
             <ThemeSwitcher />
-            {action &&
-              (action.type === "internal" ? (
-                <MKButton
-                  component={Link}
-                  to={action.route}
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                >
-                  {action.label}
-                </MKButton>
-              ) : (
-                <MKButton
-                  component="a"
-                  href={action.route}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                >
-                  {action.label}
-                </MKButton>
-              ))}
           </MKBox>
           <MKBox
             display={{ xs: "inline-block", lg: "none" }}
@@ -590,26 +556,6 @@ DefaultNavbar.propTypes = {
   routes: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])).isRequired,
   transparent: PropTypes.bool,
   light: PropTypes.bool,
-  action: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.shape({
-      type: PropTypes.oneOf(["external", "internal"]).isRequired,
-      route: PropTypes.string.isRequired,
-      color: PropTypes.oneOf([
-        "primary",
-        "secondary",
-        "info",
-        "success",
-        "warning",
-        "error",
-        "dark",
-        "light",
-        "default",
-        "white",
-      ]),
-      label: PropTypes.string.isRequired,
-    }),
-  ]),
   sticky: PropTypes.bool,
   relative: PropTypes.bool,
   center: PropTypes.bool,
