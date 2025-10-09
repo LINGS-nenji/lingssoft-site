@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "title": "LINGSSOFTプレゼンテーション",
+    "description": "LINGSSOFTは知識を守り、人の可能性を引き出すインテリジェンスを構築します。信頼できるAI、堅牢なセキュリティ、人を中心とした学習を組み合わせ、企業がインサイトをグローバルに発信できるよう支援します。",
+    "cta_primary": "プラットフォームを見る",
+    "cta_secondary": "専門家に相談"
+  },
+  "pillars": {
+    "items": [
+      {
+        "title": "AIプラットフォーム",
+        "description": "OpenAIやAnthropicに着想を得たModelOps。ガバナンスと責任あるAIを備えたパイプラインで導入を加速します。",
+        "cta": "OpenAIの事例"
+      },
+      {
+        "title": "セキュリティファブリック",
+        "description": "Palo Alto NetworksやCrowdStrikeのゼロトラストモデルを参考に、統合脅威インテリジェンスと自動化されたSOCであらゆる接点を守ります。",
+        "cta": "Palo Altoの事例"
+      },
+      {
+        "title": "ラーニングインテリジェンス",
+        "description": "CourseraやDuolingoの適応型学習体験を通じて、スキル分析と資格連携で人材を再教育します。",
+        "cta": "Courseraインサイト"
+      },
+      {
+        "title": "パブリッシングエンジン",
+        "description": "Springer NatureやElsevierのデジタル出版モデルを基に、構造化されたオーサリングとAIコピー支援で多言語展開を実現します。",
+        "cta": "Springerの事例"
+      }
+    ]
+  },
+  "influence": {
+    "title": "業界リーダーに学ぶ運用モデル",
+    "description": "OpenAI、Palo Alto Networks、Coursera、Springer Natureなど信頼される技術リーダーの運用モデルを統合し、単一の戦略として提供します。",
+    "brands": ["OpenAI", "Palo Alto Networks", "CrowdStrike", "Coursera", "Springer Nature", "Elsevier"]
+  },
+  "principles": {
+    "title": "提供ポリシー",
+    "items": [
+      {
+        "title": "モデルの健全性",
+        "points": ["バイアス監査と履歴追跡", "合成データのガバナンス", "継続的な評価"]
+      },
+      {
+        "title": "アダプティブ防御",
+        "points": ["IDファーストの保護", "ランタイム異常検知", "セキュアなDevSecOps"]
+      },
+      {
+        "title": "人を中心とした学習",
+        "points": ["個別最適化されたスキルマップ", "AIメンターとシミュレーション", "エンタープライズ資格制度"]
+      },
+      {
+        "title": "信頼される出版",
+        "points": ["構造化されたコンテンツ供給", "生成AIによる編集", "多言語展開"]
+      }
+    ]
+  },
+  "programs": {
+    "title": "変革を支えるプログラム",
+    "subtitle": "戦略・プラットフォーム・能力開発を組み合わせたモジュール型プログラム。すべて実績指標に基づいています。",
+    "items": [
+      {
+        "title": "AIファウンドリー",
+        "subtitle": "10週間で発見から展開まで",
+        "bullets": ["ドメイン適応ラボ", "産学連携リサーチ", "倫理とコンプライアンスレビュー"]
+      },
+      {
+        "title": "SecureOps Command",
+        "subtitle": "クラウド・エッジ・職場を360°可視化",
+        "bullets": ["攻撃面分析", "自律型インシデント対応", "経営層向け脅威ブリーフィング"]
+      },
+      {
+        "title": "Learning Studio",
+        "subtitle": "継続的な人材変革",
+        "bullets": ["没入型教材作成", "適応型オンボーディング", "スキルインパクト可視化"]
+      },
+      {
+        "title": "Publishing Cloud",
+        "subtitle": "インテリジェントな知識配信",
+        "bullets": ["AIによる編集支援", "セマンティック検索と推薦", "グローバルローカライズ"]
+      }
+    ]
+  },
+  "alliance": {
+    "title": "LINGSSOFTアライアンスに参加",
+    "description": "企業・大学・出版社と協力し、信頼できるインテリジェンスを実現します。安全なAIを提供し、スキルを高め、知識資産を拡大します。",
+    "cta_primary": "戦略セッションを依頼",
+    "cta_secondary": "導入事例を見る",
+    "audiences": [
+      "AI・セキュリティ・ナレッジ基盤を刷新するグローバル企業",
+      "AIファーストのカリキュラムと研究拠点を立ち上げる教育機関",
+      "AIを活用した編集・配信を推進する出版社",
+      "重要インフラと公共サービスを守る公共部門"
+    ]
+  }
+}

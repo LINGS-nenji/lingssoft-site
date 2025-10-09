@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "title": "LINGSSOFT 프리젠테이션",
+    "description": "LINGSSOFT는 지식을 보호하고 사람을 성장시키는 지능을 만듭니다. 신뢰할 수 있는 AI와 탄탄한 보안, 인간 중심의 학습 경험을 결합해 기업이 통찰을 글로벌 규모로 퍼뜨리도록 지원합니다.",
+    "cta_primary": "플랫폼 살펴보기",
+    "cta_secondary": "전문가와 상담하기"
+  },
+  "pillars": {
+    "items": [
+      {
+        "title": "AI 플랫폼",
+        "description": "OpenAI와 Anthropic에서 영감을 받은 ModelOps. 책임 있는 AI 가드레일과 합성 데이터 연구(PoC)로 적용형 AI 전달 속도를 높입니다.",
+        "cta": "OpenAI 사례"
+      },
+      {
+        "title": "보안 패브릭",
+        "description": "Palo Alto Networks와 CrowdStrike가 제시한 제로 트러스트 모델을 기반으로 모든 상호작용을 보호합니다. 통합 위협 인텔과 자동화된 대응 체계를 제공합니다.",
+        "cta": "Palo Alto 사례"
+      },
+      {
+        "title": "러닝 인텔리전스",
+        "description": "Coursera와 Duolingo에서 참고한 적응형 교육 경험. 맞춤형 데이터 분석과 자격 체계를 통해 인재를 재교육합니다.",
+        "cta": "Coursera 인사이트"
+      },
+      {
+        "title": "퍼블리싱 엔진",
+        "description": "Springer Nature와 Elsevier의 디지털 퍼블리싱 모델. 구조화된 저작, 의미 기반 검색, AI 카피 어시스트로 연구 콘텐츠를 다국적 포맷으로 변환합니다.",
+        "cta": "Springer 사례"
+      }
+    ]
+  },
+  "influence": {
+    "title": "산업 리더와 함께 구축한 운영 모델",
+    "description": "OpenAI, Palo Alto Networks, Coursera, Springer Nature 등 신뢰받는 기술 리더들의 운영 모델을 융합해 단일 전략으로 제공합니다.",
+    "brands": ["OpenAI", "Palo Alto Networks", "CrowdStrike", "Coursera", "Springer Nature", "Elsevier"]
+  },
+  "principles": {
+    "title": "전달 원칙",
+    "items": [
+      {
+        "title": "모델 무결성",
+        "points": ["편향 검증 및 계보 추적", "합성 데이터 거버넌스", "지속적 평가"]
+      },
+      {
+        "title": "적응형 방어",
+        "points": ["아이덴티티 중심 보호", "실시간 이상 탐지", "보안 내재화 파이프라인"]
+      },
+      {
+        "title": "사람 중심 학습",
+        "points": ["개인화 역량 지도", "AI 멘토 & 시뮬레이션", "기업형 자격 체계"]
+      },
+      {
+        "title": "신뢰받는 퍼블리싱",
+        "points": ["구조화된 콘텐츠 공급망", "생성형 편집 워크플로", "다국어 유통"]
+      }
+    ]
+  },
+  "programs": {
+    "title": "전환을 이끄는 프로그램",
+    "subtitle": "전략·플랫폼·역량 강화가 결합된 모듈형 프로그램입니다. 모든 프로그램은 검증된 지표에 기반합니다.",
+    "items": [
+      {
+        "title": "AI 파운드리",
+        "subtitle": "10주 안에 발견에서 배포까지",
+        "bullets": ["도메인 맞춤 연구 랩", "산학·산연 협력", "윤리·규제 검토"]
+      },
+      {
+        "title": "SecureOps Command",
+        "subtitle": "클라우드·엣지·업무 공간을 아우르는 360º 가시성",
+        "bullets": ["공격 표면 분석", "자동화 대응 시나리오", "임원용 위협 브리핑"]
+      },
+      {
+        "title": "Learning Studio",
+        "subtitle": "지속적인 인재 전환",
+        "bullets": ["몰입형 교육 콘텐츠 제작", "적응형 온보딩 여정", "역량 영향 분석"]
+      },
+      {
+        "title": "Publishing Cloud",
+        "subtitle": "지능형 지식 유통",
+        "bullets": ["AI 기반 편집 지원", "의미 기반 검색·추천", "글로벌 콘텐츠 로컬라이제이션"]
+      }
+    ]
+  },
+  "alliance": {
+    "title": "LINGSSOFT Alliance에 합류하세요",
+    "description": "기업, 대학, 퍼블리셔와 협력해 신뢰할 수 있는 지능을 구현합니다. 함께 안전한 AI를 제공하고, 역량을 강화하며, 지식 자산을 확장합니다.",
+    "cta_primary": "전략 세션 요청",
+    "cta_secondary": "사례 보기",
+    "audiences": [
+      "AI·보안·지식 생태계를 현대화하는 글로벌 기업",
+      "AI 중심 커리큘럼과 연구 허브를 구축하는 교육 기관",
+      "AI를 활용한 편집·유통을 추진하는 퍼블리셔",
+      "중요 인프라와 시민 서비스를 보호하는 공공 부문"
+    ]
+  }
+}

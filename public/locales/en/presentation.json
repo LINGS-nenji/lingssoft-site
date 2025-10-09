@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "title": "LINGSSOFT Presentation",
+    "description": "We build intelligence that protects knowledge and elevates people. Our platforms blend trusted AI, resilient security, and human-centered learning to help enterprises publish insight at global scale.",
+    "cta_primary": "Explore the Platform",
+    "cta_secondary": "Talk with Experts"
+  },
+  "pillars": {
+    "items": [
+      {
+        "title": "AI Platform",
+        "description": "ModelOps inspired by OpenAI and Anthropic. LINGSSOFT accelerates applied AI delivery with governed pipelines, synthetic data labs, and responsible AI guardrails.",
+        "cta": "OpenAI Practices"
+      },
+      {
+        "title": "Security Fabric",
+        "description": "Zero Trust frameworks influenced by Palo Alto Networks and CrowdStrike protect every interaction. Unified threat intel, automated SOC playbooks, and post-quantum readiness.",
+        "cta": "Palo Alto Networks"
+      },
+      {
+        "title": "Learning Intelligence",
+        "description": "Adaptive training experiences modeled after Coursera and Duolingo. Cohort analytics and credential pipelines reskill workforces for AI-driven industries.",
+        "cta": "Coursera Insights"
+      },
+      {
+        "title": "Publishing Engine",
+        "description": "Digital publishing inspired by Springer Nature and Elsevier. Structured authoring, semantic search, and AI copy-assist turn research into multi-format experiences.",
+        "cta": "Springer Nature"
+      }
+    ]
+  },
+  "influence": {
+    "title": "Influence from industry leaders",
+    "description": "LINGSSOFT synthesizes proven operating models from the technology leaders our clients trust: OpenAI for AI stewardship, Palo Alto Networks for Zero Trust, Coursera for talent transformation, and Springer Nature for global knowledge distribution. We bring these patterns together in a unified strategy.",
+    "brands": ["OpenAI", "Palo Alto Networks", "CrowdStrike", "Coursera", "Springer Nature", "Elsevier"]
+  },
+  "principles": {
+    "title": "Delivery principles",
+    "items": [
+      {
+        "title": "Model Integrity",
+        "points": ["Bias audits & lineage tracking", "Synthetic data governance", "Continuous evaluation"]
+      },
+      {
+        "title": "Adaptive Defense",
+        "points": ["Identity-first protection", "Runtime anomaly detection", "Secure DevSecOps pipelines"]
+      },
+      {
+        "title": "Human-Centered Learning",
+        "points": ["Personalized skill graphs", "AI mentors & simulations", "Enterprise credentialing"]
+      },
+      {
+        "title": "Trusted Publishing",
+        "points": ["Structured content supply chain", "Generative editorial workflows", "Multilingual delivery"]
+      }
+    ]
+  },
+  "programs": {
+    "title": "Programs built for transformation",
+    "subtitle": "Modular engagements that combine strategy, platforms, and enablement. Each program is anchored by benchmarked outcomes.",
+    "items": [
+      {
+        "title": "AI Foundry",
+        "subtitle": "Discovery to deployment in 10 weeks",
+        "bullets": ["Domain adaptation labs", "Applied research partnerships", "Ethics & compliance reviews"]
+      },
+      {
+        "title": "SecureOps Command",
+        "subtitle": "360º visibility across cloud, edge, and workplace",
+        "bullets": ["Attack surface analytics", "Autonomous incident response", "Executive threat briefings"]
+      },
+      {
+        "title": "Learning Studio",
+        "subtitle": "Continuous talent transformation",
+        "bullets": ["Immersive courseware authoring", "Adaptive onboarding journeys", "Skill impact dashboards"]
+      },
+      {
+        "title": "Publishing Cloud",
+        "subtitle": "Intelligent knowledge distribution",
+        "bullets": ["AI-assisted editorial suites", "Semantic search & recommendations", "Global content localization"]
+      }
+    ]
+  },
+  "alliance": {
+    "title": "Join the LINGSSOFT alliance",
+    "description": "We partner with enterprises, universities, and publishers who share our pursuit of trustworthy intelligence. Together we deliver secure AI, elevate skills, and amplify knowledge assets.",
+    "cta_primary": "Request a Strategy Session",
+    "cta_secondary": "View Case Studies",
+    "audiences": [
+      "Global enterprises modernizing AI, security, and knowledge ecosystems",
+      "Academic institutions launching AI-first curricula and research hubs",
+      "Publishers seeking AI-assisted editorial and distribution workflows",
+      "Public sector teams securing critical infrastructure and citizen services"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "title": "LINGSSOFT展示页",
+    "description": "LINGSSOFT 构建可信赖的智能，保护知识并赋能人才。我们将可信 AI、韧性安全与以人为本的学习体验结合，帮助企业在全球范围内发布洞察。",
+    "cta_primary": "了解平台",
+    "cta_secondary": "联系专家"
+  },
+  "pillars": {
+    "items": [
+      {
+        "title": "AI 平台",
+        "description": "借鉴 OpenAI 和 Anthropic 的 ModelOps 实践，通过治理完善的管线、合成数据实验室和责任 AI 护栏，加速 AI 应用落地。",
+        "cta": "OpenAI 案例"
+      },
+      {
+        "title": "安全织网",
+        "description": "参考 Palo Alto Networks 与 CrowdStrike 的零信任框架，统一威胁情报和自动化 SOC 剧本，保护每一次交互。",
+        "cta": "Palo Alto 案例"
+      },
+      {
+        "title": "学习智能",
+        "description": "借鉴 Coursera 和 Duolingo 的自适应学习体验，通过技能画像与证书通道提升人才竞争力。",
+        "cta": "Coursera 洞察"
+      },
+      {
+        "title": "出版引擎",
+        "description": "参考 Springer Nature 和 Elsevier 的数字出版模式，借助结构化创作、语义搜索和 AI 辅助撰稿，将研究成果转化为多语种内容。",
+        "cta": "Springer 案例"
+      }
+    ]
+  },
+  "influence": {
+    "title": "源自行业领军者的模式",
+    "description": "LINGSSOFT 将客户信赖的技术领导者——OpenAI、Palo Alto Networks、Coursera、Springer Nature 的成熟模式融合为统一策略。",
+    "brands": ["OpenAI", "Palo Alto Networks", "CrowdStrike", "Coursera", "Springer Nature", "Elsevier"]
+  },
+  "principles": {
+    "title": "交付原则",
+    "items": [
+      {
+        "title": "模型完整性",
+        "points": ["偏差审计与谱系追踪", "合成数据治理", "持续评估"]
+      },
+      {
+        "title": "自适应防御",
+        "points": ["身份优先保护", "运行时异常检测", "DevSecOps 自动化"]
+      },
+      {
+        "title": "以人为本的学习",
+        "points": ["个性化技能图谱", "AI 导师与仿真", "企业级证书体系"]
+      },
+      {
+        "title": "可信出版",
+        "points": ["结构化内容供应链", "生成式编辑流程", "多语言发布"]
+      }
+    ]
+  },
+  "programs": {
+    "title": "推动转型的项目",
+    "subtitle": "集战略、平台与赋能于一体的模块化项目，每一项都以可验证成果为依据。",
+    "items": [
+      {
+        "title": "AI Foundry",
+        "subtitle": "10 周实现从探索到部署",
+        "bullets": ["领域适配实验室", "产学研协作", "伦理与合规评估"]
+      },
+      {
+        "title": "SecureOps Command",
+        "subtitle": "覆盖云、边缘与办公场景的 360° 可视化",
+        "bullets": ["攻击面分析", "自主化事件响应", "高管威胁简报"]
+      },
+      {
+        "title": "Learning Studio",
+        "subtitle": "持续的人才变革",
+        "bullets": ["沉浸式课程制作", "自适应入职旅程", "技能影响看板"]
+      },
+      {
+        "title": "Publishing Cloud",
+        "subtitle": "智能知识分发",
+        "bullets": ["AI 辅助编辑", "语义搜索与推荐", "全球内容本地化"]
+      }
+    ]
+  },
+  "alliance": {
+    "title": "加入 LINGSSOFT 联盟",
+    "description": "我们与企业、大学和出版机构合作，共同实现可信的智能未来。携手交付安全的 AI，增强技能，扩大知识资产。",
+    "cta_primary": "预约战略会议",
+    "cta_secondary": "查看成功案例",
+    "audiences": [
+      "升级 AI、安全与知识生态的全球企业",
+      "打造 AI 驱动课程和研究中心的高校",
+      "推进 AI 辅助编辑和分发的出版机构",
+      "守护关键基础设施与公共服务的公共部门"
+    ]
+  }
+}

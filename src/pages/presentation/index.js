@@ -16,6 +16,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useTheme } from "@mui/material/styles";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 // Material Kit 2 PRO React components
 import MKBadge from "components/MKBadge";
 import MKBox from "components/MKBox";
@@ -39,128 +42,29 @@ import securityOpsImage from "assets/images/examples/content-2.jpg";
 import classroomImage from "assets/images/examples/content-4.jpg";
 import publishingImage from "assets/images/office-dark.jpg";
 
-const heroDescription =
-  "We build intelligence that protects knowledge and elevates people. Our platforms blend trusted AI, resilient security, and human-centered learning to help enterprises publish insight at global scale.";
-
-const influenceText =
-  "LINGSSOFT synthesizes proven operating models from the technology leaders our clients trust: OpenAI for AI stewardship, Palo Alto Networks for Zero Trust, Coursera for talent transformation, and Springer Nature for global knowledge distribution. We bring these patterns together in a unified strategy.";
-
-const partnershipText =
-  "We partner with enterprises, universities, and publishers who share our pursuit of trustworthy intelligence. Together we deliver secure AI, elevate skills, and amplify knowledge assets.";
-
-const pillars = [
-  {
-    icon: "auto_awesome",
-    title: "AI Platform",
-    description:
-      "ModelOps inspired by OpenAI and Anthropic. LINGSSOFT accelerates applied AI delivery with governed pipelines, synthetic data labs, and responsible AI guardrails.",
-    link: "https://openai.com/",
-    cta: "OpenAI Practices",
-  },
-  {
-    icon: "shield",
-    title: "Security Fabric",
-    description:
-      "Zero Trust frameworks influenced by Palo Alto Networks and CrowdStrike protect every interaction. Unified threat intel, automated SOC playbooks, and post-quantum readiness.",
-    link: "https://www.paloaltonetworks.com/",
-    cta: "Palo Alto Networks",
-  },
-  {
-    icon: "school",
-    title: "Learning Intelligence",
-    description:
-      "Adaptive training experiences modeled after Coursera and Duolingo. Cohort analytics and credential pipelines reskill workforces for AI-driven industries.",
-    link: "https://www.coursera.org/",
-    cta: "Coursera Insights",
-  },
-  {
-    icon: "article",
-    title: "Publishing Engine",
-    description:
-      "Digital publishing inspired by Springer Nature and Elsevier. Structured authoring, semantic search, and AI copy-assist turn research into multi-format experiences.",
-    link: "https://www.springernature.com/",
-    cta: "Springer Nature",
-  },
+const pillarMeta = [
+  { icon: "auto_awesome", link: "https://openai.com/" },
+  { icon: "shield", link: "https://www.paloaltonetworks.com/" },
+  { icon: "school", link: "https://www.coursera.org/" },
+  { icon: "article", link: "https://www.springernature.com/" },
 ];
 
-const focusAreas = [
-  {
-    label: "Model Integrity",
-    points: [
-      "Bias audits & lineage tracking",
-      "Synthetic data governance",
-      "Continuous evaluation",
-    ],
-  },
-  {
-    label: "Adaptive Defense",
-    points: [
-      "Identity-first protection",
-      "Runtime anomaly detection",
-      "Secure DevSecOps pipelines",
-    ],
-  },
-  {
-    label: "Human-Centered Learning",
-    points: ["Personalized skill graphs", "AI mentors & simulations", "Enterprise credentialing"],
-  },
-  {
-    label: "Trusted Publishing",
-    points: [
-      "Structured content supply chain",
-      "Generative editorial workflows",
-      "Multilingual delivery",
-    ],
-  },
-];
-
-const programHighlights = [
-  {
-    title: "AI Foundry",
-    subtitle: "Discovery to deployment in 10 weeks",
-    image: aiLabImage,
-    bullets: [
-      "Domain adaptation labs",
-      "Applied research partnerships",
-      "Ethics & compliance reviews",
-    ],
-  },
-  {
-    title: "SecureOps Command",
-    subtitle: "360º visibility across cloud, edge, and workplace",
-    image: securityOpsImage,
-    bullets: [
-      "Attack surface analytics",
-      "Autonomous incident response",
-      "Executive threat briefings",
-    ],
-  },
-  {
-    title: "Learning Studio",
-    subtitle: "Continuous talent transformation",
-    image: classroomImage,
-    bullets: [
-      "Immersive courseware authoring",
-      "Adaptive onboarding journeys",
-      "Skill impact dashboards",
-    ],
-  },
-  {
-    title: "Publishing Cloud",
-    subtitle: "Intelligent knowledge distribution",
-    image: publishingImage,
-    bullets: [
-      "AI-assisted editorial suites",
-      "Semantic search & recommendations",
-      "Global content localization",
-    ],
-  },
+const programMedia = [
+  aiLabImage,
+  securityOpsImage,
+  classroomImage,
+  publishingImage,
 ];
 
 function Presentation() {
   const theme = useTheme();
   const { mode } = useThemeMode();
+  const { t } = useTranslation(["presentation", "common"]);
   const isDark = mode === "dark" || theme.palette.mode === "dark";
+  const pillars = t("presentation:pillars.items", { returnObjects: true }) || [];
+  const focusAreas = t("presentation:principles.items", { returnObjects: true }) || [];
+  const programHighlights = t("presentation:programs.items", { returnObjects: true }) || [];
+  const allianceAudiences = t("presentation:alliance.audiences", { returnObjects: true }) || [];
 
   return (
     <>
@@ -200,13 +104,19 @@ function Presentation() {
                   },
                 })}
               >
-                LINGSSOFT Presentation
+                {t("presentation:hero.title")}
               </MKTypography>
-              <MKTypography variant="h5" color="white" opacity={0.9} mb={3} px={{ xs: 2, md: 6 }}>
-                {heroDescription}
+              <MKTypography
+                variant="h5"
+                color={isDark ? "white" : "text"}
+                opacity={0.9}
+                mb={3}
+                px={{ xs: 2, md: 6 }}
+              >
+                {t("presentation:hero.description")}
               </MKTypography>
               <MKButton color="info" variant="gradient" size="large">
-                Explore the Platform
+                {t("presentation:hero.cta_primary")}
               </MKButton>
               <MKButton
                 color="white"
@@ -214,7 +124,7 @@ function Presentation() {
                 size="large"
                 sx={{ ml: 2, color: "white !important" }}
               >
-                Talk with Experts
+                {t("presentation:hero.cta_secondary")}
               </MKButton>
             </Grid>
           </Grid>
@@ -234,18 +144,26 @@ function Presentation() {
       >
         <Container sx={{ py: 6 }}>
           <Grid container spacing={3}>
-            {pillars.map(({ icon, title, description, link, cta }) => (
-              <Grid item xs={12} md={6} lg={3} key={title}>
-                <FilledInfoCard
-                  variant="gradient"
-                  color={isDark ? "dark" : "info"}
-                  icon={icon}
-                  title={title}
-                  description={description}
-                  action={{ type: "external", route: link, label: cta }}
-                />
-              </Grid>
-            ))}
+            {pillarMeta.map(({ icon, link }, index) => {
+              const content = pillars[index] || {};
+              const title = content.title || `pillar-${index}`;
+              return (
+                <Grid item xs={12} md={6} lg={3} key={title}>
+                  <FilledInfoCard
+                    variant="gradient"
+                    color={isDark ? "dark" : "info"}
+                    icon={icon}
+                    title={content.title || ""}
+                    description={content.description || ""}
+                    action={{
+                      type: "external",
+                      route: link,
+                      label: content.cta || "",
+                    }}
+                  />
+                </Grid>
+              );
+            })}
           </Grid>
         </Container>
         <Divider sx={{ my: 6 }} />
@@ -253,38 +171,31 @@ function Presentation() {
           <Grid container spacing={6} alignItems="center">
             <Grid item xs={12} lg={6}>
               <MKTypography variant="h3" mb={2}>
-                Influence from industry leaders
+                {t("presentation:influence.title")}
               </MKTypography>
               <MKTypography variant="body1" color={isDark ? "white" : "text"} mb={3}>
-                {influenceText}
+                {t("presentation:influence.description")}
               </MKTypography>
               <MKBox display="flex" flexWrap="wrap" gap={1.5}>
-                {[
-                  "OpenAI",
-                  "Palo Alto Networks",
-                  "CrowdStrike",
-                  "Coursera",
-                  "Springer Nature",
-                  "Elsevier",
-                ].map((brand) => (
+                {t("presentation:influence.brands", { returnObjects: true }).map((brand) => (
                   <MKBadge key={brand} color="info" variant="contained" badgeContent={brand} />
                 ))}
               </MKBox>
             </Grid>
             <Grid item xs={12} lg={6}>
               <MKTypography variant="h5" mb={2} color={isDark ? "white" : "text"}>
-                Delivery principles
+                {t("presentation:principles.title")}
               </MKTypography>
               <List>
-                {focusAreas.map(({ label, points }) => (
-                  <ListItem key={label} sx={{ alignItems: "flex-start" }}>
+                {focusAreas.map(({ title, points }, index) => (
+                  <ListItem key={title || `principle-${index}`} sx={{ alignItems: "flex-start" }}>
                     <ListItemIcon sx={{ minWidth: "2.5rem" }}>
                       <Icon color="info">check_circle</Icon>
                     </ListItemIcon>
                     <ListItemText
                       primary={
                         <MKTypography variant="h6" mb={0.5} color={isDark ? "white" : "text"}>
-                          {label}
+                          {title}
                         </MKTypography>
                       }
                       secondary={
@@ -293,7 +204,7 @@ function Presentation() {
                           variant="body2"
                           color={isDark ? "white" : "text"}
                         >
-                          {points.join(" • ")}
+                          {(points || []).join(" • ")}
                         </MKTypography>
                       }
                     />
@@ -306,23 +217,26 @@ function Presentation() {
         <Divider sx={{ my: 6 }} />
         <Container>
           <MKTypography variant="h3" textAlign="center" mb={1}>
-            Programs built for transformation
+            {t("presentation:programs.title")}
           </MKTypography>
           <MKTypography variant="body1" color={isDark ? "white" : "text"} textAlign="center" mb={6}>
-            Modular engagements that combine strategy, platforms, and enablement.
+            {t("presentation:programs.subtitle")}
           </MKTypography>
           <Grid container spacing={4}>
-            {programHighlights.map(({ title, subtitle, image, bullets }) => (
-              <Grid item xs={12} md={6} key={title}>
-                <Card
-                  sx={({ boxShadows: { lg }, palette }) => ({
-                    height: "100%",
-                    overflow: "hidden",
-                    boxShadow: lg,
-                    backgroundColor: palette.background.paper,
-                    color: palette.mode === "dark" ? palette.common.white : palette.text.primary,
-                  })}
-                >
+            {programHighlights.map((program, index) => {
+              const image = programMedia[index % programMedia.length];
+              const cardKey = program.title || `program-${index}`;
+              return (
+                <Grid item xs={12} md={6} key={cardKey}>
+                  <Card
+                    sx={({ boxShadows: { lg }, palette }) => ({
+                      height: "100%",
+                      overflow: "hidden",
+                      boxShadow: lg,
+                      backgroundColor: palette.background.paper,
+                      color: palette.mode === "dark" ? palette.common.white : palette.text.primary,
+                    })}
+                  >
                   <MKBox
                     minHeight="220px"
                     sx={{
@@ -333,21 +247,21 @@ function Presentation() {
                   />
                   <MKBox p={3}>
                     <MKTypography variant="h4" mb={1} color={isDark ? "white" : "text"}>
-                      {title}
+                      {program.title}
                     </MKTypography>
                     <MKTypography variant="body2" color={isDark ? "white" : "text"} mb={2}>
-                      {subtitle}
+                      {program.subtitle}
                     </MKTypography>
                     <List>
-                      {bullets.map((item) => (
-                        <ListItem key={item} sx={{ py: 0.5 }}>
+                      {program.bullets?.map((bullet, bulletIndex) => (
+                        <ListItem key={`${cardKey}-bullet-${bulletIndex}`} sx={{ py: 0.5 }}>
                           <ListItemIcon sx={{ minWidth: "2rem" }}>
                             <Icon color="info">arrow_right</Icon>
                           </ListItemIcon>
                           <ListItemText
                             primary={
                               <MKTypography variant="body2" color={isDark ? "white" : "text"}>
-                                {item}
+                                {bullet}
                               </MKTypography>
                             }
                           />
@@ -356,8 +270,9 @@ function Presentation() {
                     </List>
                   </MKBox>
                 </Card>
-              </Grid>
-            ))}
+                </Grid>
+              );
+            })}
           </Grid>
         </Container>
         <Divider sx={{ my: 6 }} />
@@ -366,16 +281,16 @@ function Presentation() {
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} md={6}>
                 <MKTypography variant="h4" fontWeight="bold" mb={2}>
-                  Join the LINGSSOFT alliance
+                  {t("presentation:alliance.title")}
                 </MKTypography>
                 <MKTypography variant="body1" color={isDark ? "white" : "text"} mb={3}>
-                  {partnershipText}
+                  {t("presentation:alliance.description")}
                 </MKTypography>
                 <MKButton color="info" variant="gradient">
-                  Request a Strategy Session
+                  {t("presentation:alliance.cta_primary")}
                 </MKButton>
                 <MKButton color="info" variant="text" sx={{ ml: 1 }}>
-                  View Case Studies
+                  {t("presentation:alliance.cta_secondary")}
                 </MKButton>
               </Grid>
               <Grid item xs={12} md={6}>
@@ -391,20 +306,15 @@ function Presentation() {
                     Who we engage with
                   </MKTypography>
                   <List>
-                    {[
-                      "Global enterprises modernizing AI, security, and knowledge ecosystems",
-                      "Academic institutions launching AI-first curricula and research hubs",
-                      "Publishers seeking AI-assisted editorial and distribution workflows",
-                      "Public sector teams securing critical infrastructure and citizen services",
-                    ].map((item) => (
-                      <ListItem key={item} sx={{ py: 0.5 }}>
+                    {allianceAudiences.map((audience, index) => (
+                      <ListItem key={`audience-${index}`} sx={{ py: 0.5 }}>
                         <ListItemIcon sx={{ minWidth: "2rem" }}>
                           <Icon color="info">check</Icon>
                         </ListItemIcon>
                         <ListItemText
                           primary={
                             <MKTypography variant="body2" color={isDark ? "white" : "text"}>
-                              {item}
+                              {audience}
                             </MKTypography>
                           }
                         />
