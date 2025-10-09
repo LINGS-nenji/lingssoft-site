@@ -164,6 +164,10 @@ const buildPalette = (mode = "light") => {
     return {
       ...colors,
       mode,
+      transparent: {
+        main: "rgba(0, 0, 0, 0)",
+        focus: "rgba(0, 0, 0, 0)",
+      },
       background: {
         ...(colors.background || {}),
         default: "#0c111f",
@@ -260,6 +264,10 @@ const buildPalette = (mode = "light") => {
   return {
     ...colors,
     mode,
+    transparent: {
+      main: "rgba(0, 0, 0, 0)",
+      focus: "rgba(0, 0, 0, 0)",
+    },
     background: {
       ...(colors.background || {}),
       default: colors.background?.default || "#f0f2f5",

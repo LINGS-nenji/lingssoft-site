@@ -2,6 +2,7 @@ import React from "react";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import { useLocation, useNavigate } from "react-router-dom";
 import i18n from "../../i18n";
 
 const langs = [
@@ -12,14 +13,24 @@ const langs = [
 ];
 
 export default function LanguageSwitcher() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const change = (e) => {
     const lng = e.target.value;
-    const path = window.location.pathname;
-    const parts = path.split("/").filter(Boolean);
-    if (langs.some((l) => l.code === parts[0])) parts.shift();
-    const newPath = `/${lng}/${parts.join("/")}`;
+    const parts = location.pathname.split("/").filter(Boolean);
+
+    if (langs.some((l) => l.code === parts[0])) {
+      parts[0] = lng;
+    } else {
+      parts.unshift(lng);
+    }
+
+    const newPath = parts.length ? `/${parts.join("/")}` : `/${lng}`;
+    const suffix = `${location.search || ""}${location.hash || ""}`;
+
     i18n.changeLanguage(lng);
-    window.location.href = newPath || `/${lng}/`;
+    navigate(`${newPath}${suffix}`, { replace: true });
   };
 
   return (

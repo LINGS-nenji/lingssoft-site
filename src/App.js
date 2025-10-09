@@ -45,16 +45,27 @@ export default function App() {
   }, [pathname]);
 
   const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
+    allRoutes.flatMap((route) => {
       if (route.collapse) {
         return getRoutes(route.collapse);
       }
 
       if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
+        const normalizedPath = route.route.startsWith("/") ? route.route : `/${route.route}`;
+        const key = route.key || normalizedPath;
+
+        return [
+          <Route exact path={normalizedPath} element={route.component} key={key} />,
+          <Route
+            exact
+            path={`/:lng${normalizedPath}`}
+            element={route.component}
+            key={`${key}-localized`}
+          />,
+        ];
       }
 
-      return null;
+      return [];
     });
 
   return (
@@ -64,7 +75,9 @@ export default function App() {
       <Routes>
         {getRoutes(routes)}
         <Route path="/presentation" element={<Presentation />} />
-        <Route path="*" element={<Navigate to="/presentation" />} />
+        <Route path="/:lng/presentation" element={<Presentation />} />
+        <Route path="/:lng/*" element={<Navigate to="presentation" replace />} />
+        <Route path="*" element={<Navigate to="/presentation" replace />} />
       </Routes>
     </ThemeProvider>
   );
