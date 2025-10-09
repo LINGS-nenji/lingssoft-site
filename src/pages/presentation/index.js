@@ -108,7 +108,7 @@ function Presentation() {
               </MKTypography>
               <MKTypography
                 variant="h5"
-                color={isDark ? "white" : "text"}
+                color="white"
                 opacity={0.9}
                 mb={3}
                 px={{ xs: 2, md: 6 }}
@@ -226,6 +226,7 @@ function Presentation() {
             {programHighlights.map((program, index) => {
               const image = programMedia[index % programMedia.length];
               const cardKey = program.title || `program-${index}`;
+
               return (
                 <Grid item xs={12} md={6} key={cardKey}>
                   <Card
@@ -237,39 +238,39 @@ function Presentation() {
                       color: palette.mode === "dark" ? palette.common.white : palette.text.primary,
                     })}
                   >
-                  <MKBox
-                    minHeight="220px"
-                    sx={{
-                      backgroundImage: `url(${image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  />
-                  <MKBox p={3}>
-                    <MKTypography variant="h4" mb={1} color={isDark ? "white" : "text"}>
-                      {program.title}
-                    </MKTypography>
-                    <MKTypography variant="body2" color={isDark ? "white" : "text"} mb={2}>
-                      {program.subtitle}
-                    </MKTypography>
-                    <List>
-                      {program.bullets?.map((bullet, bulletIndex) => (
-                        <ListItem key={`${cardKey}-bullet-${bulletIndex}`} sx={{ py: 0.5 }}>
-                          <ListItemIcon sx={{ minWidth: "2rem" }}>
-                            <Icon color="info">arrow_right</Icon>
-                          </ListItemIcon>
-                          <ListItemText
-                            primary={
-                              <MKTypography variant="body2" color={isDark ? "white" : "text"}>
-                                {bullet}
-                              </MKTypography>
-                            }
-                          />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </MKBox>
-                </Card>
+                    <MKBox
+                      minHeight="220px"
+                      sx={{
+                        backgroundImage: `url(${image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    />
+                    <MKBox p={3}>
+                      <MKTypography variant="h4" mb={1} color={isDark ? "white" : "text"}>
+                        {program.title}
+                      </MKTypography>
+                      <MKTypography variant="body2" color={isDark ? "white" : "text"} mb={2}>
+                        {program.subtitle}
+                      </MKTypography>
+                      <List>
+                        {program.bullets?.map((bullet, bulletIndex) => (
+                          <ListItem key={`${cardKey}-bullet-${bulletIndex}`} sx={{ py: 0.5 }}>
+                            <ListItemIcon sx={{ minWidth: "2rem" }}>
+                              <Icon color="info">arrow_right</Icon>
+                            </ListItemIcon>
+                            <ListItemText
+                              primary={
+                                <MKTypography variant="body2" color={isDark ? "white" : "text"}>
+                                  {bullet}
+                                </MKTypography>
+                              }
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </MKBox>
+                  </Card>
                 </Grid>
               );
             })}
