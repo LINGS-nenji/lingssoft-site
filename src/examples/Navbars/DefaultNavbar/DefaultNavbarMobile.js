@@ -13,11 +13,11 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // react-router components
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -36,12 +36,30 @@ import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarD
 function DefaultNavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");
   const { t } = useTranslation("common");
+  const location = useLocation();
   const getLabel = (item) =>
     item && item.translationKey ? t(item.translationKey) : item && item.name ? item.name : "";
+  const isActiveRoute = (route) => Boolean(route && location.pathname.startsWith(route));
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
 
-  const visibleRoutes = routes.filter(({ hidden }) => !hidden);
+  const visibleRoutes = useMemo(() => routes.filter(({ hidden }) => !hidden), [routes]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const activeParent = visibleRoutes.find((item) => {
+      if (item.collapse) {
+        return item.collapse.some((child) => isActiveRoute(child.route));
+      }
+
+      return isActiveRoute(item.route);
+    });
+
+    if (activeParent) {
+      setCollapse(activeParent.name);
+    }
+  }, [open, location.pathname, visibleRoutes]);
 
   const renderNavbarItems = visibleRoutes.map((item) => {
     const { name, icon, collapse: routeCollapses, href, route, collapse: navCollapse } = item;
@@ -67,7 +85,7 @@ function DefaultNavbarMobile({ routes, open }) {
                     <MKTypography
                       display="block"
                       variant="button"
-                      fontWeight="bold"
+                      fontWeight={name === collapse ? "bold" : "regular"}
                       textTransform="capitalize"
                       py={1}
                       px={0.5}
@@ -87,7 +105,7 @@ function DefaultNavbarMobile({ routes, open }) {
                         variant="button"
                         color="text"
                         textTransform="capitalize"
-                        fontWeight="regular"
+                        fontWeight={isActiveRoute(el.route) ? "bold" : "regular"}
                         py={0.625}
                         px={2}
                         sx={({ palette: { grey, dark }, borders: { borderRadius } }) => ({
@@ -134,7 +152,7 @@ function DefaultNavbarMobile({ routes, open }) {
                     <MKTypography
                       display="block"
                       variant="button"
-                      fontWeight="bold"
+                      fontWeight={isActiveRoute(item.route) ? "bold" : "regular"}
                       textTransform="capitalize"
                     >
                       {getLabel(item)}
