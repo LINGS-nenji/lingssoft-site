@@ -40,6 +40,9 @@ function DefaultNavbarMobile({ routes, open }) {
   const getLabel = (item) =>
     item && item.translationKey ? t(item.translationKey) : item && item.name ? item.name : "";
   const isActiveRoute = (route) => Boolean(route && location.pathname.startsWith(route));
+  const hasActiveChildren = (items) =>
+    Array.isArray(items) &&
+    items.some((child) => isActiveRoute(child.route) || hasActiveChildren(child.collapse));
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
 
@@ -50,7 +53,7 @@ function DefaultNavbarMobile({ routes, open }) {
 
     const activeParent = visibleRoutes.find((item) => {
       if (item.collapse) {
-        return item.collapse.some((child) => isActiveRoute(child.route));
+        return hasActiveChildren(item.collapse);
       }
 
       return isActiveRoute(item.route);
@@ -64,6 +67,7 @@ function DefaultNavbarMobile({ routes, open }) {
   const renderNavbarItems = visibleRoutes.map((item) => {
     const { name, icon, collapse: routeCollapses, href, route, collapse: navCollapse } = item;
     const displayName = getLabel(item);
+    const isActive = isActiveRoute(route) || hasActiveChildren(routeCollapses);
 
     return (
       <DefaultNavbarDropdown
@@ -75,6 +79,7 @@ function DefaultNavbarMobile({ routes, open }) {
         href={href}
         route={route}
         collapse={Boolean(navCollapse)}
+        active={isActive}
       >
         <MKBox sx={{ height: "15rem", maxHeight: "15rem", overflowY: "scroll" }}>
           {routeCollapses &&

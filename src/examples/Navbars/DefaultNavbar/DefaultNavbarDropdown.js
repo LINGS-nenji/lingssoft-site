@@ -36,6 +36,7 @@ function DefaultNavbarDropdown({
   href = "",
   route = "",
   collapse,
+  active = false,
   ...rest
 }) {
   const linkComponent = {
@@ -59,7 +60,7 @@ function DefaultNavbarDropdown({
         display="flex"
         alignItems="baseline"
         color={light ? "white" : "dark"}
-        opacity={light ? 1 : 0.6}
+        opacity={light || active ? 1 : 0.6}
         sx={{ cursor: "pointer", userSelect: "none" }}
         {...(route && routeComponent)}
         {...(href && linkComponent)}
@@ -74,10 +75,10 @@ function DefaultNavbarDropdown({
         </MKTypography>
         <MKTypography
           variant="button"
-          fontWeight="regular"
+          fontWeight={active ? "bold" : "regular"}
           textTransform="capitalize"
           color={light ? "white" : "dark"}
-          sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
+          sx={{ ml: 1, mr: 0.25 }}
         >
           {name}
         </MKTypography>
@@ -106,6 +107,7 @@ DefaultNavbarDropdown.propTypes = {
   href: PropTypes.string,
   route: PropTypes.string,
   collapse: PropTypes.bool.isRequired,
+  active: PropTypes.bool,
 };
 
 export default DefaultNavbarDropdown;

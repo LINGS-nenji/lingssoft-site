@@ -49,12 +49,7 @@ const pillarMeta = [
   { icon: "article", link: "https://www.springernature.com/" },
 ];
 
-const programMedia = [
-  aiLabImage,
-  securityOpsImage,
-  classroomImage,
-  publishingImage,
-];
+const programMedia = [aiLabImage, securityOpsImage, classroomImage, publishingImage];
 
 function Presentation() {
   const theme = useTheme();
@@ -106,13 +101,7 @@ function Presentation() {
               >
                 {t("presentation:hero.title")}
               </MKTypography>
-              <MKTypography
-                variant="h5"
-                color="white"
-                opacity={0.9}
-                mb={3}
-                px={{ xs: 2, md: 6 }}
-              >
+              <MKTypography variant="h5" color="white" opacity={0.9} mb={3} px={{ xs: 2, md: 6 }}>
                 {t("presentation:hero.description")}
               </MKTypography>
               <MKButton color="info" variant="gradient" size="large">

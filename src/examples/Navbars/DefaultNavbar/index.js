@@ -18,7 +18,7 @@ import { Fragment, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // react-router components
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -64,6 +64,7 @@ function DefaultNavbar({
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
   const { t } = useTranslation("common");
+  const location = useLocation();
   const brandLabel = brand || t("site.title");
 
   const getLabel = (item) =>
@@ -97,10 +98,16 @@ function DefaultNavbar({
   }, []);
 
   const visibleRoutes = routes.filter(({ hidden }) => !hidden);
+  const isActiveRoute = (path) =>
+    Boolean(path && path !== "#" && location.pathname.startsWith(path));
+  const hasActiveChildren = (items) =>
+    Array.isArray(items) &&
+    items.some((child) => isActiveRoute(child.route) || hasActiveChildren(child.collapse));
 
   const renderNavbarItems = visibleRoutes.map((item) => {
     const { name, icon, href, route, collapse } = item;
     const displayName = getLabel(item);
+    const isActive = isActiveRoute(route) || hasActiveChildren(collapse);
 
     return (
       <DefaultNavbarDropdown
@@ -119,6 +126,7 @@ function DefaultNavbar({
         }}
         onMouseLeave={() => collapse && setDropdown(null)}
         light={light}
+        active={isActive}
       />
     );
   });

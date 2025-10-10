@@ -38,13 +38,17 @@ export default function ThemeSwitcher() {
           height: 34,
           borderRadius: theme.shape.borderRadius,
           backgroundColor:
-            theme.palette.mode === "dark"
-              ? theme.palette.grey[900]
-              : "rgba(255, 255, 255, 0.9)",
+            theme.palette.mode === "dark" ? theme.palette.grey[900] : "rgba(255, 255, 255, 0.9)",
           color:
             theme.palette.mode === "dark" ? theme.palette.grey[100] : theme.palette.text.primary,
           width: "100%",
-          "& .MuiSelect-select": { py: 0.5, pl: 1.25, pr: 1.25, fontWeight: 600, textAlign: "center" },
+          "& .MuiSelect-select": {
+            py: 0.5,
+            pl: 1.25,
+            pr: 1.25,
+            fontWeight: 600,
+            textAlign: "center",
+          },
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor:
               theme.palette.mode === "dark" ? theme.palette.grey[700] : "rgba(255, 255, 255, 0.6)",
