@@ -31,12 +31,14 @@ import Grow from "@mui/material/Grow";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
+import { useTheme } from "@mui/material/styles";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import LanguageSwitcher from "components/LanguageSwitcher";
 import ThemeSwitcher from "components/ThemeSwitcher";
+import { useThemeMode } from "context/ThemeModeContext";
 
 // Material Kit 2 PRO React examples
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
@@ -65,6 +67,9 @@ function DefaultNavbar({
   const [mobileView, setMobileView] = useState(false);
   const { t } = useTranslation("common");
   const location = useLocation();
+  const theme = useTheme();
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark" || theme.palette.mode === "dark";
   const brandLabel = brand || t("site.title");
 
   const getLabel = (item) =>
@@ -165,6 +170,7 @@ function DefaultNavbar({
                       variant="button"
                       fontWeight="bold"
                       textTransform="capitalize"
+                      color={isDark ? "white" : "text"}
                       py={1}
                       px={0.5}
                       mt={index !== 0 ? 2 : 0}
@@ -182,19 +188,28 @@ function DefaultNavbar({
                         minWidth="11.25rem"
                         display="block"
                         variant="button"
-                        color="text"
+                        color={isDark ? "white" : "text"}
                         textTransform="capitalize"
                         fontWeight="regular"
                         py={0.625}
                         px={2}
-                        sx={({ palette: { grey, dark }, borders: { borderRadius } }) => ({
+                        sx={({ palette: { grey, dark, text }, borders: { borderRadius } }) => ({
                           borderRadius: borderRadius.md,
                           cursor: "pointer",
                           transition: "all 300ms linear",
+                          color: isDark ? grey[60] : text.primary,
+                          opacity: 1,
+                          "& *": {
+                            color: isDark ? grey[60] : text.primary,
+                            opacity: 1,
+                          },
 
                           "&:hover": {
-                            backgroundColor: grey[200],
-                            color: dark.main,
+                            backgroundColor: isDark ? grey[800] : grey[200],
+                            color: isDark ? grey[60] : dark.main,
+                            "& *": {
+                              color: isDark ? grey[60] : dark.main,
+                            },
                           },
                         })}
                       >
@@ -247,21 +262,27 @@ function DefaultNavbar({
             variant="button"
             textTransform="capitalize"
             minWidth={item.description ? "14rem" : "12rem"}
-            color={item.description ? "dark" : "text"}
+            color={isDark ? "white" : item.description ? "dark" : "text"}
             fontWeight={item.description ? "bold" : "regular"}
             py={item.description ? 1 : 0.625}
             px={2}
-            sx={({ palette: { grey, dark }, borders: { borderRadius } }) => ({
+            sx={({ palette: { grey, dark, text }, borders: { borderRadius } }) => ({
               borderRadius: borderRadius.md,
               cursor: "pointer",
               transition: "all 300ms linear",
+              color: isDark ? grey[60] : text.primary,
+              opacity: 1,
+              "& *": {
+                color: isDark ? grey[60] : text.primary,
+                opacity: 1,
+              },
 
               "&:hover": {
-                backgroundColor: grey[200],
-                color: dark.main,
+                backgroundColor: isDark ? grey[800] : grey[200],
+                color: isDark ? grey[60] : dark.main,
 
                 "& *": {
-                  color: dark.main,
+                  color: isDark ? grey[60] : dark.main,
                 },
               },
             })}
@@ -284,7 +305,7 @@ function DefaultNavbar({
                 <MKTypography
                   display="block"
                   variant="button"
-                  color="text"
+                  color={isDark ? "white" : "text"}
                   fontWeight="regular"
                   sx={{ transition: "all 300ms linear" }}
                 >
@@ -341,16 +362,31 @@ function DefaultNavbar({
           {...TransitionProps}
           sx={{
             transformOrigin: "left top",
-            background: ({ palette: { white } }) => white.main,
+            background: "transparent",
           }}
         >
           <MKBox borderRadius="lg">
-            <MKTypography variant="h1" color="white">
+            <MKTypography
+              variant="h1"
+              sx={({ palette: { white, background } }) => ({
+                color: isDark ? background.paper : white.main,
+              })}
+            >
               <Icon ref={setArrowRef} sx={{ mt: -3 }}>
                 arrow_drop_up
               </Icon>
             </MKTypography>
-            <MKBox shadow="lg" borderRadius="lg" p={2} mt={2}>
+            <MKBox
+              shadow="lg"
+              borderRadius="lg"
+              p={2}
+              mt={2}
+              sx={({ palette }) => ({
+                backgroundColor: isDark ? palette.background.paper : palette.white.main,
+                color: isDark ? palette.grey[100] : "inherit",
+                border: isDark ? `1px solid ${palette.grey[800]}` : "none",
+              })}
+            >
               {renderRoutes}
             </MKBox>
           </MKBox>
@@ -391,21 +427,27 @@ function DefaultNavbar({
                     variant="button"
                     textTransform="capitalize"
                     minWidth={item.description ? "14rem" : "12rem"}
-                    color={item.description ? "dark" : "text"}
+                    color={isDark ? "white" : item.description ? "dark" : "text"}
                     fontWeight={item.description ? "bold" : "regular"}
                     py={item.description ? 1 : 0.625}
                     px={2}
-                    sx={({ palette: { grey, dark }, borders: { borderRadius } }) => ({
+                    sx={({ palette: { grey, dark, text }, borders: { borderRadius } }) => ({
                       borderRadius: borderRadius.md,
                       cursor: "pointer",
                       transition: "all 300ms linear",
+                      color: isDark ? grey[60] : text.primary,
+                      opacity: 1,
+                      "& *": {
+                        color: isDark ? grey[60] : text.primary,
+                        opacity: 1,
+                      },
 
                       "&:hover": {
-                        backgroundColor: grey[200],
-                        color: dark.main,
+                        backgroundColor: isDark ? grey[800] : grey[200],
+                        color: isDark ? grey[60] : dark.main,
 
                         "& *": {
-                          color: dark.main,
+                          color: isDark ? grey[60] : dark.main,
                         },
                       },
                     })}
@@ -416,7 +458,7 @@ function DefaultNavbar({
                         <MKTypography
                           display="block"
                           variant="button"
-                          color="text"
+                          color={isDark ? "white" : "text"}
                           fontWeight="regular"
                           sx={{ transition: "all 300ms linear" }}
                         >
@@ -467,11 +509,22 @@ function DefaultNavbar({
           {...TransitionProps}
           sx={{
             transformOrigin: "left top",
-            background: ({ palette: { white } }) => white.main,
+            background: "transparent",
           }}
         >
           <MKBox ml={2.5} mt={-2.5} borderRadius="lg">
-            <MKBox shadow="lg" borderRadius="lg" py={1.5} px={1} mt={2}>
+            <MKBox
+              shadow="lg"
+              borderRadius="lg"
+              py={1.5}
+              px={1}
+              mt={2}
+              sx={({ palette }) => ({
+                backgroundColor: isDark ? palette.background.paper : palette.white.main,
+                color: isDark ? palette.grey[100] : "inherit",
+                border: isDark ? `1px solid ${palette.grey[800]}` : "none",
+              })}
+            >
               {renderNestedRoutes}
             </MKBox>
           </MKBox>
