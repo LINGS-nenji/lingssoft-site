@@ -97,7 +97,7 @@ export default {
       items: [
         {
           translationKey: "menu.terms",
-          route: "#",
+          route: "/pages/support/terms",
         },
         {
           translationKey: "menu.privacy",
@@ -105,11 +105,11 @@ export default {
         },
         {
           translationKey: "menu.gdpr",
-          route: "#",
+          route: "/pages/support/gdpr",
         },
         {
           translationKey: "menu.license",
-          route: "#",
+          route: "/pages/support/license",
         },
       ],
     },

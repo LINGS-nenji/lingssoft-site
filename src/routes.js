@@ -44,7 +44,10 @@ import AboutUs from "layouts/pages/company/about-us";
 import Pricing from "layouts/pages/company/pricing";
 import ContactUs from "layouts/pages/support/contact-us";
 import HelpCenter from "layouts/pages/support/help-center";
+import Terms from "layouts/pages/support/terms";
 import Privacy from "layouts/pages/support/privacy";
+import Gdpr from "layouts/pages/support/gdpr";
+import License from "layouts/pages/support/license";
 
 const routes = [
   {
@@ -120,7 +123,8 @@ const routes = [
     collapse: [
       {
         translationKey: "menu.terms",
-        route: "#",
+        route: "/pages/support/terms",
+        component: <Terms />,
       },
       {
         translationKey: "menu.privacy",
@@ -128,8 +132,14 @@ const routes = [
         component: <Privacy />,
       },
       {
+        translationKey: "menu.gdpr",
+        route: "/pages/support/gdpr",
+        component: <Gdpr />,
+      },
+      {
         translationKey: "menu.license",
-        route: "#",
+        route: "/pages/support/license",
+        component: <License />,
       },
     ],
   },

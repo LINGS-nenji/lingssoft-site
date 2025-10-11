@@ -30,77 +30,69 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
-function Privacy() {
-  const officialPrivacyLink = (
+function Gdpr() {
+  const officialCookieLink = (
     <MKTypography
       component="a"
       variant="body2"
       color="info"
-      href="https://www.creative-tim.com/knowledge-center/privacy-policy/"
+      href="https://www.creative-tim.com/knowledge-center/cookie-policy/"
       target="_blank"
       rel="noreferrer"
       sx={{ fontWeight: "bold", display: "inline" }}
     >
-      Creative Tim Privacy Policy
+      Creative Tim Cookie Policy
     </MKTypography>
   );
 
   const sections = [
     {
-      heading: "1. Scope",
+      heading: "1. Purpose and Consent",
       paragraphs: [
-        "This privacy summary explains how LINGSSOFT collects, uses, and safeguards personal information when you browse our sites, download assets, or communicate with our team.",
-        "It complements the full privacy policy referenced below and is designed to help legal and compliance teams understand how we protect data throughout the product lifecycle.",
+        "This cookie and GDPR notice explains how LINGSSOFT uses tracking technologies on our websites and applications. When you first visit we present a consent banner so you can opt in to analytics or marketing cookies.",
+        "Essential cookies are required to operate the site and remember your preferences; they are always active. Non-essential cookies are loaded only after you give consent, which you may withdraw at any time.",
       ],
     },
     {
-      heading: "2. Data We Collect",
+      heading: "2. Types of Cookies We Use",
       paragraphs: [
-        "We collect only the information needed to deliver requested services, provide support, and secure our community.",
+        "Cookies and similar technologies support different aspects of the customer experience. We categorize them so you can make granular choices that match your compliance requirements.",
       ],
       bullets: [
-        "Account information such as name, email address, company, and billing details.",
-        "Usage data including download history, pages visited, and device identifiers gathered through analytics tools.",
-        "Support communications, feedback, and documentation shared when you open a ticket or request onboarding help.",
+        "Essential cookies keep you logged in, store language selections, and enable secure checkout experiences.",
+        "Analytics cookies measure feature adoption, documentation paths, and error frequency so we can improve performance.",
+        "Marketing cookies power optional campaigns, such as remembering that you dismissed an educational modal or requested a follow-up demo.",
       ],
     },
     {
-      heading: "3. How We Use Your Information",
+      heading: "3. Managing Preferences",
       paragraphs: [
-        "Data is processed to fulfill contractual obligations, improve experiences, and keep our services resilient.",
-      ],
-      bullets: [
-        "Provisioning products, licenses, and updates you request.",
-        "Communicating about releases, security notices, or important policy changes.",
-        "Monitoring platform performance, detecting abuse, and troubleshooting incidents.",
-        "Personalizing documentation or recommendations based on your role or region.",
+        "You can update consent by reopening the cookie banner via the footer link or by clearing cookies in your browser. Some browsers include advanced controls such as blocking third-party cookies or sending a Do Not Track signal; we honor those where technically feasible.",
+        "Disabling analytics or marketing cookies will not prevent you from downloading products, but it may limit personalized tips and usage metrics available in the dashboard.",
       ],
     },
     {
-      heading: "4. Sharing and Processors",
+      heading: "4. Third Parties and Data Transfers",
       paragraphs: [
-        "We do not sell personal information. When sharing is required to operate the service, we rely on vetted subprocessors bound to confidentiality and data protection terms.",
-      ],
-      bullets: [
-        "Payment providers that process transactions on our behalf.",
-        "Cloud hosting, logging, and analytics partners that keep infrastructure secure.",
-        "Professional advisors or legal authorities when required to comply with the law or defend our rights.",
+        "We partner with a small number of service providers to deliver analytics, marketing insights, and error reporting. Each provider signs data processing agreements that include EU Standard Contractual Clauses or other recognized transfer safeguards.",
+        "When we share pseudonymized data with these vendors, it is used only for the purpose described and only for as long as needed to provide the contracted service.",
       ],
     },
     {
-      heading: "5. Cookies and Preferences",
+      heading: "5. Retention and Updates",
       paragraphs: [
-        "We use essential cookies to keep you signed in and remember language preferences. Optional analytics cookies help us understand usage patterns so we can prioritize roadmap work.",
-        "You can manage consent through the cookie banner or your browser settings. Choosing to disable certain cookies may limit personalized features but core functionality remains available.",
+        "Cookie expiration periods vary based on their purpose. Session cookies expire when you close your browser, while persistent cookies last between 6 and 12 months unless you clear them sooner.",
+        "We review the cookie inventory quarterly. Material changes—including new vendors or purposes—will trigger an updated banner and revised documentation.",
       ],
     },
     {
-      heading: "6. Security, Retention, and Your Rights",
+      heading: "6. Learn More and Contact Us",
       paragraphs: [
-        "Access to personal data is restricted to staff who need it to complete their work. We apply encryption, role-based access, and continuous monitoring to prevent unauthorized use. Records are retained only as long as necessary to deliver the services or satisfy legal obligations.",
-        "Depending on your jurisdiction you may request access, correction, deletion, or portability of your data. Submit privacy requests to support@lingssoft.com and we will confirm receipt within two business days.",
-        <>These highlights align with the official {officialPrivacyLink}.</>,
-        "Review that document for detailed definitions, lawful bases, and regulatory disclosures.",
+        <>
+          These guidelines align with the official {officialCookieLink}. Review that resource for
+          the complete legal definitions and compliance controls.
+        </>,
+        "For privacy or cookie questions contact support@lingssoft.com. We respond to regulator or user inquiries within the timelines defined by GDPR.",
       ],
     },
   ];
@@ -133,7 +125,7 @@ function Privacy() {
                   mx={2}
                 >
                   <MKTypography variant="h3" color="white">
-                    Privacy Policy
+                    Cookie & GDPR Notice
                   </MKTypography>
                   <MKTypography variant="body2" color="white" opacity={0.8}>
                     Last updated: July 15, 2024
@@ -185,4 +177,4 @@ function Privacy() {
   );
 }
 
-export default Privacy;
+export default Gdpr;

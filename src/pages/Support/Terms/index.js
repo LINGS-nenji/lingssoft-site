@@ -30,77 +30,78 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
-function Privacy() {
-  const officialPrivacyLink = (
+function Terms() {
+  const officialTermsLink = (
     <MKTypography
       component="a"
       variant="body2"
       color="info"
-      href="https://www.creative-tim.com/knowledge-center/privacy-policy/"
+      href="https://www.creative-tim.com/knowledge-center/terms-of-service/"
       target="_blank"
       rel="noreferrer"
       sx={{ fontWeight: "bold", display: "inline" }}
     >
-      Creative Tim Privacy Policy
+      Creative Tim Terms of Service
     </MKTypography>
   );
 
   const sections = [
     {
-      heading: "1. Scope",
+      heading: "1. Acceptance of Service",
       paragraphs: [
-        "This privacy summary explains how LINGSSOFT collects, uses, and safeguards personal information when you browse our sites, download assets, or communicate with our team.",
-        "It complements the full privacy policy referenced below and is designed to help legal and compliance teams understand how we protect data throughout the product lifecycle.",
+        "By accessing or using LINGSSOFT products and sample assets you agree to comply with these Terms of Service. Use of the platform is permitted only for individuals or organizations that can form legally binding agreements under applicable law.",
+        "This summary highlights essential duties so legal, procurement, and security reviewers can onboard quickly while retaining the full protections described in the official agreement.",
       ],
     },
     {
-      heading: "2. Data We Collect",
+      heading: "2. Accounts and Eligibility",
       paragraphs: [
-        "We collect only the information needed to deliver requested services, provide support, and secure our community.",
+        "You must provide accurate contact, billing, and organizational details when creating an account. Administrators are responsible for managing authorized seats and ensuring credentials remain confidential.",
       ],
       bullets: [
-        "Account information such as name, email address, company, and billing details.",
-        "Usage data including download history, pages visited, and device identifiers gathered through analytics tools.",
-        "Support communications, feedback, and documentation shared when you open a ticket or request onboarding help.",
+        "Only use the services for lawful work that aligns with your internal policies.",
+        "Notify LINGSSOFT immediately if you suspect unauthorized access, credential compromise, or data misuse.",
+        "Ensure collaborators accessing premium files have the appropriate plan or license assigned to them.",
       ],
     },
     {
-      heading: "3. How We Use Your Information",
+      heading: "3. Orders, Payments, and Refunds",
       paragraphs: [
-        "Data is processed to fulfill contractual obligations, improve experiences, and keep our services resilient.",
+        "Paid orders, subscriptions, and renewals are billed up-front through the payment method on file. Unless otherwise stated, fees are non-refundable once digital assets or license keys are delivered.",
+        "If you experience billing issues, contact our support team within seven days of the charge so we can investigate and resolve them promptly.",
       ],
       bullets: [
-        "Provisioning products, licenses, and updates you request.",
-        "Communicating about releases, security notices, or important policy changes.",
-        "Monitoring platform performance, detecting abuse, and troubleshooting incidents.",
-        "Personalizing documentation or recommendations based on your role or region.",
+        "Discounts or promotional prices apply only to the stated term.",
+        "You may cancel auto-renewal at any time from the billing dashboard; access continues until the end of the current period.",
+        "Taxes, duties, and bank fees remain your responsibility unless required law dictates otherwise.",
       ],
     },
     {
-      heading: "4. Sharing and Processors",
+      heading: "4. Intellectual Property and License Grant",
       paragraphs: [
-        "We do not sell personal information. When sharing is required to operate the service, we rely on vetted subprocessors bound to confidentiality and data protection terms.",
+        "All product files, documentation, logos, and trademarks remain the property of LINGSSOFT and its licensors. When you purchase a license you receive a limited, non-exclusive right to use the assets for permitted commercial or internal projects.",
       ],
       bullets: [
-        "Payment providers that process transactions on our behalf.",
-        "Cloud hosting, logging, and analytics partners that keep infrastructure secure.",
-        "Professional advisors or legal authorities when required to comply with the law or defend our rights.",
+        "You may modify source files for your own applications or client deliverables.",
+        "You may not distribute template source code, UI kits, or components as stand-alone assets, even if modified.",
+        "Attribution is appreciated but not required; however you must not imply an endorsement or partnership without written approval.",
       ],
     },
     {
-      heading: "5. Cookies and Preferences",
+      heading: "5. Warranties, Liability, and Termination",
       paragraphs: [
-        "We use essential cookies to keep you signed in and remember language preferences. Optional analytics cookies help us understand usage patterns so we can prioritize roadmap work.",
-        "You can manage consent through the cookie banner or your browser settings. Choosing to disable certain cookies may limit personalized features but core functionality remains available.",
+        "The services are provided on an “as-is” basis without warranties of uninterrupted availability, merchantability, or fitness for a particular purpose. To the extent permitted by law, LINGSSOFT’s aggregate liability is limited to the amount you paid for the applicable service during the previous twelve months.",
+        "We may suspend or terminate access if you violate these terms, misuse licensed materials, or fail to pay invoices when due. You may end the agreement at any time by ceasing use of the services and deleting licensed materials from your systems.",
       ],
     },
     {
-      heading: "6. Security, Retention, and Your Rights",
+      heading: "6. Learn More and Contact Us",
       paragraphs: [
-        "Access to personal data is restricted to staff who need it to complete their work. We apply encryption, role-based access, and continuous monitoring to prevent unauthorized use. Records are retained only as long as necessary to deliver the services or satisfy legal obligations.",
-        "Depending on your jurisdiction you may request access, correction, deletion, or portability of your data. Submit privacy requests to support@lingssoft.com and we will confirm receipt within two business days.",
-        <>These highlights align with the official {officialPrivacyLink}.</>,
-        "Review that document for detailed definitions, lawful bases, and regulatory disclosures.",
+        <>
+          These highlights follow the structure of the official {officialTermsLink}. Review that
+          document for complete definitions, jurisdiction, and dispute resolution terms.
+        </>,
+        "Have questions? Reach us at support@lingssoft.com and our team will respond within two business days.",
       ],
     },
   ];
@@ -133,7 +134,7 @@ function Privacy() {
                   mx={2}
                 >
                   <MKTypography variant="h3" color="white">
-                    Privacy Policy
+                    Terms of Service
                   </MKTypography>
                   <MKTypography variant="body2" color="white" opacity={0.8}>
                     Last updated: July 15, 2024
@@ -185,4 +186,4 @@ function Privacy() {
   );
 }
 
-export default Privacy;
+export default Terms;

@@ -30,77 +30,73 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
-function Privacy() {
-  const officialPrivacyLink = (
+function License() {
+  const officialLicenseLink = (
     <MKTypography
       component="a"
       variant="body2"
       color="info"
-      href="https://www.creative-tim.com/knowledge-center/privacy-policy/"
+      href="https://www.creative-tim.com/knowledge-center/licenses/"
       target="_blank"
       rel="noreferrer"
       sx={{ fontWeight: "bold", display: "inline" }}
     >
-      Creative Tim Privacy Policy
+      Creative Tim License Guide
     </MKTypography>
   );
 
   const sections = [
     {
-      heading: "1. Scope",
+      heading: "1. License Overview",
       paragraphs: [
-        "This privacy summary explains how LINGSSOFT collects, uses, and safeguards personal information when you browse our sites, download assets, or communicate with our team.",
-        "It complements the full privacy policy referenced below and is designed to help legal and compliance teams understand how we protect data throughout the product lifecycle.",
+        "LINGSSOFT UI kits, templates, and code components are distributed under commercial licenses. Purchasing a license grants you certain rights to use the product in your own applications or client deliverables while retaining ownership of the original assets.",
+        "Review these highlights with your procurement or legal team to confirm that the granted rights align with your intended usage before launching a project.",
       ],
     },
     {
-      heading: "2. Data We Collect",
+      heading: "2. Permitted Uses",
       paragraphs: [
-        "We collect only the information needed to deliver requested services, provide support, and secure our community.",
+        "Depending on the plan you choose, licenses may cover single-project deployments or multiple commercial products. Unless otherwise noted, each developer who works with the source files requires a seat.",
       ],
       bullets: [
-        "Account information such as name, email address, company, and billing details.",
-        "Usage data including download history, pages visited, and device identifiers gathered through analytics tools.",
-        "Support communications, feedback, and documentation shared when you open a ticket or request onboarding help.",
+        "Modify or extend the source code to build internal tools, SaaS applications, or client websites.",
+        "Combine the assets with proprietary or open source codebases, provided you respect the original license of third-party dependencies.",
+        "Use components in marketing or demo materials that showcase your implementation of the product.",
       ],
     },
     {
-      heading: "3. How We Use Your Information",
+      heading: "3. Restrictions",
       paragraphs: [
-        "Data is processed to fulfill contractual obligations, improve experiences, and keep our services resilient.",
+        "The license does not transfer ownership of LINGSSOFT intellectual property. Redistribution of template files or design systems in a way that competes with the original product is prohibited.",
       ],
       bullets: [
-        "Provisioning products, licenses, and updates you request.",
-        "Communicating about releases, security notices, or important policy changes.",
-        "Monitoring platform performance, detecting abuse, and troubleshooting incidents.",
-        "Personalizing documentation or recommendations based on your role or region.",
+        "Do not resell or repackage the UI kit, even if you modify styling or structure.",
+        "Do not share source files publicly on GitHub, design libraries, or download portals.",
+        "Do not incorporate the assets into products that enable end users to build derivative templates that bypass our licensing model.",
       ],
     },
     {
-      heading: "4. Sharing and Processors",
+      heading: "4. Updates and Maintenance",
       paragraphs: [
-        "We do not sell personal information. When sharing is required to operate the service, we rely on vetted subprocessors bound to confidentiality and data protection terms.",
-      ],
-      bullets: [
-        "Payment providers that process transactions on our behalf.",
-        "Cloud hosting, logging, and analytics partners that keep infrastructure secure.",
-        "Professional advisors or legal authorities when required to comply with the law or defend our rights.",
+        "Active licenses receive access to bug fixes, security updates, and new features released during the subscription period. We announce notable changes in the changelog so you can plan upgrades.",
+        "After a license expires you may keep using the version you already downloaded, but downloads and updates are paused until you renew.",
       ],
     },
     {
-      heading: "5. Cookies and Preferences",
+      heading: "5. Support and Attribution",
       paragraphs: [
-        "We use essential cookies to keep you signed in and remember language preferences. Optional analytics cookies help us understand usage patterns so we can prioritize roadmap work.",
-        "You can manage consent through the cookie banner or your browser settings. Choosing to disable certain cookies may limit personalized features but core functionality remains available.",
+        "Each commercial license includes priority support for implementation questions related to the purchased product. Submit tickets through the LINGSSOFT dashboard and include purchase details to expedite review.",
+        "Attribution to LINGSSOFT is optional. If you choose to credit us, please link to lingssoft.com and avoid language implying a partnership or certification.",
       ],
     },
     {
-      heading: "6. Security, Retention, and Your Rights",
+      heading: "6. Learn More and Contact Us",
       paragraphs: [
-        "Access to personal data is restricted to staff who need it to complete their work. We apply encryption, role-based access, and continuous monitoring to prevent unauthorized use. Records are retained only as long as necessary to deliver the services or satisfy legal obligations.",
-        "Depending on your jurisdiction you may request access, correction, deletion, or portability of your data. Submit privacy requests to support@lingssoft.com and we will confirm receipt within two business days.",
-        <>These highlights align with the official {officialPrivacyLink}.</>,
-        "Review that document for detailed definitions, lawful bases, and regulatory disclosures.",
+        <>
+          These highlights mirror the structure of the official {officialLicenseLink}. Consult that
+          resource for license tiers, usage scenarios, and country-specific terms.
+        </>,
+        "For custom licensing questions email support@lingssoft.com. Our team is happy to review enterprise distribution needs or offline procurement processes.",
       ],
     },
   ];
@@ -133,7 +129,7 @@ function Privacy() {
                   mx={2}
                 >
                   <MKTypography variant="h3" color="white">
-                    Privacy Policy
+                    Product License Summary
                   </MKTypography>
                   <MKTypography variant="body2" color="white" opacity={0.8}>
                     Last updated: July 15, 2024
@@ -185,4 +181,4 @@ function Privacy() {
   );
 }
 
-export default Privacy;
+export default License;
