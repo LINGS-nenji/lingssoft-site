@@ -104,6 +104,10 @@ export default {
           route: "/pages/support/privacy",
         },
         {
+          translationKey: "menu.gdpr",
+          route: "#",
+        },
+        {
           translationKey: "menu.license",
           route: "#",
         },
