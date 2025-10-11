@@ -293,7 +293,7 @@ function Presentation() {
                   })}
                 >
                   <MKTypography variant="h6" mb={1}>
-                    Who we engage with
+                    {t("presentation:alliance.engagements")}
                   </MKTypography>
                   <List>
                     {allianceAudiences.map((audience, index) => (
