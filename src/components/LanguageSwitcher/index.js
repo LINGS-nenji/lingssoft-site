@@ -6,8 +6,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import i18n from "../../i18n";
 
 const langs = [
+  { code: "en", label: "ENGLISH" },
   { code: "ko", label: "한국어" },
-  { code: "en", label: "EN" },
   { code: "ja", label: "日本語" },
   { code: "zh", label: "中文" },
 ];
@@ -33,6 +33,12 @@ export default function LanguageSwitcher() {
     navigate(`${newPath}${suffix}`, { replace: true });
   };
 
+  // Determine current language: prefer URL path, then i18n language (normalized), then 'en'
+  const parts = location.pathname.split("/").filter(Boolean);
+  const langFromPath = langs.some((l) => l.code === parts[0]) ? parts[0] : null;
+  const i18nLang = (i18n.language || i18n.resolvedLanguage || "").split("-")[0] || null;
+  const currentLang = langFromPath || i18nLang || "en";
+
   return (
     <FormControl
       size="small"
@@ -43,7 +49,7 @@ export default function LanguageSwitcher() {
       }}
     >
       <Select
-        value={i18n.language || "ko"}
+        value={currentLang}
         onChange={change}
         displayEmpty
         variant="outlined"

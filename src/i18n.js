@@ -8,7 +8,8 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "ko",
+    // When no language is detected, fall back to English
+    fallbackLng: "en",
     supportedLngs: ["ko", "en", "ja", "zh"],
     ns: ["common", "presentation"],
     defaultNS: "common",
