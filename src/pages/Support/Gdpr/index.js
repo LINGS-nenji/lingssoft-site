@@ -29,73 +29,39 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
+import { Trans, useTranslation } from "react-i18next";
 
 function Gdpr() {
-  const officialCookieLink = (
-    <MKTypography
-      component="a"
-      variant="body2"
-      color="info"
-      href="https://www.creative-tim.com/knowledge-center/cookie-policy/"
-      target="_blank"
-      rel="noreferrer"
-      sx={{ fontWeight: "bold", display: "inline" }}
-    >
-      Creative Tim Cookie Policy
-    </MKTypography>
-  );
-
-  const sections = [
-    {
-      heading: "1. Purpose and Consent",
-      paragraphs: [
-        "This cookie and GDPR notice explains how LINGSSOFT uses tracking technologies on our websites and applications. When you first visit we present a consent banner so you can opt in to analytics or marketing cookies.",
-        "Essential cookies are required to operate the site and remember your preferences; they are always active. Non-essential cookies are loaded only after you give consent, which you may withdraw at any time.",
-      ],
-    },
-    {
-      heading: "2. Types of Cookies We Use",
-      paragraphs: [
-        "Cookies and similar technologies support different aspects of the customer experience. We categorize them so you can make granular choices that match your compliance requirements.",
-      ],
-      bullets: [
-        "Essential cookies keep you logged in, store language selections, and enable secure checkout experiences.",
-        "Analytics cookies measure feature adoption, documentation paths, and error frequency so we can improve performance.",
-        "Marketing cookies power optional campaigns, such as remembering that you dismissed an educational modal or requested a follow-up demo.",
-      ],
-    },
-    {
-      heading: "3. Managing Preferences",
-      paragraphs: [
-        "You can update consent by reopening the cookie banner via the footer link or by clearing cookies in your browser. Some browsers include advanced controls such as blocking third-party cookies or sending a Do Not Track signal; we honor those where technically feasible.",
-        "Disabling analytics or marketing cookies will not prevent you from downloading products, but it may limit personalized tips and usage metrics available in the dashboard.",
-      ],
-    },
-    {
-      heading: "4. Third Parties and Data Transfers",
-      paragraphs: [
-        "We partner with a small number of service providers to deliver analytics, marketing insights, and error reporting. Each provider signs data processing agreements that include EU Standard Contractual Clauses or other recognized transfer safeguards.",
-        "When we share pseudonymized data with these vendors, it is used only for the purpose described and only for as long as needed to provide the contracted service.",
-      ],
-    },
-    {
-      heading: "5. Retention and Updates",
-      paragraphs: [
-        "Cookie expiration periods vary based on their purpose. Session cookies expire when you close your browser, while persistent cookies last between 6 and 12 months unless you clear them sooner.",
-        "We review the cookie inventory quarterly. Material changes—including new vendors or purposes—will trigger an updated banner and revised documentation.",
-      ],
-    },
-    {
-      heading: "6. Learn More and Contact Us",
-      paragraphs: [
-        <>
-          These guidelines align with the official {officialCookieLink}. Review that resource for
-          the complete legal definitions and compliance controls.
-        </>,
-        "For privacy or cookie questions contact support@lingssoft.com. We respond to regulator or user inquiries within the timelines defined by GDPR.",
-      ],
-    },
-  ];
+  const { t } = useTranslation("gdpr");
+  const sections = t("sections", { returnObjects: true }) || [];
+  const title = t("meta.title");
+  const updated = t("meta.updated");
+  const referenceLabel = t("meta.referenceLabel");
+  const referenceUrl = t("meta.referenceUrl");
+  const contactEmail = t("meta.contactEmail");
+  const transComponents = {
+    link: (
+      <MKTypography
+        component="a"
+        variant="body2"
+        color="info"
+        href={referenceUrl}
+        target="_blank"
+        rel="noreferrer"
+        sx={{ fontWeight: "bold", display: "inline" }}
+      />
+    ),
+    email: (
+      <MKTypography
+        component="a"
+        variant="body2"
+        color="info"
+        href={`mailto:${contactEmail}`}
+        sx={{ fontWeight: "bold", display: "inline" }}
+      />
+    ),
+  };
+  const transValues = { label: referenceLabel, email: contactEmail };
 
   return (
     <>
@@ -125,38 +91,48 @@ function Gdpr() {
                   mx={2}
                 >
                   <MKTypography variant="h3" color="white">
-                    Cookie & GDPR Notice
+                    {title}
                   </MKTypography>
                   <MKTypography variant="body2" color="white" opacity={0.8}>
-                    Last updated: July 15, 2024
+                    {updated}
                   </MKTypography>
                 </MKBox>
                 <MKBox pb={6} px={{ xs: 3, md: 6 }}>
                   {sections.map((section, index) => (
-                    <MKBox key={section.heading} mt={index === 0 ? 6 : 4}>
+                    <MKBox key={section.title || `section-${index}`} mt={index === 0 ? 6 : 4}>
                       <MKTypography variant="h5" mb={2}>
-                        {section.heading}
+                        {section.title}
                       </MKTypography>
-                      {section.paragraphs?.map((paragraph, idx) => (
+                      {section.paragraphs?.map((_, paragraphIdx) => (
                         <MKTypography
-                          key={`${section.heading}-paragraph-${idx}`}
+                          key={`${section.title || index}-paragraph-${paragraphIdx}`}
                           variant="body2"
                           color="text"
                           mb={1.5}
                         >
-                          {paragraph}
+                          <Trans
+                            ns="gdpr"
+                            i18nKey={`sections.${index}.paragraphs.${paragraphIdx}`}
+                            components={transComponents}
+                            values={transValues}
+                          />
                         </MKTypography>
                       ))}
                       {section.bullets && (
                         <MKBox component="ul" pl={3} my={2}>
-                          {section.bullets.map((item, bulletIdx) => (
+                          {section.bullets.map((_, bulletIdx) => (
                             <MKBox
                               component="li"
-                              key={`${section.heading}-bullet-${bulletIdx}`}
+                              key={`${section.title || index}-bullet-${bulletIdx}`}
                               mb={1}
                             >
                               <MKTypography variant="body2" color="text">
-                                {item}
+                                <Trans
+                                  ns="gdpr"
+                                  i18nKey={`sections.${index}.bullets.${bulletIdx}`}
+                                  components={transComponents}
+                                  values={transValues}
+                                />
                               </MKTypography>
                             </MKBox>
                           ))}

@@ -29,81 +29,39 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
+import { Trans, useTranslation } from "react-i18next";
 
 function Privacy() {
-  const officialPrivacyLink = (
-    <MKTypography
-      component="a"
-      variant="body2"
-      color="info"
-      href="https://www.creative-tim.com/knowledge-center/privacy-policy/"
-      target="_blank"
-      rel="noreferrer"
-      sx={{ fontWeight: "bold", display: "inline" }}
-    >
-      Creative Tim Privacy Policy
-    </MKTypography>
-  );
-
-  const sections = [
-    {
-      heading: "1. Scope",
-      paragraphs: [
-        "This privacy summary explains how LINGSSOFT collects, uses, and safeguards personal information when you browse our sites, download assets, or communicate with our team.",
-        "It complements the full privacy policy referenced below and is designed to help legal and compliance teams understand how we protect data throughout the product lifecycle.",
-      ],
-    },
-    {
-      heading: "2. Data We Collect",
-      paragraphs: [
-        "We collect only the information needed to deliver requested services, provide support, and secure our community.",
-      ],
-      bullets: [
-        "Account information such as name, email address, company, and billing details.",
-        "Usage data including download history, pages visited, and device identifiers gathered through analytics tools.",
-        "Support communications, feedback, and documentation shared when you open a ticket or request onboarding help.",
-      ],
-    },
-    {
-      heading: "3. How We Use Your Information",
-      paragraphs: [
-        "Data is processed to fulfill contractual obligations, improve experiences, and keep our services resilient.",
-      ],
-      bullets: [
-        "Provisioning products, licenses, and updates you request.",
-        "Communicating about releases, security notices, or important policy changes.",
-        "Monitoring platform performance, detecting abuse, and troubleshooting incidents.",
-        "Personalizing documentation or recommendations based on your role or region.",
-      ],
-    },
-    {
-      heading: "4. Sharing and Processors",
-      paragraphs: [
-        "We do not sell personal information. When sharing is required to operate the service, we rely on vetted subprocessors bound to confidentiality and data protection terms.",
-      ],
-      bullets: [
-        "Payment providers that process transactions on our behalf.",
-        "Cloud hosting, logging, and analytics partners that keep infrastructure secure.",
-        "Professional advisors or legal authorities when required to comply with the law or defend our rights.",
-      ],
-    },
-    {
-      heading: "5. Cookies and Preferences",
-      paragraphs: [
-        "We use essential cookies to keep you signed in and remember language preferences. Optional analytics cookies help us understand usage patterns so we can prioritize roadmap work.",
-        "You can manage consent through the cookie banner or your browser settings. Choosing to disable certain cookies may limit personalized features but core functionality remains available.",
-      ],
-    },
-    {
-      heading: "6. Security, Retention, and Your Rights",
-      paragraphs: [
-        "Access to personal data is restricted to staff who need it to complete their work. We apply encryption, role-based access, and continuous monitoring to prevent unauthorized use. Records are retained only as long as necessary to deliver the services or satisfy legal obligations.",
-        "Depending on your jurisdiction you may request access, correction, deletion, or portability of your data. Submit privacy requests to support@lingssoft.com and we will confirm receipt within two business days.",
-        <>These highlights align with the official {officialPrivacyLink}.</>,
-        "Review that document for detailed definitions, lawful bases, and regulatory disclosures.",
-      ],
-    },
-  ];
+  const { t } = useTranslation("privacy");
+  const sections = t("sections", { returnObjects: true }) || [];
+  const title = t("meta.title");
+  const updated = t("meta.updated");
+  const referenceLabel = t("meta.referenceLabel");
+  const referenceUrl = t("meta.referenceUrl");
+  const contactEmail = t("meta.contactEmail");
+  const transComponents = {
+    link: (
+      <MKTypography
+        component="a"
+        variant="body2"
+        color="info"
+        href={referenceUrl}
+        target="_blank"
+        rel="noreferrer"
+        sx={{ fontWeight: "bold", display: "inline" }}
+      />
+    ),
+    email: (
+      <MKTypography
+        component="a"
+        variant="body2"
+        color="info"
+        href={`mailto:${contactEmail}`}
+        sx={{ fontWeight: "bold", display: "inline" }}
+      />
+    ),
+  };
+  const transValues = { label: referenceLabel, email: contactEmail };
 
   return (
     <>
@@ -133,38 +91,48 @@ function Privacy() {
                   mx={2}
                 >
                   <MKTypography variant="h3" color="white">
-                    Privacy Policy
+                    {title}
                   </MKTypography>
                   <MKTypography variant="body2" color="white" opacity={0.8}>
-                    Last updated: July 15, 2024
+                    {updated}
                   </MKTypography>
                 </MKBox>
                 <MKBox pb={6} px={{ xs: 3, md: 6 }}>
                   {sections.map((section, index) => (
-                    <MKBox key={section.heading} mt={index === 0 ? 6 : 4}>
+                    <MKBox key={section.title || `section-${index}`} mt={index === 0 ? 6 : 4}>
                       <MKTypography variant="h5" mb={2}>
-                        {section.heading}
+                        {section.title}
                       </MKTypography>
-                      {section.paragraphs?.map((paragraph, idx) => (
+                      {section.paragraphs?.map((_, paragraphIdx) => (
                         <MKTypography
-                          key={`${section.heading}-paragraph-${idx}`}
+                          key={`${section.title || index}-paragraph-${paragraphIdx}`}
                           variant="body2"
                           color="text"
                           mb={1.5}
                         >
-                          {paragraph}
+                          <Trans
+                            ns="privacy"
+                            i18nKey={`sections.${index}.paragraphs.${paragraphIdx}`}
+                            components={transComponents}
+                            values={transValues}
+                          />
                         </MKTypography>
                       ))}
                       {section.bullets && (
                         <MKBox component="ul" pl={3} my={2}>
-                          {section.bullets.map((item, bulletIdx) => (
+                          {section.bullets.map((_, bulletIdx) => (
                             <MKBox
                               component="li"
-                              key={`${section.heading}-bullet-${bulletIdx}`}
+                              key={`${section.title || index}-bullet-${bulletIdx}`}
                               mb={1}
                             >
                               <MKTypography variant="body2" color="text">
-                                {item}
+                                <Trans
+                                  ns="privacy"
+                                  i18nKey={`sections.${index}.bullets.${bulletIdx}`}
+                                  components={transComponents}
+                                  values={transValues}
+                                />
                               </MKTypography>
                             </MKBox>
                           ))}

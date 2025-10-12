@@ -11,7 +11,7 @@ i18n
     // When no language is detected, fall back to English
     fallbackLng: "en",
     supportedLngs: ["ko", "en", "ja", "zh"],
-    ns: ["common", "presentation"],
+    ns: ["common", "presentation", "terms", "privacy", "gdpr", "license"],
     defaultNS: "common",
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",

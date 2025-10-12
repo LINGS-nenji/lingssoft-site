@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Cookie & GDPR Notice",
+    "updated": "Last updated: July 15, 2024",
+    "referenceLabel": "Creative Tim Cookie Policy",
+    "referenceUrl": "https://www.creative-tim.com/knowledge-center/cookie-policy/",
+    "contactEmail": "support@lingssoft.com"
+  },
+  "sections": [
+    {
+      "title": "1. Purpose and Consent",
+      "paragraphs": [
+        "This cookie and GDPR notice explains how LINGSSOFT uses tracking technologies on our websites and applications. When you first visit we present a consent banner so you can opt in to analytics or marketing cookies.",
+        "Essential cookies are required to operate the site and remember your preferences; they are always active. Non-essential cookies are loaded only after you give consent, which you may withdraw at any time."
+      ]
+    },
+    {
+      "title": "2. Types of Cookies We Use",
+      "paragraphs": [
+        "Cookies and similar technologies support different aspects of the customer experience. We categorize them so you can make granular choices that match your compliance requirements."
+      ],
+      "bullets": [
+        "Essential cookies keep you logged in, store language selections, and enable secure checkout experiences.",
+        "Analytics cookies measure feature adoption, documentation paths, and error frequency so we can improve performance.",
+        "Marketing cookies power optional campaigns, such as remembering that you dismissed an educational modal or requested a follow-up demo."
+      ]
+    },
+    {
+      "title": "3. Managing Preferences",
+      "paragraphs": [
+        "You can update consent by reopening the cookie banner via the footer link or by clearing cookies in your browser. Some browsers include advanced controls such as blocking third-party cookies or sending a Do Not Track signal; we honor those where technically feasible.",
+        "Disabling analytics or marketing cookies will not prevent you from downloading products, but it may limit personalized tips and usage metrics available in the dashboard."
+      ]
+    },
+    {
+      "title": "4. Third Parties and Data Transfers",
+      "paragraphs": [
+        "We partner with a small number of service providers to deliver analytics, marketing insights, and error reporting. Each provider signs data processing agreements that include EU Standard Contractual Clauses or other recognized transfer safeguards.",
+        "When we share pseudonymized data with these vendors, it is used only for the purpose described and only for as long as needed to provide the contracted service."
+      ]
+    },
+    {
+      "title": "5. Retention and Updates",
+      "paragraphs": [
+        "Cookie expiration periods vary based on their purpose. Session cookies expire when you close your browser, while persistent cookies last between 6 and 12 months unless you clear them sooner.",
+        "We review the cookie inventory quarterly. Material changes—including new vendors or purposes—will trigger an updated banner and revised documentation."
+      ]
+    },
+    {
+      "title": "6. Learn More and Contact Us",
+      "paragraphs": [
+        "These guidelines align with the official <link>{{label}}</link>. Review that resource for the complete legal definitions and compliance controls.",
+        "For privacy or cookie questions contact <email>{{email}}</email>. We respond to regulator or user inquiries within the timelines defined by GDPR."
+      ]
+    }
+  ]
+}

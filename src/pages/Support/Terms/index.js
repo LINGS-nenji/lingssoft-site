@@ -29,82 +29,39 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
+import { Trans, useTranslation } from "react-i18next";
 
 function Terms() {
-  const officialTermsLink = (
-    <MKTypography
-      component="a"
-      variant="body2"
-      color="info"
-      href="https://www.creative-tim.com/knowledge-center/terms-of-service/"
-      target="_blank"
-      rel="noreferrer"
-      sx={{ fontWeight: "bold", display: "inline" }}
-    >
-      Creative Tim Terms of Service
-    </MKTypography>
-  );
-
-  const sections = [
-    {
-      heading: "1. Acceptance of Service",
-      paragraphs: [
-        "By accessing or using LINGSSOFT products and sample assets you agree to comply with these Terms of Service. Use of the platform is permitted only for individuals or organizations that can form legally binding agreements under applicable law.",
-        "This summary highlights essential duties so legal, procurement, and security reviewers can onboard quickly while retaining the full protections described in the official agreement.",
-      ],
-    },
-    {
-      heading: "2. Accounts and Eligibility",
-      paragraphs: [
-        "You must provide accurate contact, billing, and organizational details when creating an account. Administrators are responsible for managing authorized seats and ensuring credentials remain confidential.",
-      ],
-      bullets: [
-        "Only use the services for lawful work that aligns with your internal policies.",
-        "Notify LINGSSOFT immediately if you suspect unauthorized access, credential compromise, or data misuse.",
-        "Ensure collaborators accessing premium files have the appropriate plan or license assigned to them.",
-      ],
-    },
-    {
-      heading: "3. Orders, Payments, and Refunds",
-      paragraphs: [
-        "Paid orders, subscriptions, and renewals are billed up-front through the payment method on file. Unless otherwise stated, fees are non-refundable once digital assets or license keys are delivered.",
-        "If you experience billing issues, contact our support team within seven days of the charge so we can investigate and resolve them promptly.",
-      ],
-      bullets: [
-        "Discounts or promotional prices apply only to the stated term.",
-        "You may cancel auto-renewal at any time from the billing dashboard; access continues until the end of the current period.",
-        "Taxes, duties, and bank fees remain your responsibility unless required law dictates otherwise.",
-      ],
-    },
-    {
-      heading: "4. Intellectual Property and License Grant",
-      paragraphs: [
-        "All product files, documentation, logos, and trademarks remain the property of LINGSSOFT and its licensors. When you purchase a license you receive a limited, non-exclusive right to use the assets for permitted commercial or internal projects.",
-      ],
-      bullets: [
-        "You may modify source files for your own applications or client deliverables.",
-        "You may not distribute template source code, UI kits, or components as stand-alone assets, even if modified.",
-        "Attribution is appreciated but not required; however you must not imply an endorsement or partnership without written approval.",
-      ],
-    },
-    {
-      heading: "5. Warranties, Liability, and Termination",
-      paragraphs: [
-        "The services are provided on an “as-is” basis without warranties of uninterrupted availability, merchantability, or fitness for a particular purpose. To the extent permitted by law, LINGSSOFT’s aggregate liability is limited to the amount you paid for the applicable service during the previous twelve months.",
-        "We may suspend or terminate access if you violate these terms, misuse licensed materials, or fail to pay invoices when due. You may end the agreement at any time by ceasing use of the services and deleting licensed materials from your systems.",
-      ],
-    },
-    {
-      heading: "6. Learn More and Contact Us",
-      paragraphs: [
-        <>
-          These highlights follow the structure of the official {officialTermsLink}. Review that
-          document for complete definitions, jurisdiction, and dispute resolution terms.
-        </>,
-        "Have questions? Reach us at support@lingssoft.com and our team will respond within two business days.",
-      ],
-    },
-  ];
+  const { t } = useTranslation("terms");
+  const sections = t("sections", { returnObjects: true }) || [];
+  const title = t("meta.title");
+  const updated = t("meta.updated");
+  const referenceLabel = t("meta.referenceLabel");
+  const referenceUrl = t("meta.referenceUrl");
+  const contactEmail = t("meta.contactEmail");
+  const transComponents = {
+    link: (
+      <MKTypography
+        component="a"
+        variant="body2"
+        color="info"
+        href={referenceUrl}
+        target="_blank"
+        rel="noreferrer"
+        sx={{ fontWeight: "bold", display: "inline" }}
+      />
+    ),
+    email: (
+      <MKTypography
+        component="a"
+        variant="body2"
+        color="info"
+        href={`mailto:${contactEmail}`}
+        sx={{ fontWeight: "bold", display: "inline" }}
+      />
+    ),
+  };
+  const transValues = { label: referenceLabel, email: contactEmail };
 
   return (
     <>
@@ -134,38 +91,48 @@ function Terms() {
                   mx={2}
                 >
                   <MKTypography variant="h3" color="white">
-                    Terms of Service
+                    {title}
                   </MKTypography>
                   <MKTypography variant="body2" color="white" opacity={0.8}>
-                    Last updated: July 15, 2024
+                    {updated}
                   </MKTypography>
                 </MKBox>
                 <MKBox pb={6} px={{ xs: 3, md: 6 }}>
                   {sections.map((section, index) => (
-                    <MKBox key={section.heading} mt={index === 0 ? 6 : 4}>
+                    <MKBox key={section.title || `section-${index}`} mt={index === 0 ? 6 : 4}>
                       <MKTypography variant="h5" mb={2}>
-                        {section.heading}
+                        {section.title}
                       </MKTypography>
-                      {section.paragraphs?.map((paragraph, idx) => (
+                      {section.paragraphs?.map((_, paragraphIdx) => (
                         <MKTypography
-                          key={`${section.heading}-paragraph-${idx}`}
+                          key={`${section.title || index}-paragraph-${paragraphIdx}`}
                           variant="body2"
                           color="text"
                           mb={1.5}
                         >
-                          {paragraph}
+                          <Trans
+                            ns="terms"
+                            i18nKey={`sections.${index}.paragraphs.${paragraphIdx}`}
+                            components={transComponents}
+                            values={transValues}
+                          />
                         </MKTypography>
                       ))}
                       {section.bullets && (
                         <MKBox component="ul" pl={3} my={2}>
-                          {section.bullets.map((item, bulletIdx) => (
+                          {section.bullets.map((_, bulletIdx) => (
                             <MKBox
                               component="li"
-                              key={`${section.heading}-bullet-${bulletIdx}`}
+                              key={`${section.title || index}-bullet-${bulletIdx}`}
                               mb={1}
                             >
                               <MKTypography variant="body2" color="text">
-                                {item}
+                                <Trans
+                                  ns="terms"
+                                  i18nKey={`sections.${index}.bullets.${bulletIdx}`}
+                                  components={transComponents}
+                                  values={transValues}
+                                />
                               </MKTypography>
                             </MKBox>
                           ))}

@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "Product License Summary",
+    "updated": "Last updated: July 15, 2024",
+    "referenceLabel": "Creative Tim License Guide",
+    "referenceUrl": "https://www.creative-tim.com/knowledge-center/licenses/",
+    "contactEmail": "support@lingssoft.com"
+  },
+  "sections": [
+    {
+      "title": "1. License Overview",
+      "paragraphs": [
+        "LINGSSOFT UI kits, templates, and code components are distributed under commercial licenses. Purchasing a license grants you certain rights to use the product in your own applications or client deliverables while retaining ownership of the original assets.",
+        "Review these highlights with your procurement or legal team to confirm that the granted rights align with your intended usage before launching a project."
+      ]
+    },
+    {
+      "title": "2. Permitted Uses",
+      "paragraphs": [
+        "Depending on the plan you choose, licenses may cover single-project deployments or multiple commercial products. Unless otherwise noted, each developer who works with the source files requires a seat."
+      ],
+      "bullets": [
+        "Modify or extend the source code to build internal tools, SaaS applications, or client websites.",
+        "Combine the assets with proprietary or open source codebases, provided you respect the original license of third-party dependencies.",
+        "Use components in marketing or demo materials that showcase your implementation of the product."
+      ]
+    },
+    {
+      "title": "3. Restrictions",
+      "paragraphs": [
+        "The license does not transfer ownership of LINGSSOFT intellectual property. Redistribution of template files or design systems in a way that competes with the original product is prohibited."
+      ],
+      "bullets": [
+        "Do not resell or repackage the UI kit, even if you modify styling or structure.",
+        "Do not share source files publicly on GitHub, design libraries, or download portals.",
+        "Do not incorporate the assets into products that enable end users to build derivative templates that bypass our licensing model."
+      ]
+    },
+    {
+      "title": "4. Updates and Maintenance",
+      "paragraphs": [
+        "Active licenses receive access to bug fixes, security updates, and new features released during the subscription period. We announce notable changes in the changelog so you can plan upgrades.",
+        "After a license expires you may keep using the version you already downloaded, but downloads and updates are paused until you renew."
+      ]
+    },
+    {
+      "title": "5. Support and Attribution",
+      "paragraphs": [
+        "Each commercial license includes priority support for implementation questions related to the purchased product. Submit tickets through the LINGSSOFT dashboard and include purchase details to expedite review.",
+        "Attribution to LINGSSOFT is optional. If you choose to credit us, please link to lingssoft.com and avoid language implying a partnership or certification."
+      ]
+    },
+    {
+      "title": "6. Learn More and Contact Us",
+      "paragraphs": [
+        "These highlights mirror the structure of the official <link>{{label}}</link>. Consult that resource for license tiers, usage scenarios, and country-specific terms.",
+        "For custom licensing questions email <email>{{email}}</email>. Our team is happy to review enterprise distribution needs or offline procurement processes."
+      ]
+    }
+  ]
+}

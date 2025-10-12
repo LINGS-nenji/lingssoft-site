@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Cookie 与 GDPR 通知",
+    "updated": "最后更新：2024 年 7 月 15 日",
+    "referenceLabel": "Creative Tim Cookie 政策",
+    "referenceUrl": "https://www.creative-tim.com/knowledge-center/cookie-policy/",
+    "contactEmail": "support@lingssoft.com"
+  },
+  "sections": [
+    {
+      "title": "1. 目的与同意",
+      "paragraphs": [
+        "本通知说明 LINGSSOFT 在网站和应用中如何使用跟踪技术。首次访问时我们会显示同意横幅，方便您选择是否启用分析或营销类 cookie。",
+        "必需 cookie 用于维持站点运行和偏好设置，始终处于开启状态；非必要 cookie 仅在您同意后加载，且可随时撤回。"
+      ]
+    },
+    {
+      "title": "2. 我们使用的 Cookie 类型",
+      "paragraphs": [
+        "Cookie 及类似技术支撑着客户体验的不同方面。我们对其分类，便于您根据合规要求作出精细选择。"
+      ],
+      "bullets": [
+        "必需 cookie 用于保持登录、存储语言选择并支持安全结账。",
+        "分析 cookie 衡量功能采纳率、文档路径和错误频率，以便改进性能。",
+        "营销 cookie 支持可选活动，如记住您关闭的教育弹窗或后续演示请求。"
+      ]
+    },
+    {
+      "title": "3. 偏好管理",
+      "paragraphs": [
+        "您可以通过页脚链接重新打开 cookie 横幅，或在浏览器中清除 cookie 以更新同意。某些浏览器提供第三方 cookie 阻止或 Do Not Track 信号，我们在技术可行时予以尊重。",
+        "禁用分析或营销 cookie 不会阻止您下载产品，但可能限制仪表板中的个性化提示和使用指标。"
+      ]
+    },
+    {
+      "title": "4. 第三方与数据传输",
+      "paragraphs": [
+        "我们与少数服务提供商合作，提供分析、营销洞察和错误报告。每家供应商都签署了包含欧盟标准合同条款等传输保护措施的数据处理协议。",
+        "与这些供应商共享的数据经过化名处理，仅在提供约定服务所需的时间内使用。"
+      ]
+    },
+    {
+      "title": "5. 保留期限与更新",
+      "paragraphs": [
+        "Cookie 的有效期取决于用途。会话 cookie 在关闭浏览器时失效，持久 cookie 通常保留 6 至 12 个月，您也可以随时清除。",
+        "我们每季度审查 Cookie 清单，若新增供应商或用途发生重大变化，将更新横幅与相关文档。"
+      ]
+    },
+    {
+      "title": "6. 了解更多并联系我们",
+      "paragraphs": [
+        "本指南与官方文档 <link>{{label}}</link> 保持一致。有关法律定义与合规控制的详细信息，请参阅原文。",
+        "如有隐私或 Cookie 相关问题，请发送邮件至 <email>{{email}}</email>。我们会在 GDPR 规定的时限内回复监管机构和用户的咨询。"
+      ]
+    }
+  ]
+}

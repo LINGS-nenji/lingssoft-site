@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Terms of Service",
+    "updated": "Last updated: July 15, 2024",
+    "referenceLabel": "Creative Tim Terms of Service",
+    "referenceUrl": "https://www.creative-tim.com/knowledge-center/terms-of-service/",
+    "contactEmail": "support@lingssoft.com"
+  },
+  "sections": [
+    {
+      "title": "1. Acceptance of Service",
+      "paragraphs": [
+        "By accessing or using LINGSSOFT products and sample assets you agree to comply with these Terms of Service. Use of the platform is permitted only for individuals or organizations that can form legally binding agreements under applicable law.",
+        "This summary highlights essential duties so legal, procurement, and security reviewers can onboard quickly while retaining the full protections described in the official agreement."
+      ]
+    },
+    {
+      "title": "2. Accounts and Eligibility",
+      "paragraphs": [
+        "You must provide accurate contact, billing, and organizational details when creating an account. Administrators are responsible for managing authorized seats and ensuring credentials remain confidential."
+      ],
+      "bullets": [
+        "Only use the services for lawful work that aligns with your internal policies.",
+        "Notify LINGSSOFT immediately if you suspect unauthorized access, credential compromise, or data misuse.",
+        "Ensure collaborators accessing premium files have the appropriate plan or license assigned to them."
+      ]
+    },
+    {
+      "title": "3. Orders, Payments, and Refunds",
+      "paragraphs": [
+        "Paid orders, subscriptions, and renewals are billed up-front through the payment method on file. Unless otherwise stated, fees are non-refundable once digital assets or license keys are delivered.",
+        "If you experience billing issues, contact our support team within seven days of the charge so we can investigate and resolve them promptly."
+      ],
+      "bullets": [
+        "Discounts or promotional prices apply only to the stated term.",
+        "You may cancel auto-renewal at any time from the billing dashboard; access continues until the end of the current period.",
+        "Taxes, duties, and bank fees remain your responsibility unless required law dictates otherwise."
+      ]
+    },
+    {
+      "title": "4. Intellectual Property and License Grant",
+      "paragraphs": [
+        "All product files, documentation, logos, and trademarks remain the property of LINGSSOFT and its licensors. When you purchase a license you receive a limited, non-exclusive right to use the assets for permitted commercial or internal projects."
+      ],
+      "bullets": [
+        "You may modify source files for your own applications or client deliverables.",
+        "You may not distribute template source code, UI kits, or components as stand-alone assets, even if modified.",
+        "Attribution is appreciated but not required; however you must not imply an endorsement or partnership without written approval."
+      ]
+    },
+    {
+      "title": "5. Warranties, Liability, and Termination",
+      "paragraphs": [
+        "The services are provided on an “as-is” basis without warranties of uninterrupted availability, merchantability, or fitness for a particular purpose. To the extent permitted by law, LINGSSOFT’s aggregate liability is limited to the amount you paid for the applicable service during the previous twelve months.",
+        "We may suspend or terminate access if you violate these terms, misuse licensed materials, or fail to pay invoices when due. You may end the agreement at any time by ceasing use of the services and deleting licensed materials from your systems."
+      ]
+    },
+    {
+      "title": "6. Learn More and Contact Us",
+      "paragraphs": [
+        "These highlights follow the structure of the official <link>{{label}}</link>. Review that document for complete definitions, jurisdiction, and dispute resolution terms.",
+        "Have questions? Reach us at <email>{{email}}</email> and our team will respond within two business days."
+      ]
+    }
+  ]
+}

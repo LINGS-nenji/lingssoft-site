@@ -29,77 +29,39 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
+import { Trans, useTranslation } from "react-i18next";
 
 function License() {
-  const officialLicenseLink = (
-    <MKTypography
-      component="a"
-      variant="body2"
-      color="info"
-      href="https://www.creative-tim.com/knowledge-center/licenses/"
-      target="_blank"
-      rel="noreferrer"
-      sx={{ fontWeight: "bold", display: "inline" }}
-    >
-      Creative Tim License Guide
-    </MKTypography>
-  );
-
-  const sections = [
-    {
-      heading: "1. License Overview",
-      paragraphs: [
-        "LINGSSOFT UI kits, templates, and code components are distributed under commercial licenses. Purchasing a license grants you certain rights to use the product in your own applications or client deliverables while retaining ownership of the original assets.",
-        "Review these highlights with your procurement or legal team to confirm that the granted rights align with your intended usage before launching a project.",
-      ],
-    },
-    {
-      heading: "2. Permitted Uses",
-      paragraphs: [
-        "Depending on the plan you choose, licenses may cover single-project deployments or multiple commercial products. Unless otherwise noted, each developer who works with the source files requires a seat.",
-      ],
-      bullets: [
-        "Modify or extend the source code to build internal tools, SaaS applications, or client websites.",
-        "Combine the assets with proprietary or open source codebases, provided you respect the original license of third-party dependencies.",
-        "Use components in marketing or demo materials that showcase your implementation of the product.",
-      ],
-    },
-    {
-      heading: "3. Restrictions",
-      paragraphs: [
-        "The license does not transfer ownership of LINGSSOFT intellectual property. Redistribution of template files or design systems in a way that competes with the original product is prohibited.",
-      ],
-      bullets: [
-        "Do not resell or repackage the UI kit, even if you modify styling or structure.",
-        "Do not share source files publicly on GitHub, design libraries, or download portals.",
-        "Do not incorporate the assets into products that enable end users to build derivative templates that bypass our licensing model.",
-      ],
-    },
-    {
-      heading: "4. Updates and Maintenance",
-      paragraphs: [
-        "Active licenses receive access to bug fixes, security updates, and new features released during the subscription period. We announce notable changes in the changelog so you can plan upgrades.",
-        "After a license expires you may keep using the version you already downloaded, but downloads and updates are paused until you renew.",
-      ],
-    },
-    {
-      heading: "5. Support and Attribution",
-      paragraphs: [
-        "Each commercial license includes priority support for implementation questions related to the purchased product. Submit tickets through the LINGSSOFT dashboard and include purchase details to expedite review.",
-        "Attribution to LINGSSOFT is optional. If you choose to credit us, please link to lingssoft.com and avoid language implying a partnership or certification.",
-      ],
-    },
-    {
-      heading: "6. Learn More and Contact Us",
-      paragraphs: [
-        <>
-          These highlights mirror the structure of the official {officialLicenseLink}. Consult that
-          resource for license tiers, usage scenarios, and country-specific terms.
-        </>,
-        "For custom licensing questions email support@lingssoft.com. Our team is happy to review enterprise distribution needs or offline procurement processes.",
-      ],
-    },
-  ];
+  const { t } = useTranslation("license");
+  const sections = t("sections", { returnObjects: true }) || [];
+  const title = t("meta.title");
+  const updated = t("meta.updated");
+  const referenceLabel = t("meta.referenceLabel");
+  const referenceUrl = t("meta.referenceUrl");
+  const contactEmail = t("meta.contactEmail");
+  const transComponents = {
+    link: (
+      <MKTypography
+        component="a"
+        variant="body2"
+        color="info"
+        href={referenceUrl}
+        target="_blank"
+        rel="noreferrer"
+        sx={{ fontWeight: "bold", display: "inline" }}
+      />
+    ),
+    email: (
+      <MKTypography
+        component="a"
+        variant="body2"
+        color="info"
+        href={`mailto:${contactEmail}`}
+        sx={{ fontWeight: "bold", display: "inline" }}
+      />
+    ),
+  };
+  const transValues = { label: referenceLabel, email: contactEmail };
 
   return (
     <>
@@ -129,38 +91,48 @@ function License() {
                   mx={2}
                 >
                   <MKTypography variant="h3" color="white">
-                    Product License Summary
+                    {title}
                   </MKTypography>
                   <MKTypography variant="body2" color="white" opacity={0.8}>
-                    Last updated: July 15, 2024
+                    {updated}
                   </MKTypography>
                 </MKBox>
                 <MKBox pb={6} px={{ xs: 3, md: 6 }}>
                   {sections.map((section, index) => (
-                    <MKBox key={section.heading} mt={index === 0 ? 6 : 4}>
+                    <MKBox key={section.title || `section-${index}`} mt={index === 0 ? 6 : 4}>
                       <MKTypography variant="h5" mb={2}>
-                        {section.heading}
+                        {section.title}
                       </MKTypography>
-                      {section.paragraphs?.map((paragraph, idx) => (
+                      {section.paragraphs?.map((_, paragraphIdx) => (
                         <MKTypography
-                          key={`${section.heading}-paragraph-${idx}`}
+                          key={`${section.title || index}-paragraph-${paragraphIdx}`}
                           variant="body2"
                           color="text"
                           mb={1.5}
                         >
-                          {paragraph}
+                          <Trans
+                            ns="license"
+                            i18nKey={`sections.${index}.paragraphs.${paragraphIdx}`}
+                            components={transComponents}
+                            values={transValues}
+                          />
                         </MKTypography>
                       ))}
                       {section.bullets && (
                         <MKBox component="ul" pl={3} my={2}>
-                          {section.bullets.map((item, bulletIdx) => (
+                          {section.bullets.map((_, bulletIdx) => (
                             <MKBox
                               component="li"
-                              key={`${section.heading}-bullet-${bulletIdx}`}
+                              key={`${section.title || index}-bullet-${bulletIdx}`}
                               mb={1}
                             >
                               <MKTypography variant="body2" color="text">
-                                {item}
+                                <Trans
+                                  ns="license"
+                                  i18nKey={`sections.${index}.bullets.${bulletIdx}`}
+                                  components={transComponents}
+                                  values={transValues}
+                                />
                               </MKTypography>
                             </MKBox>
                           ))}
