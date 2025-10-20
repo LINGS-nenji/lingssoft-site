@@ -16,12 +16,16 @@ Coded by www.creative-tim.com
 // @mui material components
 // import Card from "@mui/material/Card";
 
+// @mui material hooks
+import { useTheme } from "@mui/material/styles";
+
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 
 // Material Kit 2 PRO React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
+import { useThemeMode } from "context/ThemeModeContext";
 
 // Pricing page sections
 import Header from "pages/Company/Pricing/sections/Header";
@@ -37,6 +41,10 @@ import routes from "routes";
 import footerRoutes from "footer.routes";
 
 function Pricing() {
+  const theme = useTheme();
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark" || theme.palette.mode === "dark";
+
   return (
     <>
       <DefaultNavbar
@@ -50,7 +58,7 @@ function Pricing() {
         light
       />
       <Header />
-      <MKBox p={3}>
+      <MKBox p={3} color={isDark ? "white" : "dark"}>
         <AboutUs />
         <PricingSection />
         <LifetimeMembership />
