@@ -14,7 +14,7 @@ function initialLngFromPath() {
   } catch (_) {
     return "en";
   }
-}
+} 
 
 i18n
   .use(HttpBackend)
