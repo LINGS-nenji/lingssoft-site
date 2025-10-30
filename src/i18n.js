@@ -3,6 +3,19 @@ import { initReactI18next } from "react-i18next";
 import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 
+const supported = ["ko", "en", "ja", "zh"];
+function initialLngFromPath() {
+  try {
+    const parts = (typeof window !== "undefined" ? window.location.pathname : "")
+      .split("/")
+      .filter(Boolean);
+    const first = parts[0] || "";
+    return supported.includes(first) ? first : "en";
+  } catch (_) {
+    return "en";
+  }
+}
+
 i18n
   .use(HttpBackend)
   .use(LanguageDetector)
@@ -10,7 +23,8 @@ i18n
   .init({
     // When no language is detected, fall back to English
     fallbackLng: "en",
-    supportedLngs: ["ko", "en", "ja", "zh"],
+    supportedLngs: supported,
+    lng: initialLngFromPath(),
     ns: ["common", "presentation", "terms", "privacy", "gdpr", "license"],
     defaultNS: "common",
     backend: {
