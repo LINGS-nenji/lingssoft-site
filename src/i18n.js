@@ -17,7 +17,9 @@ i18n
       loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
     detection: {
-      order: ["path", "cookie", "localStorage", "navigator", "htmlTag"],
+      // Prefer explicit signals (URL/cookie/localStorage). Do NOT auto-detect
+      // from browser or <html> so first visit defaults to English.
+      order: ["path", "cookie", "localStorage"],
       caches: ["cookie"],
     },
     react: { useSuspense: true },

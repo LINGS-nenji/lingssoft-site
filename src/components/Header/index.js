@@ -4,7 +4,7 @@ import LanguageSwitcher from "../LanguageSwitcher";
 import i18n from "../../i18n";
 
 function withLang(path) {
-  const lang = i18n.language || "ko";
+  const lang = i18n.language || "en";
   if (!path || path === "/") return `/${lang}/`;
   return `/${lang}${path.startsWith("/") ? "" : "/"}${path}`.replace(/\/+/g, "/");
 }
