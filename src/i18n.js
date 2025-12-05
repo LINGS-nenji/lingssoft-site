@@ -16,6 +16,10 @@ function initialLngFromPath() {
   }
 }
 
+const rawPublicUrl = process.env.PUBLIC_URL || "";
+const normalizedPublicUrl =
+  rawPublicUrl === "." || rawPublicUrl === "" ? "." : rawPublicUrl.replace(/\/$/, "");
+
 i18n
   .use(HttpBackend)
   .use(LanguageDetector)
@@ -28,7 +32,7 @@ i18n
     ns: ["common", "presentation", "terms", "privacy", "gdpr", "license"],
     defaultNS: "common",
     backend: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json",
+      loadPath: `${normalizedPublicUrl}/locales/{{lng}}/{{ns}}.json`,
     },
     detection: {
       // Prefer explicit signals (URL/cookie/localStorage). Do NOT auto-detect
