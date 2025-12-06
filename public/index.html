@@ -31,27 +31,16 @@
 
     <script type="text/javascript">
       (function (l) {
-        if (!l.search || !l.search.startsWith("?/")) return;
-        var repoName = "lingssoft-site";
-        var hasRepo =
-          l.pathname === "/" + repoName ||
-          l.pathname.startsWith("/" + repoName + "/");
-        var segmentsToKeep = hasRepo ? 1 : 0;
-        var basePath = l.pathname
-          .split("/")
-          .slice(0, 1 + segmentsToKeep)
-          .join("/");
-        if (basePath === "") basePath = "/";
-        if (!basePath.endsWith("/")) basePath += "/";
-        var decoded = l.search
-          .slice(2)
-          .split("&")
-          .map(function (s) {
-            return s.replace(/~and~/g, "&");
-          })
-          .join("?");
-        var newUrl = basePath + decoded + l.hash;
-        l.replace(newUrl);
+        if (l.search.length > 1 && l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
       })(window.location);
     </script>
   </head>
