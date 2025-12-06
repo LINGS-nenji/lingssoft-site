@@ -25,7 +25,7 @@ const root = ReactDOMClient.createRoot(container);
 
 root.render(
   <ThemeModeProvider>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL || "/"}>
       <App />
     </BrowserRouter>
   </ThemeModeProvider>
