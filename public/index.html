@@ -28,6 +28,32 @@
 
     <!-- Removed Font Awesome Kit script (returned 403). Use CDN CSS as a stable fallback. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <script type="text/javascript">
+      (function (l) {
+        if (!l.search || !l.search.startsWith("?/")) return;
+        var repoName = "lingssoft-site";
+        var hasRepo =
+          l.pathname === "/" + repoName ||
+          l.pathname.startsWith("/" + repoName + "/");
+        var segmentsToKeep = hasRepo ? 1 : 0;
+        var basePath = l.pathname
+          .split("/")
+          .slice(0, 1 + segmentsToKeep)
+          .join("/");
+        if (basePath === "") basePath = "/";
+        if (!basePath.endsWith("/")) basePath += "/";
+        var decoded = l.search
+          .slice(2)
+          .split("&")
+          .map(function (s) {
+            return s.replace(/~and~/g, "&");
+          })
+          .join("?");
+        var newUrl = basePath + decoded + l.hash;
+        l.replace(newUrl);
+      })(window.location);
+    </script>
   </head>
 
   <body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <meta name="robots" content="noindex" />
+    <script type="text/javascript">
+      (function () {
+        var repoName = "lingssoft-site";
+        var l = window.location;
+        var hasRepo =
+          l.pathname === "/" + repoName ||
+          l.pathname.startsWith("/" + repoName + "/");
+        var segmentsToKeep = hasRepo ? 1 : 0;
+        var origin =
+          l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "");
+        var basePath = l.pathname
+          .split("/")
+          .slice(0, 1 + segmentsToKeep)
+          .join("/");
+        var redirectPath = l.pathname
+          .split("/")
+          .slice(1 + segmentsToKeep)
+          .join("/")
+          .replace(/&/g, "~and~");
+        var search = l.search
+          ? "&" + l.search.slice(1).replace(/&/g, "~and~")
+          : "";
+        var newUrl = origin + basePath + "/?/" + redirectPath + search + l.hash;
+        l.replace(newUrl);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

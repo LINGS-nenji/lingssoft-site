@@ -20,12 +20,23 @@ import App from "App";
 import "./i18n";
 import ThemeModeProvider from "context/ThemeModeContext";
 
+function resolveBasename() {
+  const raw = process.env.PUBLIC_URL;
+  if (!raw || raw === "." || raw === "/") return "/";
+  const withoutOrigin = raw.replace(/^https?:\/\/[^/]+/i, "");
+  const cleaned = withoutOrigin || raw;
+  const noTrailingSlash = cleaned.replace(/\/$/, "");
+  return noTrailingSlash || "/";
+}
+
+const basename = resolveBasename();
+
 const container = document.getElementById("root");
 const root = ReactDOMClient.createRoot(container);
 
 root.render(
   <ThemeModeProvider>
-    <BrowserRouter basename={process.env.PUBLIC_URL || "/"}>
+    <BrowserRouter basename={basename}>
       <App />
     </BrowserRouter>
   </ThemeModeProvider>
