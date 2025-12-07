@@ -4,17 +4,35 @@ import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 const supported = ["ko", "en", "ja", "zh"];
-function initialLngFromPath() {
+
+function extractPathSegments() {
+  if (typeof window === "undefined") return [];
+
   try {
-    const parts = (typeof window !== "undefined" ? window.location.pathname : "")
-      .split("/")
-      .filter(Boolean);
-    const first = parts[0] || "";
-    return supported.includes(first) ? first : "en";
+    const { hash = "", pathname = "" } = window.location;
+    const normalizedHash = hash.replace(/^#\/?/, "").split(/[?#]/)[0];
+    const normalizedPath = pathname.replace(/^\//, "").split(/[?#]/)[0];
+    const source = normalizedHash || normalizedPath;
+    return source ? source.split("/").filter(Boolean) : [];
   } catch (_) {
-    return "en";
+    return [];
   }
 }
+
+function initialLngFromPath() {
+  const parts = extractPathSegments();
+  const first = parts[0] || "";
+  return supported.includes(first) ? first : "en";
+}
+
+LanguageDetector.addDetector({
+  name: "hash",
+  lookup() {
+    const first = extractPathSegments()[0];
+    return supported.includes(first || "") ? first : undefined;
+  },
+  cacheUserLanguage() {},
+});
 
 const rawPublicUrl = process.env.PUBLIC_URL || "";
 const normalizedPublicUrl =
@@ -37,7 +55,7 @@ i18n
     detection: {
       // Prefer explicit signals (URL/cookie/localStorage). Do NOT auto-detect
       // from browser or <html> so first visit defaults to English.
-      order: ["path", "cookie", "localStorage"],
+      order: ["hash", "path", "cookie", "localStorage"],
       caches: ["cookie"],
     },
     react: { useSuspense: true },
