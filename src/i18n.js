@@ -25,7 +25,9 @@ function initialLngFromPath() {
   return supported.includes(first) ? first : "en";
 }
 
-LanguageDetector.addDetector({
+const detector = new LanguageDetector();
+
+detector.addDetector({
   name: "hash",
   lookup() {
     const first = extractPathSegments()[0];
@@ -40,7 +42,7 @@ const normalizedPublicUrl =
 
 i18n
   .use(HttpBackend)
-  .use(LanguageDetector)
+  .use(detector)
   .use(initReactI18next)
   .init({
     // When no language is detected, fall back to English
