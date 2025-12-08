@@ -41,8 +41,21 @@ import review1 from "assets/images/examples/clem-onojegaw.jpg";
 import review2 from "assets/images/examples/studio-3.jpg";
 import logoSpotify from "assets/images/logos/small-logos/logo-spotify.svg";
 import logoSlack from "assets/images/logos/small-logos/logo-slack.svg";
+import { useTranslation } from "react-i18next";
+
+const slidesConfig = [
+  { id: "spotify", image: review1, logo: logoSpotify },
+  { id: "slack", image: review2, logo: logoSlack },
+];
 
 function Testimonials() {
+  const { t } = useTranslation("pricing");
+  const slidesContent = t("testimonials.slides", { returnObjects: true }) || [];
+  const slides = slidesConfig.map((slide) => {
+    const content = slidesContent.find(({ id }) => id === slide.id) || {};
+    return { ...slide, ...content };
+  });
+
   // install SwiperJS modules
   SwiperCore.use([Autoplay, Navigation]);
 
@@ -87,34 +100,22 @@ function Testimonials() {
         slidesPerView={1}
         loop
       >
-        <SwiperSlide>
-          <Container>
-            <ComplexReviewCard
-              image={review1}
-              title="Excelent payment service. You guys are the best!"
-              review="Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success."
-              author={{
-                logo: logoSpotify,
-                name: "Mathew Glock",
-                role: "Marketing Manager - Spotify",
-              }}
-            />
-          </Container>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Container>
-            <ComplexReviewCard
-              image={review2}
-              title="Awesome services! Fast and secure."
-              review="Wealth creation is an evolutionarily recent positive-sum game. Status is an old zero-sum game. Those attacking wealth creation are often just seeking status."
-              author={{
-                logo: logoSlack,
-                name: "Mathew Glock",
-                role: "CFO - Slack",
-              }}
-            />
-          </Container>
-        </SwiperSlide>
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <Container>
+              <ComplexReviewCard
+                image={slide.image}
+                title={slide.title || ""}
+                review={slide.review || ""}
+                author={{
+                  logo: slide.logo,
+                  name: slide.author?.name || "",
+                  role: slide.author?.role || "",
+                }}
+              />
+            </Container>
+          </SwiperSlide>
+        ))}
         <MKTypography
           variant="h2"
           color="dark"

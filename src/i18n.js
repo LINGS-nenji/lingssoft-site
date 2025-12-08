@@ -1,3 +1,4 @@
+/* global process */
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpBackend from "i18next-http-backend";
@@ -49,7 +50,7 @@ i18n
     fallbackLng: "en",
     supportedLngs: supported,
     lng: initialLngFromPath(),
-    ns: ["common", "presentation", "terms", "privacy", "gdpr", "license"],
+    ns: ["common", "presentation", "terms", "privacy", "gdpr", "license", "pricing"],
     defaultNS: "common",
     backend: {
       loadPath: `${normalizedPublicUrl}/locales/{{lng}}/{{ns}}.json`,

@@ -29,14 +29,46 @@ import MKTypography from "components/MKTypography";
 
 // Material Kit 2 PRO React examples
 import DefaultPricingCard from "examples/Cards/PricingCards/DefaultPricingCard";
+import { useTranslation } from "react-i18next";
 
 // Imags
 const bgImage =
   "https://images.unsplash.com/photo-1467541473380-93479a5a3ffa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2246&amp;q=80";
 
+const plansConfig = [
+  {
+    id: "starter",
+    badgeColor: "light",
+    price: { currency: "$", type: "mo", monthly: 59, annual: 119 },
+    actionColor: "dark",
+    specIncludes: [true, true, false, false, false, false],
+  },
+  {
+    id: "premium",
+    badgeColor: "info",
+    cardColor: "dark",
+    price: { currency: "$", type: "mo", monthly: 89, annual: 159 },
+    actionColor: "info",
+    specIncludes: [true, true, true, true, false, false],
+  },
+  {
+    id: "enterprise",
+    badgeColor: "light",
+    price: { currency: "$", type: "mo", monthly: 399, annual: 99 },
+    actionColor: "dark",
+    specIncludes: [true, true, true, true, true, true],
+  },
+];
+
 function Pricing() {
+  const { t } = useTranslation("pricing");
   const [activeTab, setActiveTab] = useState(0);
   const [tabType, setTabType] = useState("monthly");
+  const badgeLabel = t("pricing.badge");
+  const title = t("pricing.title");
+  const subtitle = t("pricing.subtitle");
+  const tabs = t("pricing.tabs", { returnObjects: true }) || {};
+  const plansContent = t("pricing.plans", { returnObjects: true }) || [];
 
   const handleTabType = ({ currentTarget }, newValue) => {
     setActiveTab(newValue);
@@ -68,17 +100,17 @@ function Pricing() {
             sx={{ mx: "auto", textAlign: "center" }}
           >
             <MKBadge
-              badgeContent="pricing"
+              badgeContent={badgeLabel}
               variant="gradient"
               container
               color="dark"
               sx={{ mb: 1 }}
             />
             <MKTypography variant="h3" color="white" mb={2}>
-              See our pricing
+              {title}
             </MKTypography>
             <MKTypography variant="body2" color="white">
-              You have Free Unlimited Updates and Premium Support on each package.
+              {subtitle}
             </MKTypography>
           </Grid>
         </Container>
@@ -93,7 +125,7 @@ function Pricing() {
                     id="monthly"
                     label={
                       <MKBox py={0.5} px={2} color="inherit">
-                        Monthly
+                        {tabs.monthly || "Monthly"}
                       </MKBox>
                     }
                   />
@@ -101,7 +133,7 @@ function Pricing() {
                     id="annual"
                     label={
                       <MKBox py={0.5} px={2} color="inherit">
-                        Annual
+                        {tabs.annual || "Annual"}
                       </MKBox>
                     }
                   />
@@ -111,67 +143,35 @@ function Pricing() {
           </Grid>
           <MKBox position="relative" zIndex={10} px={{ xs: 1, sm: 0 }}>
             <Grid container spacing={3} justifyContent="center">
-              <Grid item xs={12} lg={4}>
-                <DefaultPricingCard
-                  badge={{ color: "light", label: "starter" }}
-                  price={{ currency: "$", value: tabType === "annual" ? 119 : 59, type: "mo" }}
-                  specifications={[
-                    { label: "2 team members", includes: true },
-                    { label: "20GB Cloud storage", includes: true },
-                    { label: "Integration help", includes: false },
-                    { label: "Sketch Files", includes: false },
-                    { label: "API Access", includes: false },
-                    { label: "Complete documentation", includes: false },
-                  ]}
-                  action={{
-                    type: "internal",
-                    route: "/",
-                    color: "dark",
-                    label: "join",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} lg={4}>
-                <DefaultPricingCard
-                  color="dark"
-                  badge={{ color: "info", label: "premium" }}
-                  price={{ currency: "$", value: tabType === "annual" ? 159 : 89, type: "mo" }}
-                  specifications={[
-                    { label: "10 team members", includes: true },
-                    { label: "40GB Cloud storage", includes: true },
-                    { label: "Integration help", includes: true },
-                    { label: "Sketch Files", includes: true },
-                    { label: "API Access", includes: false },
-                    { label: "Complete documentation", includes: false },
-                  ]}
-                  action={{
-                    type: "internal",
-                    route: "/",
-                    color: "info",
-                    label: "try premium",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} lg={4}>
-                <DefaultPricingCard
-                  badge={{ color: "light", label: "enterprise" }}
-                  price={{ currency: "$", value: tabType === "annual" ? 99 : 399, type: "mo" }}
-                  specifications={[
-                    { label: "Unlimited team members", includes: true },
-                    { label: "100GB Cloud storage", includes: true },
-                    { label: "Integration help", includes: true },
-                    { label: "Sketch Files", includes: true },
-                    { label: "API Access", includes: true },
-                    { label: "Complete documentation", includes: true },
-                  ]}
-                  action={{
-                    type: "internal",
-                    route: "/",
-                    color: "dark",
-                    label: "join",
-                  }}
-                />
-              </Grid>
+              {plansConfig.map((plan) => {
+                const content = plansContent.find(({ id }) => id === plan.id) || {};
+                const specifications = (content.specs || []).map((label, specIdx) => ({
+                  label,
+                  includes: Boolean(plan.specIncludes[specIdx]),
+                }));
+                const priceValue = tabType === "annual" ? plan.price.annual : plan.price.monthly;
+
+                return (
+                  <Grid key={plan.id} item xs={12} lg={4}>
+                    <DefaultPricingCard
+                      color={plan.cardColor}
+                      badge={{ color: plan.badgeColor, label: content.badgeLabel || "" }}
+                      price={{
+                        currency: plan.price.currency,
+                        value: priceValue,
+                        type: plan.price.type,
+                      }}
+                      specifications={specifications}
+                      action={{
+                        type: "internal",
+                        route: "/",
+                        color: plan.actionColor,
+                        label: content.actionLabel || "",
+                      }}
+                    />
+                  </Grid>
+                );
+              })}
             </Grid>
           </MKBox>
         </Container>

@@ -21,61 +21,46 @@ import Icon from "@mui/material/Icon";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import { useTranslation } from "react-i18next";
+
+const featuresConfig = [
+  { id: "globalPayments", icon: "credit_card" },
+  { id: "support", icon: "support_agent" },
+  { id: "technology", icon: "biotech" },
+  { id: "fastSecure", icon: "bolt" },
+  { id: "reporting", icon: "receipt_long" },
+  { id: "developers", icon: "group" },
+];
 
 function AboutUs() {
-  const data = [
-    {
-      icon: "credit_card",
-      title: "Global payments in a single integration",
-      items: ["120+ global currenices", "Global payment"],
-    },
-    {
-      icon: "support_agent",
-      title: "24/7 email, phone and chat support",
-      items: ["24/7 support", "Fast responses"],
-    },
-    {
-      icon: "biotech",
-      title: "Working with the latest technologies",
-      items: ["Custom apps", "Best technologies"],
-    },
-    {
-      icon: "bolt",
-      title: "Fast and secure payments over the world",
-      items: ["Full time access", "Transparent transactions"],
-    },
-    {
-      icon: "receipt_long",
-      title: "Financial reconciliation and reporting",
-      items: ["5.000+ archives", "Real-time reporting"],
-    },
-    {
-      icon: "group",
-      title: "Developer platform and third-party integrations",
-      items: ["Over 100 extensions", "Developer Dashboard"],
-    },
-  ];
+  const { t } = useTranslation("pricing");
+  const title = t("about.title");
+  const description = t("about.description");
+  const featuresContent = t("about.features", { returnObjects: true }) || [];
+
+  const features = featuresConfig.map((feature) => {
+    const content = featuresContent.find(({ id }) => id === feature.id) || {};
+    return { ...feature, ...content };
+  });
 
   return (
     <MKBox component="section" py={12} px={1}>
       <Container>
         <Grid container item xs={12} lg={8}>
-          <MKTypography variant="h3">Read More About Us</MKTypography>
+          <MKTypography variant="h3">{title}</MKTypography>
           <MKTypography variant="body2" fontWeight="regular" color="text">
-            Pain is what we go through as we become older. We get insulted by others, lose trust for
-            those others. We get back stabbed by friends. It becomes harder for us to give others a
-            hand.
+            {description}
           </MKTypography>
         </Grid>
         <Grid container sx={{ mt: 6 }}>
-          {data.map(({ icon, title, items }) => (
+          {features.map(({ icon, title: featureTitle, items = [] }) => (
             <Grid key={icon} item xs={12} md={4}>
               <MKBox py={2} pr={2}>
                 <MKTypography variant="h3" color="info">
                   <Icon>{icon}</Icon>
                 </MKTypography>
                 <MKTypography variant="h5" mt={2} mb={3}>
-                  {title}
+                  {featureTitle}
                 </MKTypography>
                 {items.map((item) => (
                   <MKBox key={item} display="flex" lineHeight={1.25}>

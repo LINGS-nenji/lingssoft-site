@@ -28,7 +28,7 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 PRO React examples
 import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
-function Header({ image, label, title, description, cards }) {
+function Header({ image, label, title, description, cards, actionLabel }) {
   return (
     <>
       <MKBox
@@ -98,7 +98,7 @@ function Header({ image, label, title, description, cards }) {
                 action={{
                   type: "internal",
                   route: "/pages/company/about-us",
-                  label: "More about us",
+                  label: actionLabel,
                 }}
               />
             </Grid>
@@ -116,6 +116,11 @@ Header.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])).isRequired,
+  actionLabel: PropTypes.string,
+};
+
+Header.defaultProps = {
+  actionLabel: "More about us",
 };
 
 export default Header;

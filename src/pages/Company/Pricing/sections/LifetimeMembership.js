@@ -23,8 +23,17 @@ import Icon from "@mui/material/Icon";
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import { useTranslation } from "react-i18next";
 
 function LifetimeMembership() {
+  const { t } = useTranslation("pricing");
+  const content = t("lifetime", { returnObjects: true }) || {};
+  const features = content.features || [];
+  const midpoint = Math.ceil(features.length / 2);
+  const columns = [features.slice(0, midpoint), features.slice(midpoint)];
+  const priceValue = content.price?.value || "399";
+  const priceCurrency = content.price?.currency || "$";
+
   return (
     <MKBox component="section" py={{ xs: 12, lg: 18 }}>
       <Container>
@@ -37,11 +46,10 @@ function LifetimeMembership() {
           sx={{ mx: "auto", mb: 8, textAlign: "center" }}
         >
           <MKTypography variant="h2" mb={1}>
-            Best no-tricks pricing
+            {content.title}
           </MKTypography>
           <MKTypography variant="body1" color="text">
-            If you&apos;re not satisfied, contact us within the first 30 days and we&apos;ll send
-            you a full refund.
+            {content.description}
           </MKTypography>
         </Grid>
         <Grid container item xs={12}>
@@ -50,68 +58,46 @@ function LifetimeMembership() {
               <Grid item xs={12} lg={8}>
                 <MKBox py={3} px={4}>
                   <MKTypography variant="h3" mb={1}>
-                    Lifetime Membership
+                    {content.planTitle}
                   </MKTypography>
                   <MKTypography variant="body2" color="text" fontWeight="regular">
-                    You have Free Unlimited Updates and Premium Support on each package. You also
-                    have 30 days to request a refund.
+                    {content.planDescription}
                   </MKTypography>
                   <Grid container item xs={12} lg={3} sx={{ mt: 6, mb: 1 }}>
-                    <MKTypography variant="h6">What&apos;s included</MKTypography>
+                    <MKTypography variant="h6">{content.whatsIncluded}</MKTypography>
                   </Grid>
                   <Grid container spacing={3}>
-                    <Grid item xs={12} md={6}>
-                      <MKBox display="flex" py={1} pr={1} lineHeight={0}>
-                        <MKTypography variant="body1" color="dark">
-                          <Icon sx={{ fontWeight: "bold" }}>done</Icon>
-                        </MKTypography>
-                        <MKTypography variant="body2" color="text" fontWeight="regular" pl={1}>
-                          Private code access
-                        </MKTypography>
-                      </MKBox>
-                      <MKBox display="flex" py={1} pr={1} lineHeight={0}>
-                        <MKTypography variant="body1" color="dark">
-                          <Icon sx={{ fontWeight: "bold" }}>done</Icon>
-                        </MKTypography>
-                        <MKTypography variant="body2" color="text" fontWeight="regular" pl={1}>
-                          Free entry to all repositories
-                        </MKTypography>
-                      </MKBox>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                      <MKBox display="flex" py={1} pr={1} lineHeight={0}>
-                        <MKTypography variant="body1" color="dark">
-                          <Icon sx={{ fontWeight: "bold" }}>done</Icon>
-                        </MKTypography>
-                        <MKTypography variant="body2" color="text" fontWeight="regular" pl={1}>
-                          Pro member accounts
-                        </MKTypography>
-                      </MKBox>
-                      <MKBox display="flex" py={1} pr={1} lineHeight={0}>
-                        <MKTypography variant="body1" color="dark">
-                          <Icon sx={{ fontWeight: "bold" }}>done</Icon>
-                        </MKTypography>
-                        <MKTypography variant="body2" color="text" fontWeight="regular" pl={1}>
-                          Support team full assist
-                        </MKTypography>
-                      </MKBox>
-                    </Grid>
+                    {columns.map((column, columnIdx) => (
+                      <Grid key={`features-column-${columnIdx}`} item xs={12} md={6}>
+                        {column.map((item) => (
+                          <MKBox key={item} display="flex" py={1} pr={1} lineHeight={0}>
+                            <MKTypography variant="body1" color="dark">
+                              <Icon sx={{ fontWeight: "bold" }}>done</Icon>
+                            </MKTypography>
+                            <MKTypography variant="body2" color="text" fontWeight="regular" pl={1}>
+                              {item}
+                            </MKTypography>
+                          </MKBox>
+                        ))}
+                      </Grid>
+                    ))}
                   </Grid>
                 </MKBox>
               </Grid>
               <Grid item xs={12} lg={4}>
                 <MKBox p={3} textAlign="center">
                   <MKTypography variant="h6" mt={{ xs: 0, sm: 3 }}>
-                    Pay once, own it forever
+                    {content.cta?.tagline}
                   </MKTypography>
                   <MKTypography variant="h1">
-                    <MKBox component="small">$</MKBox>399
+                    <MKBox component="small">{priceCurrency}</MKBox>
+                    {priceValue}
                   </MKTypography>
                   <MKButton variant="gradient" color="error" size="large" sx={{ my: 2 }}>
-                    Get Access
+                    {content.cta?.button}
                   </MKButton>
                   <MKTypography display="block" variant="button" color="text" fontWeight="regular">
-                    Get a free sample (20MB)
+                    {content.cta?.priceNote}
                   </MKTypography>
                 </MKBox>
               </Grid>

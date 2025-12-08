@@ -1,0 +1,240 @@
+{
+  "header": {
+    "cardActionLabel": "More about us",
+    "slides": [
+      {
+        "id": "pricingPlans",
+        "label": "Pricing Plans",
+        "title": "Work with the rockets",
+        "description": "Wealth creation is an evolutionarily recent positive-sum game. Status is an old zero-sum game. Those attacking wealth creation are often just seeking status.",
+        "cards": [
+          {
+            "id": "shuffle",
+            "title": "Netflix's 'Shuffle Play' feature",
+            "description": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever."
+          },
+          {
+            "id": "landbot",
+            "title": "Landbot closes $8M Series",
+            "description": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever."
+          },
+          {
+            "id": "brave",
+            "title": "Brave web browser",
+            "description": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever."
+          }
+        ]
+      },
+      {
+        "id": "team",
+        "label": "Our Team",
+        "title": "Work with the best",
+        "description": "Free people make free choices. Free choices mean you get unequal outcomes. You can have freedom, or you can have equal outcomes. You can't have both.",
+        "cards": [
+          {
+            "id": "shuffle",
+            "title": "Netflix's 'Shuffle Play' feature",
+            "description": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever."
+          },
+          {
+            "id": "landbot",
+            "title": "Landbot closes $8M Series",
+            "description": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever."
+          },
+          {
+            "id": "brave",
+            "title": "Brave web browser",
+            "description": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever."
+          }
+        ]
+      },
+      {
+        "id": "office",
+        "label": "Office Places",
+        "title": "Work from home",
+        "description": "You're spending time to save money when you should be spending money to save time.",
+        "cards": [
+          {
+            "id": "shuffle",
+            "title": "Netflix's 'Shuffle Play' feature",
+            "description": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever."
+          },
+          {
+            "id": "landbot",
+            "title": "Landbot closes $8M Series",
+            "description": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever."
+          },
+          {
+            "id": "brave",
+            "title": "Brave web browser",
+            "description": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever."
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "title": "Read More About Us",
+    "description": "Pain is what we go through as we become older. We get insulted by others, lose trust for those others. We get back stabbed by friends. It becomes harder for us to give others a hand.",
+    "features": [
+      {
+        "id": "globalPayments",
+        "title": "Global payments in a single integration",
+        "items": ["120+ global currencies", "Global payment"]
+      },
+      {
+        "id": "support",
+        "title": "24/7 email, phone and chat support",
+        "items": ["24/7 support", "Fast responses"]
+      },
+      {
+        "id": "technology",
+        "title": "Working with the latest technologies",
+        "items": ["Custom apps", "Best technologies"]
+      },
+      {
+        "id": "fastSecure",
+        "title": "Fast and secure payments over the world",
+        "items": ["Full time access", "Transparent transactions"]
+      },
+      {
+        "id": "reporting",
+        "title": "Financial reconciliation and reporting",
+        "items": ["5,000+ archives", "Real-time reporting"]
+      },
+      {
+        "id": "developers",
+        "title": "Developer platform and third-party integrations",
+        "items": ["Over 100 extensions", "Developer Dashboard"]
+      }
+    ]
+  },
+  "pricing": {
+    "badge": "pricing",
+    "title": "See our pricing",
+    "subtitle": "You have Free Unlimited Updates and Premium Support on each package.",
+    "tabs": {
+      "monthly": "Monthly",
+      "annual": "Annual"
+    },
+    "plans": [
+      {
+        "id": "starter",
+        "badgeLabel": "starter",
+        "actionLabel": "join",
+        "specs": [
+          "2 team members",
+          "20GB Cloud storage",
+          "Integration help",
+          "Sketch Files",
+          "API Access",
+          "Complete documentation"
+        ]
+      },
+      {
+        "id": "premium",
+        "badgeLabel": "premium",
+        "actionLabel": "try premium",
+        "specs": [
+          "10 team members",
+          "40GB Cloud storage",
+          "Integration help",
+          "Sketch Files",
+          "API Access",
+          "Complete documentation"
+        ]
+      },
+      {
+        "id": "enterprise",
+        "badgeLabel": "enterprise",
+        "actionLabel": "join",
+        "specs": [
+          "Unlimited team members",
+          "100GB Cloud storage",
+          "Integration help",
+          "Sketch Files",
+          "API Access",
+          "Complete documentation"
+        ]
+      }
+    ]
+  },
+  "lifetime": {
+    "title": "Best no-tricks pricing",
+    "description": "If you're not satisfied, contact us within the first 30 days and we'll send you a full refund.",
+    "planTitle": "Lifetime Membership",
+    "planDescription": "You have Free Unlimited Updates and Premium Support on each package. You also have 30 days to request a refund.",
+    "whatsIncluded": "What's included",
+    "features": [
+      "Private code access",
+      "Free entry to all repositories",
+      "Pro member accounts",
+      "Support team full assist"
+    ],
+    "cta": {
+      "tagline": "Pay once, own it forever",
+      "button": "Get Access",
+      "priceNote": "Get a free sample (20MB)"
+    },
+    "price": {
+      "currency": "$",
+      "value": "399"
+    }
+  },
+  "testimonials": {
+    "slides": [
+      {
+        "id": "spotify",
+        "title": "Excellent payment service. You guys are the best!",
+        "review": "Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success.",
+        "author": {
+          "name": "Mathew Glock",
+          "role": "Marketing Manager - Spotify"
+        }
+      },
+      {
+        "id": "slack",
+        "title": "Awesome services! Fast and secure.",
+        "review": "Wealth creation is an evolutionarily recent positive-sum game. Status is an old zero-sum game. Those attacking wealth creation are often just seeking status.",
+        "author": {
+          "name": "Mathew Glock",
+          "role": "CFO - Slack"
+        }
+      }
+    ]
+  },
+  "trust": {
+    "title": "More than 50+ brands trust Material"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "updated": "Last modified: Sept 07 2021",
+    "items": [
+      {
+        "id": "order",
+        "question": "How do I order?",
+        "answer": "We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don't appreciate the moment until it's passed."
+      },
+      {
+        "id": "payment",
+        "question": "How can I make the payment?",
+        "answer": "It really matters and then like it really doesn't matter. What matters is the people who are sparked by it. And the people who are like offended by it, it doesn't matter. Because it's about motivating the doers. Because I'm here to follow my dreams and inspire other people to follow their dreams, too. We're not always in the position that we want to be at. We're constantly growing. We're constantly making mistakes. We're constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don't appreciate the moment until it's passed."
+      },
+      {
+        "id": "delivery",
+        "question": "How much time does it take to receive the order?",
+        "answer": "The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now to be okay to be the greatest you. Would you believe in what you believe in, if you were the only one who believed it? If everything I did failed - which it doesn't, it actually succeeds - just the fact that I'm willing to fail is an inspiration. People are so scared to lose that they don't even try. Like, one thing people can't say is that I'm not trying, and I'm not trying my hardest, and I'm not trying to do the best way I know how."
+      },
+      {
+        "id": "resell",
+        "question": "Can I resell the products?",
+        "answer": "I always felt like I could do anything. That's the main thing people are controlled by! Thoughts- their perception of themselves! They're slowed down by their perception of themselves. If you're taught you can't do anything, you won't do anything. I was taught I could do everything.\n\nIf everything I did failed - which it doesn't, it actually succeeds - just the fact that I'm willing to fail is an inspiration. People are so scared to lose that they don't even try. Like, one thing people can't say is that I'm not trying, and I'm not trying my hardest, and I'm not trying to do the best way I know how."
+      },
+      {
+        "id": "shipping",
+        "question": "Where do I find the shipping details?",
+        "answer": "There's nothing I really wanted to do in life that I wasn't able to get good at. That's my skill. I'm not really specifically talented at anything except for the ability to learn. That's what I do. That's what I'm here for. Don't be afraid to be wrong because you can't learn anything from a compliment. I always felt like I could do anything. That's the main thing people are controlled by! Thoughts- their perception of themselves! They're slowed down by their perception of themselves. If you're taught you can't do anything, you won't do anything. I was taught I could do everything."
+      }
+    ]
+  }
+}

@@ -20,6 +20,7 @@ import Grid from "@mui/material/Grid";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import { useTranslation } from "react-i18next";
 
 // Images
 import coinbase from "assets/images/logos/gray-logos/logo-coinbase.svg";
@@ -30,6 +31,9 @@ import spotify from "assets/images/logos/gray-logos/logo-spotify.svg";
 import vodafone from "assets/images/logos/gray-logos/logo-vodafone.svg";
 
 function Trust() {
+  const { t } = useTranslation("pricing");
+  const title = t("trust.title");
+
   return (
     <MKBox py={6}>
       <Container>
@@ -41,7 +45,7 @@ function Trust() {
           sx={{ mx: "auto", textAlign: "center" }}
         >
           <MKTypography variant="h6" opacity={0.5}>
-            More than 50+ brands trust Material
+            {title}
           </MKTypography>
         </Grid>
         <Grid container spacing={3} sx={{ mt: 3 }}>
