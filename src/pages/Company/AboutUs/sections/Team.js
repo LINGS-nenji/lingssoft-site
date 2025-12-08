@@ -23,6 +23,8 @@ import MKTypography from "components/MKTypography";
 
 // Material Kit 2 PRO React examples
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
+import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
 
 // Images
 import team1 from "assets/images/team-5.jpg";
@@ -30,7 +32,18 @@ import team2 from "assets/images/bruce-mars.jpg";
 import team3 from "assets/images/ivana-squares.jpg";
 import team4 from "assets/images/ivana-square.jpg";
 
+const memberImages = {
+  emma: team1,
+  william: team2,
+  ivana: team3,
+  marquez: team4,
+};
+
 function Team() {
+  const { t, i18n } = useTranslation("about");
+  const content = useMemo(() => t("team", { returnObjects: true }) || {}, [t, i18n.language]);
+  const members = Array.isArray(content.members) ? content.members : [];
+
   return (
     <MKBox
       component="section"
@@ -45,55 +58,30 @@ function Team() {
         <Grid container>
           <Grid item xs={12} md={8} sx={{ mb: 6 }}>
             <MKTypography variant="h3" color="white">
-              The Executive Team
+              {content.title || "The Executive Team"}
             </MKTypography>
             <MKTypography variant="body2" color="white" opacity={0.8}>
-              There&apos;s nothing I really wanted to do in life that I wasn&apos;t able to get good
-              at. That&apos;s my skill.
+              {content.description ||
+                "There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill."}
             </MKTypography>
           </Grid>
         </Grid>
         <Grid container spacing={3}>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <HorizontalTeamCard
-                image={team1}
-                name="Emma Roberts"
-                position={{ color: "info", label: "UI Designer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <HorizontalTeamCard
-                image={team2}
-                name="William Pearce"
-                position={{ color: "info", label: "Boss" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team3}
-                name="Ivana Flow"
-                position={{ color: "info", label: "Athlete" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team4}
-                name="Marquez Garcia"
-                position={{ color: "info", label: "JS Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
+          {members.map((member, index) => (
+            <Grid key={member.id || `team-member-${index}`} item xs={12} lg={6}>
+              <MKBox mb={{ xs: 1, lg: 0 }}>
+                <HorizontalTeamCard
+                  image={memberImages[member.id] || memberImages.emma}
+                  name={member.name || ""}
+                  position={{ color: "info", label: member.position || "" }}
+                  description={
+                    member.description ||
+                    "Artist is a term applied to a person who engages in an activity deemed to be an art."
+                  }
+                />
+              </MKBox>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </MKBox>

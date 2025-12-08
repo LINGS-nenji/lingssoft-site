@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "title": "Work with an amazing",
+    "typed": ["team", "design", "tool"],
+    "description": "We're constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game",
+    "cta": "create account",
+    "socialLabel": "Find us on",
+    "socialLinks": [
+      { "id": "facebook", "icon": "fab fa-facebook", "url": "#" },
+      { "id": "instagram", "icon": "fab fa-instagram", "url": "#" },
+      { "id": "twitter", "icon": "fab fa-twitter", "url": "#" },
+      { "id": "google", "icon": "fab fa-google-plus", "url": "#" }
+    ]
+  },
+  "information": {
+    "cards": [
+      {
+        "id": "integrated",
+        "icon": "public",
+        "title": "Fully integrated",
+        "description": "We get insulted by others, lose trust for those We get back freezes"
+      },
+      {
+        "id": "payments",
+        "icon": "payments",
+        "title": "Payments functionality",
+        "description": "We get insulted by others, lose trust for those We get back freezes"
+      },
+      {
+        "id": "components",
+        "icon": "apps",
+        "title": "Prebuilt components",
+        "description": "We get insulted by others, lose trust for those We get back freezes"
+      },
+      {
+        "id": "platform",
+        "icon": "3p",
+        "title": "Improved platform",
+        "description": "We get insulted by others, lose trust for those We get back freezes"
+      }
+    ],
+    "blogCard": {
+      "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      "title": "Get insights on Search",
+      "description": "Website visitors today demand a frictionless user expericence — especially when using search. Because of the hight standards.",
+      "action": {
+        "route": "pages/company/about-us",
+        "label": "find out more"
+      }
+    }
+  },
+  "team": {
+    "title": "The Executive Team",
+    "description": "There's nothing I really wanted to do in life that I wasn't able to get good at. That's my skill.",
+    "members": [
+      {
+        "id": "emma",
+        "name": "Emma Roberts",
+        "position": "UI Designer",
+        "description": "Artist is a term applied to a person who engages in an activity deemed to be an art."
+      },
+      {
+        "id": "william",
+        "name": "William Pearce",
+        "position": "Boss",
+        "description": "Artist is a term applied to a person who engages in an activity deemed to be an art."
+      },
+      {
+        "id": "ivana",
+        "name": "Ivana Flow",
+        "position": "Athlete",
+        "description": "Artist is a term applied to a person who engages in an activity deemed to be an art."
+      },
+      {
+        "id": "marquez",
+        "name": "Marquez Garcia",
+        "position": "JS Developer",
+        "description": "Artist is a term applied to a person who engages in an activity deemed to be an art."
+      }
+    ]
+  },
+  "featuring": {
+    "logos": [
+      { "id": "coinbase", "alt": "coinbase" },
+      { "id": "nasa", "alt": "nasa" },
+      { "id": "netflix", "alt": "netflix" },
+      { "id": "pinterest", "alt": "pinterest" },
+      { "id": "spotify", "alt": "spotify" },
+      { "id": "vodafone", "alt": "vodafone" }
+    ],
+    "stats": [
+      {
+        "id": "projects",
+        "count": 5234,
+        "separator": ",",
+        "title": "Projects",
+        "description": "Of “high-performing” level are led by a certified project manager"
+      },
+      {
+        "id": "hours",
+        "count": 3400,
+        "separator": ",",
+        "suffix": "+",
+        "title": "Hours",
+        "description": "That meets quality standards required by our users"
+      },
+      {
+        "id": "support",
+        "count": 24,
+        "suffix": "/7",
+        "title": "Support",
+        "description": "Actively engage team members that finishes on time"
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Be the first to see the news",
+    "description": "Your company may not be in the software business, but eventually, a software company will be in your business.",
+    "placeholder": "Email Here...",
+    "button": "Subscribe"
+  }
+}

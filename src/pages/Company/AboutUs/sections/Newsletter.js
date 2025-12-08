@@ -26,25 +26,32 @@ import MKButton from "components/MKButton";
 
 // Images
 import macbook from "assets/images/macbook.png";
+import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
 
 function Newsletter() {
+  const { t, i18n } = useTranslation("about");
+  const content = useMemo(() => t("newsletter", { returnObjects: true }) || {}, [t, i18n.language]);
+
   return (
     <MKBox component="section" pt={6} my={6}>
       <Container>
         <Grid container alignItems="center">
-          <Grid item sx={12} md={6} sx={{ ml: { xs: 0, lg: 3 }, mb: { xs: 12, md: 0 } }}>
-            <MKTypography variant="h4">Be the first to see the news</MKTypography>
+          <Grid item xs={12} md={6} sx={{ ml: { xs: 0, lg: 3 }, mb: { xs: 12, md: 0 } }}>
+            <MKTypography variant="h4">
+              {content.title || "Be the first to see the news"}
+            </MKTypography>
             <MKTypography variant="body2" color="text" mb={3}>
-              Your company may not be in the software business, but eventually, a software company
-              will be in your business.
+              {content.description ||
+                "Your company may not be in the software business, but eventually, a software company will be in your business."}
             </MKTypography>
             <Grid container spacing={1}>
               <Grid item xs={8}>
-                <MKInput type="email" label="Email Here..." fullWidth />
+                <MKInput type="email" label={content.placeholder || "Email Here..."} fullWidth />
               </Grid>
               <Grid item xs={4}>
                 <MKButton variant="gradient" color="info" sx={{ height: "100%" }}>
-                  Subscribe
+                  {content.button || "Subscribe"}
                 </MKButton>
               </Grid>
             </Grid>

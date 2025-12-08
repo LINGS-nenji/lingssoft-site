@@ -50,7 +50,7 @@ i18n
     fallbackLng: "en",
     supportedLngs: supported,
     lng: initialLngFromPath(),
-    ns: ["common", "presentation", "terms", "privacy", "gdpr", "license", "pricing"],
+    ns: ["common", "presentation", "terms", "privacy", "gdpr", "license", "pricing", "about"],
     defaultNS: "common",
     backend: {
       loadPath: `${normalizedPublicUrl}/locales/{{lng}}/{{ns}}.json`,

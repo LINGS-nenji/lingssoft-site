@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 // rellax
 import Rellax from "rellax";
@@ -47,10 +47,35 @@ import footerRoutes from "footer.routes";
 
 // Images
 import bgImage from "assets/images/bg-about-us.jpg";
+import { useTranslation } from "react-i18next";
+
+const defaultSocialLinks = [
+  { id: "facebook", icon: "fab fa-facebook", url: "#" },
+  { id: "instagram", icon: "fab fa-instagram", url: "#" },
+  { id: "twitter", icon: "fab fa-twitter", url: "#" },
+  { id: "google", icon: "fab fa-google-plus", url: "#" },
+];
 
 function AboutUs() {
   const headerRef = useRef(null);
   const typedJSRef = useRef(null);
+  const { t, i18n } = useTranslation("about");
+  const hero = useMemo(() => t("hero", { returnObjects: true }) || {}, [t, i18n.language]);
+  const heroTitle = hero.title || "Work with an amazing";
+  const heroDescription =
+    hero.description ||
+    "We're constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game";
+  const heroCta = hero.cta || "create account";
+  const heroSocialLabel = hero.socialLabel || "Find us on";
+  const heroSocialLinks =
+    Array.isArray(hero.socialLinks) && hero.socialLinks.length > 0
+      ? hero.socialLinks
+      : defaultSocialLinks;
+  const typedStrings = useMemo(() => {
+    const strings = Array.isArray(hero.typed) && hero.typed.length > 0 ? hero.typed : ["team"];
+    return strings;
+  }, [hero]);
+  const typedDependency = typedStrings.join("|");
 
   // Setting up rellax
   useEffect(() => {
@@ -63,8 +88,10 @@ function AboutUs() {
 
   // Setting up typedJS
   useEffect(() => {
+    if (!typedJSRef.current) return undefined;
+
     const typedJS = new Typed(typedJSRef.current, {
-      strings: ["team", "design", "tool"],
+      strings: typedStrings,
       typeSpeed: 90,
       backSpeed: 90,
       backDelay: 200,
@@ -73,7 +100,7 @@ function AboutUs() {
     });
 
     return () => typedJS.destroy();
-  }, []);
+  }, [typedDependency]);
 
   return (
     <>
@@ -124,31 +151,30 @@ function AboutUs() {
                 },
               })}
             >
-              Work with an amazing <span ref={typedJSRef} />
+              {heroTitle} <span ref={typedJSRef} />
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              We&apos;re constantly trying to express ourselves and actualize our dreams. If you
-              have the opportunity to play this game
+              {heroDescription}
             </MKTypography>
             <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
-              create account
+              {heroCta}
             </MKButton>
             <MKTypography variant="h6" color="white" mt={8} mb={1}>
-              Find us on
+              {heroSocialLabel}
             </MKTypography>
             <MKBox display="flex" justifyContent="center" alignItems="center">
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
-                <i className="fab fa-facebook" />
-              </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
-                <i className="fab fa-instagram" />
-              </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
-                <i className="fab fa-twitter" />
-              </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#">
-                <i className="fab fa-google-plus" />
-              </MKTypography>
+              {heroSocialLinks.map((link, index) => (
+                <MKTypography
+                  component="a"
+                  variant="body1"
+                  color="white"
+                  href={link.url || "#"}
+                  mr={index !== heroSocialLinks.length - 1 ? 3 : 0}
+                  key={link.id || index}
+                >
+                  <i className={link.icon} />
+                </MKTypography>
+              ))}
             </MKBox>
           </Grid>
         </Container>

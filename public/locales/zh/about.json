@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "title": "与出色团队合作",
+    "typed": ["团队", "设计", "工具"],
+    "description": "我们不断表达自己、让梦想成真。如果有机会参与这场游戏",
+    "cta": "创建账户",
+    "socialLabel": "关注我们",
+    "socialLinks": [
+      { "id": "facebook", "icon": "fab fa-facebook", "url": "#" },
+      { "id": "instagram", "icon": "fab fa-instagram", "url": "#" },
+      { "id": "twitter", "icon": "fab fa-twitter", "url": "#" },
+      { "id": "google", "icon": "fab fa-google-plus", "url": "#" }
+    ]
+  },
+  "information": {
+    "cards": [
+      {
+        "id": "integrated",
+        "icon": "public",
+        "title": "完全集成",
+        "description": "即便被人冒犯、失去信任，我们依旧会重新振作。"
+      },
+      {
+        "id": "payments",
+        "icon": "payments",
+        "title": "支付能力",
+        "description": "即便被人冒犯、失去信任，我们依旧会重新振作。"
+      },
+      {
+        "id": "components",
+        "icon": "apps",
+        "title": "预构建组件",
+        "description": "即便被人冒犯、失去信任，我们依旧会重新振作。"
+      },
+      {
+        "id": "platform",
+        "icon": "3p",
+        "title": "改进的平台",
+        "description": "即便被人冒犯、失去信任，我们依旧会重新振作。"
+      }
+    ],
+    "blogCard": {
+      "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      "title": "搜索洞察",
+      "description": "如今的访客尤其在搜索时要求无摩擦体验，我们必须达到更高标准。",
+      "action": {
+        "route": "pages/company/about-us",
+        "label": "了解更多"
+      }
+    }
+  },
+  "team": {
+    "title": "管理团队",
+    "description": "人生中我想做好而没做到的事情几乎没有，这就是我的能力。",
+    "members": [
+      {
+        "id": "emma",
+        "name": "Emma Roberts",
+        "position": "UI 设计师",
+        "description": "艺术家指从事被视为艺术的活动的人。"
+      },
+      {
+        "id": "william",
+        "name": "William Pearce",
+        "position": "负责人",
+        "description": "艺术家指从事被视为艺术的活动的人。"
+      },
+      {
+        "id": "ivana",
+        "name": "Ivana Flow",
+        "position": "运动员",
+        "description": "艺术家指从事被视为艺术的活动的人。"
+      },
+      {
+        "id": "marquez",
+        "name": "Marquez Garcia",
+        "position": "JS 开发者",
+        "description": "艺术家指从事被视为艺术的活动的人。"
+      }
+    ]
+  },
+  "featuring": {
+    "logos": [
+      { "id": "coinbase", "alt": "coinbase" },
+      { "id": "nasa", "alt": "nasa" },
+      { "id": "netflix", "alt": "netflix" },
+      { "id": "pinterest", "alt": "pinterest" },
+      { "id": "spotify", "alt": "spotify" },
+      { "id": "vodafone", "alt": "vodafone" }
+    ],
+    "stats": [
+      {
+        "id": "projects",
+        "count": 5234,
+        "separator": ",",
+        "title": "项目",
+        "description": "大多数高绩效项目都由认证项目经理领导。"
+      },
+      {
+        "id": "hours",
+        "count": 3400,
+        "separator": ",",
+        "suffix": "+",
+        "title": "工时",
+        "description": "满足用户所需的质量标准。"
+      },
+      {
+        "id": "support",
+        "count": 24,
+        "suffix": "/7",
+        "title": "支持",
+        "description": "全程协作，确保团队按时完成。"
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "第一时间获取资讯",
+    "description": "即便你的公司不是软件企业，最终也会有软件公司进入你的领域。",
+    "placeholder": "输入邮箱...",
+    "button": "订阅"
+  }
+}

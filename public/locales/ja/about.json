@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "title": "素晴らしいチームと",
+    "typed": ["チーム", "デザイン", "ツール"],
+    "description": "私たちは常に自分を表現し、夢を形にしようとしています。このゲームに参加できるチャンスがあるなら",
+    "cta": "アカウントを作成",
+    "socialLabel": "SNSでフォロー",
+    "socialLinks": [
+      { "id": "facebook", "icon": "fab fa-facebook", "url": "#" },
+      { "id": "instagram", "icon": "fab fa-instagram", "url": "#" },
+      { "id": "twitter", "icon": "fab fa-twitter", "url": "#" },
+      { "id": "google", "icon": "fab fa-google-plus", "url": "#" }
+    ]
+  },
+  "information": {
+    "cards": [
+      {
+        "id": "integrated",
+        "icon": "public",
+        "title": "完全統合",
+        "description": "人に侮辱され信頼を失っても、私たちは再び立ち上がります。"
+      },
+      {
+        "id": "payments",
+        "icon": "payments",
+        "title": "決済機能",
+        "description": "人に侮辱され信頼を失っても、私たちは再び立ち上がります。"
+      },
+      {
+        "id": "components",
+        "icon": "apps",
+        "title": "ビルド済みコンポーネント",
+        "description": "人に侮辱され信頼を失っても、私たちは再び立ち上がります。"
+      },
+      {
+        "id": "platform",
+        "icon": "3p",
+        "title": "向上したプラットフォーム",
+        "description": "人に侮辱され信頼を失っても、私たちは再び立ち上がります。"
+      }
+    ],
+    "blogCard": {
+      "image": "https://images.unsplash.com/photo-1544717302-de2939b7ef71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      "title": "検索のインサイト",
+      "description": "今日のサイト訪問者は、とくに検索時に摩擦のない体験を求めます。高い基準に応える必要があります。",
+      "action": {
+        "route": "pages/company/about-us",
+        "label": "詳しく見る"
+      }
+    }
+  },
+  "team": {
+    "title": "エグゼクティブチーム",
+    "description": "人生でやりたいと思ったことで上達できなかったものはほとんどありません。それが私のスキルです。",
+    "members": [
+      {
+        "id": "emma",
+        "name": "Emma Roberts",
+        "position": "UI デザイナー",
+        "description": "アーティストとは、芸術と認められる活動を行う人のことです。"
+      },
+      {
+        "id": "william",
+        "name": "William Pearce",
+        "position": "統括",
+        "description": "アーティストとは、芸術と認められる活動を行う人のことです。"
+      },
+      {
+        "id": "ivana",
+        "name": "Ivana Flow",
+        "position": "アスリート",
+        "description": "アーティストとは、芸術と認められる活動を行う人のことです。"
+      },
+      {
+        "id": "marquez",
+        "name": "Marquez Garcia",
+        "position": "JS デベロッパー",
+        "description": "アーティストとは、芸術と認められる活動を行う人のことです."
+      }
+    ]
+  },
+  "featuring": {
+    "logos": [
+      { "id": "coinbase", "alt": "coinbase" },
+      { "id": "nasa", "alt": "nasa" },
+      { "id": "netflix", "alt": "netflix" },
+      { "id": "pinterest", "alt": "pinterest" },
+      { "id": "spotify", "alt": "spotify" },
+      { "id": "vodafone", "alt": "vodafone" }
+    ],
+    "stats": [
+      {
+        "id": "projects",
+        "count": 5234,
+        "separator": ",",
+        "title": "プロジェクト",
+        "description": "ハイパフォーマンス案件の多くは認定PMが率いています。"
+      },
+      {
+        "id": "hours",
+        "count": 3400,
+        "separator": ",",
+        "suffix": "+",
+        "title": "時間",
+        "description": "ユーザーが求める品質基準を満たしています。"
+      },
+      {
+        "id": "support",
+        "count": 24,
+        "suffix": "/7",
+        "title": "サポート",
+        "description": "締め切りを守るチームを積極的に支援します。"
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "ニュースをいち早く受け取る",
+    "description": "あなたの会社がソフトウェア企業でなくても、いずれソフトウェア企業があなたの業界に参入します。",
+    "placeholder": "メールアドレスを入力",
+    "button": "購読"
+  }
+}
