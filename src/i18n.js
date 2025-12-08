@@ -1,4 +1,3 @@
-/* global process */
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpBackend from "i18next-http-backend";
@@ -37,6 +36,7 @@ detector.addDetector({
   cacheUserLanguage() {},
 });
 
+// eslint-disable-next-line no-undef
 const rawPublicUrl = process.env.PUBLIC_URL || "";
 const normalizedPublicUrl =
   rawPublicUrl === "." || rawPublicUrl === "" ? "." : rawPublicUrl.replace(/\/$/, "");
