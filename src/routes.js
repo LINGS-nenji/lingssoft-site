@@ -81,12 +81,12 @@ const routes = [
       {
         translationKey: "menu.history",
         route: "#",
-        component: <AboutUs />,
+        component: AboutUs,
       },
       {
         translationKey: "menu.values",
         route: "#",
-        component: <AboutUs />,
+        component: AboutUs,
       },
     ],
   },
