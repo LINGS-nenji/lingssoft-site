@@ -145,17 +145,12 @@ function DefaultNavbar({
 
     // Render the dropdown menu that should be display as columns
     if (collapse && columns && name === dropdownName) {
-      /* eslint-disable-next-line no-param-reassign */
-      const calculateColumns = collapse.reduce((resultArray, item, index) => {
+      // Avoid mutating the accumulator to satisfy `no-param-reassign`.
+      const calculateColumns = collapse.reduce((acc, item, index) => {
         const chunkIndex = Math.floor(index / rowsPerColumn);
-
-        if (!resultArray[chunkIndex]) {
-          resultArray[chunkIndex] = [];
-        }
-
-        resultArray[chunkIndex].push(item);
-
-        return resultArray;
+        const newAcc = acc.slice();
+        newAcc[chunkIndex] = (newAcc[chunkIndex] || []).concat(item);
+        return newAcc;
       }, []);
 
       template = (
