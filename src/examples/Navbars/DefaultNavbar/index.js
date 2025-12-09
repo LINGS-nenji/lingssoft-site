@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+﻿/* eslint-disable no-param-reassign */
 /**
 =========================================================
 * Material Kit 2 PRO React - v2.1.1
@@ -108,6 +108,8 @@ function DefaultNavbar({
   const hasActiveChildren = (items) =>
     Array.isArray(items) &&
     items.some((child) => isActiveRoute(child.route) || hasActiveChildren(child.collapse));
+  const getKey = (item, fallback) =>
+    (item && (item.name || item.translationKey || item.route || item.href)) || fallback;
 
   const renderNavbarItems = visibleRoutes.map((item) => {
     const { name, icon, href, route, collapse } = item;
@@ -164,7 +166,7 @@ function DefaultNavbar({
             return (
               <Grid key={gridKey} item xs={12 / columns} sx={{ position: "relative" }}>
                 {cols.map((col, index) => (
-                  <Fragment key={col.name}>
+                  <Fragment key={getKey(col, `col-${index}`)}>
                     <MKTypography
                       display="block"
                       variant="button"
@@ -177,9 +179,9 @@ function DefaultNavbar({
                     >
                       {getLabel(col)}
                     </MKTypography>
-                    {col.collapse.map((item) => (
+                    {col.collapse.map((item, itemIndex) => (
                       <MKTypography
-                        key={item.name}
+                        key={getKey(item, `nested-${itemIndex}`)}
                         component={item.route ? Link : MuiLink}
                         to={item.route ? item.route : ""}
                         href={item.href ? item.href : (e) => e.preventDefault()}
@@ -239,7 +241,7 @@ function DefaultNavbar({
 
       // Render the dropdown menu that should be display as list items
     } else if (collapse && name === dropdownName) {
-      template = collapse.map((item) => {
+      template = collapse.map((item, itemIndex) => {
         const linkComponent = {
           component: MuiLink,
           href: item.href,
@@ -254,7 +256,7 @@ function DefaultNavbar({
 
         return (
           <MKTypography
-            key={item.name}
+            key={getKey(item, `item-${itemIndex}`)}
             {...(item.route ? routeComponent : linkComponent)}
             display="flex"
             justifyContent="space-between"
@@ -404,7 +406,7 @@ function DefaultNavbar({
           if (parentName === nestedDropdownName) {
             template =
               nestedCollapse &&
-              nestedCollapse.map((item) => {
+              nestedCollapse.map((item, nestedIndex) => {
                 const linkComponent = {
                   component: MuiLink,
                   href: item.href,
@@ -419,7 +421,7 @@ function DefaultNavbar({
 
                 return (
                   <MKTypography
-                    key={item.name}
+                    key={getKey(item, `nested-${nestedIndex}`)}
                     {...(item.route ? routeComponent : linkComponent)}
                     display="flex"
                     justifyContent="space-between"

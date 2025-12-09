@@ -43,6 +43,8 @@ function DefaultNavbarMobile({ routes, open }) {
   const hasActiveChildren = (items) =>
     Array.isArray(items) &&
     items.some((child) => isActiveRoute(child.route) || hasActiveChildren(child.collapse));
+  const getKey = (item, fallback) =>
+    (item && (item.name || item.translationKey || item.route || item.href)) || fallback;
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
 
@@ -83,8 +85,8 @@ function DefaultNavbarMobile({ routes, open }) {
       >
         <MKBox sx={{ height: "15rem", maxHeight: "15rem", overflowY: "scroll" }}>
           {routeCollapses &&
-            routeCollapses.map((item) => (
-              <MKBox key={item.name} px={2}>
+            routeCollapses.map((item, itemIndex) => (
+              <MKBox key={getKey(item, `collapse-${itemIndex}`)} px={2}>
                 {item.collapse ? (
                   <>
                     <MKTypography
@@ -97,9 +99,9 @@ function DefaultNavbarMobile({ routes, open }) {
                     >
                       {getLabel(item)}
                     </MKTypography>
-                    {item.collapse.map((el) => (
+                    {item.collapse.map((el, nestedIndex) => (
                       <MKTypography
-                        key={el.name}
+                        key={getKey(el, `nested-${nestedIndex}`)}
                         component={el.route ? Link : MuiLink}
                         to={el.route ? el.route : ""}
                         href={el.href ? el.href : ""}
@@ -130,7 +132,7 @@ function DefaultNavbarMobile({ routes, open }) {
                   </>
                 ) : (
                   <MKBox
-                    key={item.key}
+                    key={getKey(item, `link-${itemIndex}`)}
                     display="block"
                     component={item.route ? Link : MuiLink}
                     to={item.route ? item.route : ""}

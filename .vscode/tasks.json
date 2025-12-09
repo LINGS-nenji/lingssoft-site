@@ -6,7 +6,23 @@
       "type": "shell",
       "command": "npm start",
       "isBackground": true,
-      
+      "problemMatcher": {
+        "owner": "custom",
+        "fileLocation": "relative",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(error)\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Starting the development server",
+          "endsPattern": "Compiled successfully"
+        }
+      },
       "presentation": {
         "reveal": "always",
         "panel": "dedicated"
