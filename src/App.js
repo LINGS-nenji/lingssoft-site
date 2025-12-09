@@ -55,11 +55,16 @@ export default function App() {
         const key = route.key || normalizedPath;
 
         return [
-          <Route exact path={normalizedPath} element={route.component} key={key} />,
+          <Route
+            exact
+            path={normalizedPath}
+            element={typeof route.component === "function" ? <route.component /> : route.component}
+            key={key}
+          />,
           <Route
             exact
             path={`/:lng${normalizedPath}`}
-            element={route.component}
+            element={typeof route.component === "function" ? <route.component /> : route.component}
             key={`${key}-localized`}
           />,
         ];

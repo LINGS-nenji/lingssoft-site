@@ -58,12 +58,12 @@ const routes = [
       {
         translationKey: "menu.solutions",
         route: "#",
-        component: <Pricing />,
+        component: Pricing,
       },
       {
         translationKey: "menu.pricing",
         route: "/pages/company/pricing",
-        component: <Pricing />,
+        component: Pricing,
       },
     ],
   },
@@ -75,7 +75,7 @@ const routes = [
       {
         translationKey: "menu.about",
         route: "/pages/company/about-us",
-        component: <AboutUs />,
+        component: AboutUs,
       },
       {
         translationKey: "menu.history",
@@ -98,12 +98,12 @@ const routes = [
       {
         translationKey: "menu.contact",
         route: "/pages/support/contact-us",
-        component: <ContactUs />,
+        component: ContactUs,
       },
       {
         translationKey: "menu.knowledge",
         route: "/pages/support/help-center",
-        component: <HelpCenter />,
+        component: HelpCenter,
       },
       {
         translationKey: "menu.customdev",
@@ -124,22 +124,22 @@ const routes = [
       {
         translationKey: "menu.terms",
         route: "/pages/support/terms",
-        component: <Terms />,
+        component: Terms,
       },
       {
         translationKey: "menu.privacy",
         route: "/pages/support/privacy",
-        component: <Privacy />,
+        component: Privacy,
       },
       {
         translationKey: "menu.gdpr",
         route: "/pages/support/gdpr",
-        component: <Gdpr />,
+        component: Gdpr,
       },
       {
         translationKey: "menu.license",
         route: "/pages/support/license",
-        component: <License />,
+        component: License,
       },
     ],
   },

@@ -36,7 +36,6 @@ detector.addDetector({
   cacheUserLanguage() {},
 });
 
-// eslint-disable-next-line no-undef
 const rawPublicUrl = process.env.PUBLIC_URL || "";
 const normalizedPublicUrl =
   rawPublicUrl === "." || rawPublicUrl === "" ? "." : rawPublicUrl.replace(/\/$/, "");
