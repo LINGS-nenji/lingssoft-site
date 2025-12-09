@@ -1,9 +1,7 @@
 name: Deploy lingssoft-site to GitHub Pages
 
 on:
-  push:
-    branches: [ main ]   # main에 push될 때마다 배포
-  workflow_dispatch:      # 필요하면 Actions 탭에서 수동 실행도 가능
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -37,7 +35,7 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build   # CRA 빌드 결과 폴더
+          path: ./build   # CRA output dir
 
   deploy:
     needs: build
