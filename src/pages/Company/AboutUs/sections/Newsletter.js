@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-duplicate-props */
 /*
 =========================================================
 * Material Kit 2 PRO React - v2.1.1

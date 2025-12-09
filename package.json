@@ -37,7 +37,7 @@
     "react-flatpickr": "3.10.13",
     "react-i18next": "^16.0.0",
     "react-router-dom": "6.26.1",
-    "react-scripts": "^0.0.0",
+    "react-scripts": "^5.0.1",
     "react-syntax-highlighter": "^15.6.6",
     "rellax": "1.12.1",
     "swiper": "9.2.0",

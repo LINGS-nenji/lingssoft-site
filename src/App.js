@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, Suspense } from "react";
 
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
@@ -77,13 +77,15 @@ export default function App() {
     <ThemeProvider theme={appTheme}>
       <CssBaseline />
       {/* <Header /> */}
-      <Routes>
-        {getRoutes(routes)}
-        <Route path="/presentation" element={<Presentation />} />
-        <Route path="/:lng/presentation" element={<Presentation />} />
-        <Route path="/:lng/*" element={<Navigate to="presentation" replace />} />
-        <Route path="*" element={<Navigate to="/presentation" replace />} />
-      </Routes>
+      <Suspense fallback={<div />}>
+        <Routes>
+          {getRoutes(routes)}
+          <Route path="/presentation" element={<Presentation />} />
+          <Route path="/:lng/presentation" element={<Presentation />} />
+          <Route path="/:lng/*" element={<Navigate to="presentation" replace />} />
+          <Route path="*" element={<Navigate to="/presentation" replace />} />
+        </Routes>
+      </Suspense>
     </ThemeProvider>
   );
 }

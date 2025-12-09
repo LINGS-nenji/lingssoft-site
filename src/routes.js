@@ -36,18 +36,19 @@ Coded by www.creative-tim.com
   10. The `rowsPerColumn` key is used to define that how many rows should be in a column.
 */
 
-// @mui material components
+// React + @mui material components
+import React, { lazy } from "react";
 import Icon from "@mui/material/Icon";
 
-// Pages
-import AboutUs from "layouts/pages/company/about-us";
-import Pricing from "layouts/pages/company/pricing";
-import ContactUs from "layouts/pages/support/contact-us";
-import HelpCenter from "layouts/pages/support/help-center";
-import Terms from "layouts/pages/support/terms";
-import Privacy from "layouts/pages/support/privacy";
-import Gdpr from "layouts/pages/support/gdpr";
-import License from "layouts/pages/support/license";
+// Pages (lazy-loaded)
+const AboutUs = lazy(() => import("layouts/pages/company/about-us"));
+const Pricing = lazy(() => import("layouts/pages/company/pricing"));
+const ContactUs = lazy(() => import("layouts/pages/support/contact-us"));
+const HelpCenter = lazy(() => import("layouts/pages/support/help-center"));
+const Terms = lazy(() => import("layouts/pages/support/terms"));
+const Privacy = lazy(() => import("layouts/pages/support/privacy"));
+const Gdpr = lazy(() => import("layouts/pages/support/gdpr"));
+const License = lazy(() => import("layouts/pages/support/license"));
 
 const routes = [
   {

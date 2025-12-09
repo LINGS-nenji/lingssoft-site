@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /*
 =========================================================
 * Material Kit 2 PRO React - v2.1.1

@@ -1,4 +1,4 @@
-﻿/* eslint-disable no-param-reassign */
+﻿/*
 /**
 =========================================================
 * Material Kit 2 PRO React - v2.1.1
@@ -145,6 +145,7 @@ function DefaultNavbar({
 
     // Render the dropdown menu that should be display as columns
     if (collapse && columns && name === dropdownName) {
+      /* eslint-disable-next-line no-param-reassign */
       const calculateColumns = collapse.reduce((resultArray, item, index) => {
         const chunkIndex = Math.floor(index / rowsPerColumn);
 
