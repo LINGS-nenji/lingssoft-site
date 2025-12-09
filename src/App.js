@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect, useMemo, Suspense } from "react";
+import { useEffect, useMemo, Suspense, lazy } from "react";
 
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
@@ -24,7 +24,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 // Material Kit 2 PRO React themes
 import { buildTheme } from "assets/theme";
-import Presentation from "layouts/pages/presentation";
+import CircularProgress from "@mui/material/CircularProgress";
+const Presentation = lazy(() => import("layouts/pages/presentation"));
 
 // Material Kit 2 PRO React routes
 import routes from "routes";
@@ -77,7 +78,13 @@ export default function App() {
     <ThemeProvider theme={appTheme}>
       <CssBaseline />
       {/* <Header /> */}
-      <Suspense fallback={<div />}>
+      <Suspense
+        fallback={
+          <div style={{ display: "grid", placeItems: "center", minHeight: "50vh" }}>
+            <CircularProgress />
+          </div>
+        }
+      >
         <Routes>
           {getRoutes(routes)}
           <Route path="/presentation" element={<Presentation />} />
