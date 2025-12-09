@@ -50,6 +50,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "dev:vite": "vite",
+    "build:vite": "vite build",
+    "preview:vite": "vite preview --port 5173",
     "lint": "eslint ./src",
     "prettify": "prettier --write ."
   },
@@ -73,6 +76,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@vitejs/plugin-react": "^5.1.2",
     "eslint": "8.38.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.29.1",
@@ -80,15 +84,15 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "4.6.2",
-    "prettier": "2.8.7"
+    "prettier": "2.8.7",
+    "vite": "^7.2.7"
   },
   "overrides": {
     "svgo": "3.0.2",
     "prismjs": "1.30.0",
     "refractor": {
       "prismjs": "1.30.0"
-    }
-    ,
+    },
     "postcss": "8.4.31"
   }
 }
