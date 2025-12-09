@@ -88,5 +88,7 @@
     "refractor": {
       "prismjs": "1.30.0"
     }
+    ,
+    "postcss": "8.4.31"
   }
 }
