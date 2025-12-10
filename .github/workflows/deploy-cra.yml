@@ -1,4 +1,4 @@
-name: Deploy lingssoft-site to GitHub Pages
+name: Deploy lingssoft-site CRA to GitHub Pages
 
 on:
   workflow_dispatch:
