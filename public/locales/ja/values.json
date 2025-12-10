@@ -1,0 +1,31 @@
+{
+  "title": "私たちのコアバリュー",
+  "subtitle": "私たちの働き方や素晴らしい製品を作るための指針です。",
+  "values": [
+    {
+      "id": "respect",
+      "title": "敬意",
+      "description": "すべての人を尊重し、多様な視点を大切にします。"
+    },
+    {
+      "id": "integrity",
+      "title": "誠実さ",
+      "description": "私たちはすべての業務で倫理的かつ透明に行動します。"
+    },
+    {
+      "id": "innovation",
+      "title": "イノベーション",
+      "description": "好奇心を持ち、難しい問題に対する創造的な解決を追求します。"
+    },
+    {
+      "id": "accountability",
+      "title": "責任",
+      "description": "私たちは主体性を持ち、約束を果たします。"
+    },
+    {
+      "id": "inclusion",
+      "title": "包摂",
+      "description": "すべての人が貢献し成長できる環境をつくります。"
+    }
+  ]
+}

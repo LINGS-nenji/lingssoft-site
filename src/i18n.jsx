@@ -63,6 +63,7 @@ i18n
       "pricing",
       "about",
       "history",
+      "values",
     ],
     defaultNS: "common",
     backend: {

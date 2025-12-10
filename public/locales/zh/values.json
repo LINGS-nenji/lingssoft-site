@@ -1,0 +1,31 @@
+{
+  "title": "我们的核心价值观",
+  "subtitle": "指导我们如何工作并构建优秀产品的原则。",
+  "values": [
+    {
+      "id": "respect",
+      "title": "尊重",
+      "description": "我们尊重每个人，重视多元观点。"
+    },
+    {
+      "id": "integrity",
+      "title": "诚信",
+      "description": "我们在所有工作中保持道德和透明。"
+    },
+    {
+      "id": "innovation",
+      "title": "创新",
+      "description": "我们保持好奇心，追求对难题的创造性解决方案。"
+    },
+    {
+      "id": "accountability",
+      "title": "责任",
+      "description": "我们承担责任，兑现承诺。"
+    },
+    {
+      "id": "inclusion",
+      "title": "包容",
+      "description": "我们营造人人可以贡献并茁壮成长的环境。"
+    }
+  ]
+}

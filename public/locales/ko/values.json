@@ -1,0 +1,31 @@
+{
+  "title": "핵심 가치",
+  "subtitle": "우리가 일하고 훌륭한 제품을 만드는 방식을 이끄는 원칙들입니다.",
+  "values": [
+    {
+      "id": "respect",
+      "title": "존중",
+      "description": "우리는 모든 사람을 존엄하게 대하며 다양한 관점을 소중히 여깁니다."
+    },
+    {
+      "id": "integrity",
+      "title": "정직",
+      "description": "우리는 모든 일에 윤리적이고 투명하게 행동합니다."
+    },
+    {
+      "id": "innovation",
+      "title": "혁신",
+      "description": "우리는 호기심을 가지고 어려운 문제에 대한 창의적인 해결책을 추구합니다."
+    },
+    {
+      "id": "accountability",
+      "title": "책임",
+      "description": "우리는 주인의식을 가지고 약속을 지킵니다."
+    },
+    {
+      "id": "inclusion",
+      "title": "포용",
+      "description": "우리는 모든 사람이 기여하고 성장할 수 있는 환경을 만듭니다."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Our Core Values",
+  "subtitle": "Principles that guide how we work and build great products.",
+  "values": [
+    {
+      "id": "respect",
+      "title": "Respect",
+      "description": "We treat everyone with dignity and value diverse perspectives."
+    },
+    {
+      "id": "integrity",
+      "title": "Integrity",
+      "description": "We act ethically and transparently in all our work."
+    },
+    {
+      "id": "innovation",
+      "title": "Innovation",
+      "description": "We embrace curiosity and pursue creative solutions to hard problems."
+    },
+    {
+      "id": "accountability",
+      "title": "Accountability",
+      "description": "We take ownership and deliver on our commitments."
+    },
+    {
+      "id": "inclusion",
+      "title": "Inclusion",
+      "description": "We create environments where everyone can contribute and thrive."
+    }
+  ]
+}

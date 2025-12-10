@@ -44,6 +44,7 @@ import Icon from "@mui/material/Icon";
 const AboutUs = lazy(() => import("layouts/pages/company/about-us"));
 const Pricing = lazy(() => import("layouts/pages/company/pricing"));
 const History = lazy(() => import("layouts/pages/company/history"));
+const Values = lazy(() => import("layouts/pages/company/values"));
 const ContactUs = lazy(() => import("layouts/pages/support/contact-us"));
 const HelpCenter = lazy(() => import("layouts/pages/support/help-center"));
 const Terms = lazy(() => import("layouts/pages/support/terms"));
@@ -86,8 +87,8 @@ const routes = [
       },
       {
         translationKey: "menu.values",
-        route: "#",
-        component: AboutUs,
+        route: "/pages/company/values",
+        component: Values,
       },
     ],
   },
