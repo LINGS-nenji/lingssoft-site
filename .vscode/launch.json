@@ -10,5 +10,16 @@
       "preLaunchTask": "npm: start",
       "breakOnLoad": true
     }
+    ,
+    {
+      "name": "Launch Vite",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:5173/lingssoft-site/",
+      "webRoot": "${workspaceFolder}/src",
+      "preLaunchTask": "npm: dev:vite",
+      "breakOnLoad": true,
+      "userDataDir": "${workspaceFolder}/.vscode/vite-chrome-profile"
+    }
   ]
 }

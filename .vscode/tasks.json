@@ -28,5 +28,35 @@
         "panel": "dedicated"
       }
     }
+    ,
+    {
+      "label": "npm: dev:vite",
+      "type": "shell",
+      "command": "npm run dev:vite",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "fileLocation": "relative",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(error)\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE",
+          "endsPattern": "Local:"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
   ]
 }
+
+
