@@ -36,9 +36,13 @@ detector.addDetector({
   cacheUserLanguage() {},
 });
 
-const rawPublicUrl = process.env.PUBLIC_URL || "";
+// Prefer CRA's PUBLIC_URL when available. We avoid referencing `import.meta` here
+// because CRA's bundler (webpack) does not support `import.meta` and referencing
+// it directly can cause syntax errors like "Cannot use 'import.meta' outside a module".
+const rawPublicUrl =
+  (typeof process !== "undefined" && process.env && process.env.PUBLIC_URL) || "";
 const normalizedPublicUrl =
-  rawPublicUrl === "." || rawPublicUrl === "" ? "." : rawPublicUrl.replace(/\/$/, "");
+  rawPublicUrl === "." || rawPublicUrl === "" ? "." : String(rawPublicUrl).replace(/\/$/, "");
 
 i18n
   .use(HttpBackend)

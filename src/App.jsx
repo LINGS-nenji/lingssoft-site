@@ -40,17 +40,20 @@ export default function App() {
         const normalizedPath = route.route.startsWith("/") ? route.route : `/${route.route}`;
         const key = route.key || normalizedPath;
 
+        // Guard: if there's no component defined, skip adding the route
+        if (!route.component) return [];
+
+        // Use a local variable for the component and render it as JSX.
+        // This is more reliable than using a dotted JSX tag (e.g. <route.component />)
+        // and avoids subtle parsing/runtime issues after renames/migration.
+        const Component = route.component;
+
         return [
-          <Route
-            exact
-            path={normalizedPath}
-            element={typeof route.component === "function" ? <route.component /> : route.component}
-            key={key}
-          />,
+          <Route exact path={normalizedPath} element={<Component />} key={key} />,
           <Route
             exact
             path={`/:lng${normalizedPath}`}
-            element={typeof route.component === "function" ? <route.component /> : route.component}
+            element={<Component />}
             key={`${key}-localized`}
           />,
         ];

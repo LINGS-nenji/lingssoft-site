@@ -28,6 +28,9 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 import { useThemeMode } from "context/ThemeModeContext";
 
 // Pricing page sections
+// React hooks
+import { useEffect } from "react";
+
 import Header from "pages/Company/Pricing/sections/Header";
 import AboutUs from "pages/Company/Pricing/sections/AboutUs";
 import PricingSection from "pages/Company/Pricing/sections/Pricing";
@@ -44,6 +47,12 @@ function Pricing() {
   const theme = useTheme();
   const { mode } = useThemeMode();
   const isDark = mode === "dark" || theme.palette.mode === "dark";
+
+  // Debug: log when the Pricing page mounts so we can confirm route rendering in the browser console
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log("[DEBUG] Pricing component mounted");
+  }, []);
 
   return (
     <>
