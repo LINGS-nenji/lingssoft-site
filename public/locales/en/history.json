@@ -1,0 +1,86 @@
+{
+  "hero": {
+    "eyebrow": "Company history",
+    "title": "Roots of trust, branches of innovation",
+    "description": "From bespoke security research to adaptive learning platforms, every LINGSSOFT chapter adds a new ring of experience. Follow the timeline to see how each release, partnership, and award reshaped our canopy.",
+    "mode": {
+      "label": "Display mode",
+      "light": "Dawn canopy",
+      "dark": "Midnight grove"
+    },
+    "latestLabel": "Latest chapter"
+  },
+  "timelineTitle": "Living timeline",
+  "timelineDescription": "The newest growth always appears at the top. Scroll downward to travel through previous rings until you reach the roots that still nourish us today.",
+  "timeline": [
+    {
+      "year": "2025",
+      "title": "Learning forests go global",
+      "description": "Released multilingual reasoning models that mirror the rhythms of human coaches across Asia-Pacific campuses.",
+      "milestones": [
+        "Carbon-aware training nodes deployed in 8 countries",
+        "Heritage archive digitized with contextual AI",
+        "Forest co-research program opened to universities"
+      ]
+    },
+    {
+      "year": "2024",
+      "title": "Zero-trust analytics planted",
+      "description": "Security orchestration suite linked every enterprise signal to a verifiable ledger, reducing breach response time by 42%.",
+      "milestones": [
+        "Patent filed for adaptive policy roots",
+        "GovTech trusted testing award",
+        "First bilingual SOC partnership"
+      ]
+    },
+    {
+      "year": "2023",
+      "title": "Lifelong learning canopy",
+      "description": "Combined AR classrooms and AI mentoring into a single journey, helping 120K learners reskill without leaving their workplace.",
+      "milestones": [
+        "Learning pulse API introduced",
+        "Bootstrap fund for teachers created"
+      ]
+    },
+    {
+      "year": "2022",
+      "title": "Ethical AI charter",
+      "description": "Adopted transparent review rituals led jointly by engineers, educators, and legal experts to keep every release accountable.",
+      "milestones": [
+        "Independent safety council formed",
+        "First multilingual compliance kit"
+      ]
+    },
+    {
+      "year": "2020",
+      "title": "Roots in custom engineering",
+      "description": "Founded LINGSSOFT with the belief that purposeful software, like a tree, must adapt to its ecosystem and give back more than it takes.",
+      "milestones": [
+        "First security automation delivered",
+        "Partnerships with three universities"
+      ]
+    }
+  ],
+  "leaves": {
+    "title": "Fresh leaves every season",
+    "description": "Each milestone grows directly from customer listening tours and open research sprints."
+  },
+  "roots": {
+    "title": "Roots that hold us steady",
+    "description": "Beneath the milestones are the promises that feed our soil and keep every branch balanced.",
+    "values": [
+      {
+        "label": "Integrity",
+        "summary": "Transparent data channels, auditable pipelines, and frank post-mortems no matter the result."
+      },
+      {
+        "label": "Companionship",
+        "summary": "Dedicated field squads stay beside partners until adoption feels effortless for their teams."
+      },
+      {
+        "label": "Curiosity",
+        "summary": "Joint experiments with clients surface new shoots before the market even asks."
+      }
+    ]
+  }
+}
