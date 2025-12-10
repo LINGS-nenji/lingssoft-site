@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "LINGSSOFT Launch (chrome:3002)",
+      "name": "Launch CRA",
       "type": "pwa-chrome",
       "request": "launch",
       "url": "http://localhost:3002",

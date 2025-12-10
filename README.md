@@ -1,6 +1,6 @@
 # LINGSSOFT Site
 
-Official LINGSSOFT homepage (Creative Tim template based)
+Official LINGSSOFT Site (Creative Tim template based)
 
 ## Overview
 This repository hosts the official LINGSSOFT website built on Creative Tim’s Material Kit template. The template was purchased, and all template sources and design assets remain under Creative Tim copyright.
