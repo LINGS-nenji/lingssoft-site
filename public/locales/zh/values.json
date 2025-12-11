@@ -1,31 +1,66 @@
 {
-  "title": "我们的核心价值观",
-  "subtitle": "指导我们如何工作并构建优秀产品的原则。",
-  "values": [
+  "hero": {
+    "eyebrow": "核心价值",
+    "title": "带着使命成长",
+    "description": "借鉴微软的文化支柱，LINGSSOFT 用可靠的系统守护人与地球及合作伙伴。",
+    "mode": {
+      "label": "显示模式",
+      "light": "阳光森林",
+      "dark": "星光森林"
+    },
+    "tagline": "每一次交付都应当像体贴入微。"
+  },
+  "principlesTitle": "可感知的原则",
+  "principles": [
     {
-      "id": "respect",
-      "title": "尊重",
-      "description": "我们尊重每个人，重视多元观点。"
+      "title": "成长型心态",
+      "description": "让同事与客户都能大胆尝试、学习并分享洞见。",
+      "keywords": ["学习", "复盘", "辅导"]
     },
     {
-      "id": "integrity",
-      "title": "诚信",
-      "description": "我们在所有工作中保持道德和透明。"
+      "title": "客户执着",
+      "description": "从真实场景出发，凭借交付与迭代倾听赢得信任。",
+      "keywords": ["共创", "可及路线图", "共享KPI"]
     },
     {
-      "id": "innovation",
-      "title": "创新",
-      "description": "我们保持好奇心，追求对难题的创造性解决方案。"
+      "title": "多元与包容",
+      "description": "依托多语言调研与负责任治理来设计解决方案。",
+      "keywords": ["多语言", "偏差审查", "社区委员会"]
     },
     {
-      "id": "accountability",
-      "title": "责任",
-      "description": "我们承担责任，兑现承诺。"
-    },
-    {
-      "id": "inclusion",
-      "title": "包容",
-      "description": "我们营造人人可以贡献并茁壮成长的环境。"
+      "title": "One LINGSSOFT",
+      "description": "让安全、AI、教育专家合力发出同一个声音。",
+      "keywords": ["共享手册", "轮岗", "清晰交接"]
     }
-  ]
+  ],
+  "commitments": {
+    "title": "落地做法",
+    "items": [
+      {
+        "title": "负责任的AI与安全",
+        "description": "每次发布前由红队分析师与教学负责人共同做影响审查。"
+      },
+      {
+        "title": "关注人和地球",
+        "description": "能源仪表盘与员工福祉指标在同一份执行报告中呈现。"
+      },
+      {
+        "title": "开放匠心",
+        "description": "内部公会每月携客户举办演示，保持基本功。"
+      }
+    ]
+  },
+  "culture": {
+    "title": "每日仪式",
+    "items": [
+      "各地团队共享的周度成长故事",
+      "四种语言的包容性设计评审",
+      "衡量信任与可持续性的合作伙伴委员会"
+    ]
+  },
+  "cta": {
+    "title": "看得见的价值",
+    "description": "欢迎了解我们的可持续冲刺、AI安全审计或学习影响研究。",
+    "action": "联系 LINGSSOFT"
+  }
 }

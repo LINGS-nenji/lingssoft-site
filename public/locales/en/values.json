@@ -1,31 +1,66 @@
 {
-  "title": "Our Core Values",
-  "subtitle": "Principles that guide how we work and build great products.",
-  "values": [
+  "hero": {
+    "eyebrow": "Company values",
+    "title": "We grow with purpose",
+    "description": "Inspired by Microsoft’s evergreen culture pillars, LINGSSOFT translates bold ideas into dependable systems that respect people, planet, and partners.",
+    "mode": {
+      "label": "Display mode",
+      "light": "Sunlit grove",
+      "dark": "Starlit grove"
+    },
+    "tagline": "Every release should feel like care."
+  },
+  "principlesTitle": "Living principles",
+  "principles": [
     {
-      "id": "respect",
-      "title": "Respect",
-      "description": "We treat everyone with dignity and value diverse perspectives."
+      "title": "Growth mindset",
+      "description": "Coach every teammate and client to experiment, learn, and share insights openly.",
+      "keywords": ["learn-it-all", "retrospectives", "coaching"]
     },
     {
-      "id": "integrity",
-      "title": "Integrity",
-      "description": "We act ethically and transparently in all our work."
+      "title": "Customer obsession",
+      "description": "Start with the real scenario, earn trust through shipping and iterative listening.",
+      "keywords": ["co-design", "accessible roadmaps", "shared KPIs"]
     },
     {
-      "id": "innovation",
-      "title": "Innovation",
-      "description": "We embrace curiosity and pursue creative solutions to hard problems."
+      "title": "Diverse & inclusive",
+      "description": "Design responsibly with multilingual research panels and inclusive governance.",
+      "keywords": ["multilingual", "bias reviews", "community boards"]
     },
     {
-      "id": "accountability",
-      "title": "Accountability",
-      "description": "We take ownership and deliver on our commitments."
-    },
-    {
-      "id": "inclusion",
-      "title": "Inclusion",
-      "description": "We create environments where everyone can contribute and thrive."
+      "title": "One LINGSSOFT",
+      "description": "Combine security, AI, and education specialists to deliver a single confident voice.",
+      "keywords": ["shared playbooks", "rotations", "clear handoffs"]
     }
-  ]
+  ],
+  "commitments": {
+    "title": "What this looks like",
+    "items": [
+      {
+        "title": "Responsible AI + security",
+        "description": "Impact reviews pair red-team analysts with pedagogy leads before every release."
+      },
+      {
+        "title": "People + planet",
+        "description": "Energy dashboards and well-being check-ins sit inside the same executive report."
+      },
+      {
+        "title": "Open craft",
+        "description": "Internal guilds host monthly demos with customers to keep fundamentals sharp."
+      }
+    ]
+  },
+  "culture": {
+    "title": "Daily rituals",
+    "items": [
+      "Weekly growth stories shared across all hubs",
+      "Inclusive design reviews in four languages",
+      "Partner councils measuring trust and sustainability"
+    ]
+  },
+  "cta": {
+    "title": "Values you can feel",
+    "description": "Ask us about our latest sustainability sprint, AI safety audit, or learning impact study.",
+    "action": "Talk to LINGSSOFT"
+  }
 }
