@@ -45,12 +45,6 @@ function HelpCenter() {
     <>
       <DefaultNavbar
         routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-pro-react",
-          label: "buy now",
-          color: "info",
-        }}
         transparent
         light
       />

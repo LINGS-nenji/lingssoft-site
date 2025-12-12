@@ -45,6 +45,7 @@ const AboutUs = lazy(() => import("layouts/pages/company/about-us"));
 const Pricing = lazy(() => import("layouts/pages/company/pricing"));
 const History = lazy(() => import("layouts/pages/company/history"));
 const Values = lazy(() => import("layouts/pages/company/values"));
+const Solutions = lazy(() => import("layouts/pages/company/solutions"));
 const ContactUs = lazy(() => import("layouts/pages/support/contact-us"));
 const HelpCenter = lazy(() => import("layouts/pages/support/help-center"));
 const Terms = lazy(() => import("layouts/pages/support/terms"));
@@ -60,8 +61,8 @@ const routes = [
     collapse: [
       {
         translationKey: "menu.solutions",
-        route: "#",
-        component: Pricing,
+        route: "/pages/company/solutions",
+        component: Solutions,
       },
       {
         translationKey: "menu.pricing",

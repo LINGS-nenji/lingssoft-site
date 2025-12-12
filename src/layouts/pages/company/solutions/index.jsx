@@ -1,4 +1,4 @@
-/**
+/*
 =========================================================
 * Material Kit 2 PRO React - v2.1.1
 =========================================================
@@ -13,26 +13,9 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// Material Kit 2 PRO React components
-import MKBox from "components/MKBox";
+// Material Kit 2 PRO React pages
+import Solutions from "pages/Company/Solutions";
 
-// Material Kit 2 PRO React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-
-// Routes
-import routes from "routes";
-
-function NavbarLight() {
-  return (
-    <MKBox bgColor="white" shadow="sm" py={0.25}>
-      <DefaultNavbar
-        routes={routes}
-        transparent
-        relative
-        center
-      />
-    </MKBox>
-  );
+export default function SolutionsPage() {
+    return <Solutions />;
 }
-
-export default NavbarLight;

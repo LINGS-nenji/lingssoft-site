@@ -35,12 +35,6 @@ function SimpleLayout({ children }) {
     <MKBox height="100vh" display="flex" flexDirection="column" justifyContent="space-between">
       <DefaultNavbar
         routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-pro-react",
-          label: "buy now",
-          color: "info",
-        }}
         transparent
       />
       <MKBox width="calc(100% - 2rem)" px={1} mx="auto">

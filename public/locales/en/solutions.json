@@ -1,0 +1,34 @@
+{
+    "hero": {
+        "title": "Ensuring Data Sovereignty",
+        "subtitle": "Next-Gen Local Solutions",
+        "description": "LINGSSOFT creates a world where your data remains yours, without cloud dependency. Experience local-centric innovation combining powerful security and AI."
+    },
+    "ai": {
+        "title": "AI & DevOps Platform",
+        "description": "An all-in-one development platform combining Auto-coding, AI Agents, and DevOps. Develop with powerful AI support locally, without worrying about code leakage.",
+        "features": [
+            "AI Agent-based Auto-coding",
+            "Local LLM support (Works in air-gapped networks)",
+            "Integrated CI/CD & Infrastructure Management"
+        ]
+    },
+    "security": {
+        "title": "Enterprise Security Suite",
+        "description": "From process monitoring to document security. Protect all corporate digital assets seamlessly. All logs and monitoring data remain safely isolated up within your organization.",
+        "features": [
+            "Real-time Process & Internet Monitoring",
+            "Enterprise-grade DRM & Document Security",
+            "Integrated Log Analysis & Threat Detection"
+        ]
+    },
+    "education": {
+        "title": "EduTech Platform",
+        "description": "A standalone online education system for freelance tutors. Own and manage student data and teaching materials directly without platform dependency.",
+        "features": [
+            "White-label Online Classroom",
+            "Local Learning Data Management System",
+            "Real-time Interactive Teaching Tools"
+        ]
+    }
+}

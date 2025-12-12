@@ -64,6 +64,7 @@ i18n
       "about",
       "history",
       "values",
+      "solutions",
     ],
     defaultNS: "common",
     backend: {

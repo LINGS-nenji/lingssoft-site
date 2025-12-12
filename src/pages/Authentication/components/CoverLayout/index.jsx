@@ -36,11 +36,6 @@ function CoverLayout({ coverHeight = "35vh", image, children }) {
       <MKBox width="100%" position="absolute" top="0.25rem">
         <DefaultNavbar
           routes={routes}
-          action={{
-            type: "external",
-            route: "https://www.creative-tim.com/product/material-kit-pro-react",
-            label: "buy now",
-          }}
           transparent
           light
         />

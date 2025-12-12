@@ -84,12 +84,6 @@ function History() {
         routes={routes}
         transparent
         light={isDark}
-        action={{
-          type: "internal",
-          route: "/presentation",
-          label: "overview",
-          color: "success",
-        }}
       />
       <MKBox
         component="header"

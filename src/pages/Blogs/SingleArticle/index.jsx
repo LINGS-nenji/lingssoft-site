@@ -63,12 +63,6 @@ function SingleArticle() {
       <MKBox bgColor="white" py={0.25}>
         <DefaultNavbar
           routes={routes}
-          action={{
-            type: "external",
-            route: "https://www.creative-tim.com/product/material-kit-pro-react",
-            label: "buy now",
-            color: "success",
-          }}
           transparent
           relative
         />

@@ -78,12 +78,6 @@ function Values() {
         routes={routes}
         transparent
         light={isDark}
-        action={{
-          type: "internal",
-          route: "/presentation",
-          label: "overview",
-          color: "info",
-        }}
       />
       <MKBox
         component="header"
