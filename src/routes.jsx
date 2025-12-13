@@ -52,6 +52,7 @@ const Terms = lazy(() => import("layouts/pages/support/terms"));
 const Privacy = lazy(() => import("layouts/pages/support/privacy"));
 const Gdpr = lazy(() => import("layouts/pages/support/gdpr"));
 const License = lazy(() => import("layouts/pages/support/license"));
+const CustomDev = lazy(() => import("layouts/pages/support/custom-development"));
 
 const routes = [
   {
@@ -111,7 +112,8 @@ const routes = [
       },
       {
         translationKey: "menu.customdev",
-        route: "#",
+        route: "/pages/support/custom-development",
+        component: CustomDev,
       },
       {
         translationKey: "menu.sponsor",

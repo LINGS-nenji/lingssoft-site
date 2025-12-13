@@ -43,7 +43,7 @@ export default {
       items: [
         {
           translationKey: "menu.solutions",
-          route: "#",
+          route: "/pages/company/solutions",
         },
         {
           translationKey: "menu.pricing",
@@ -61,11 +61,11 @@ export default {
         },
         {
           translationKey: "menu.history",
-          route: "#",
+          route: "/pages/company/history",
         },
         {
           translationKey: "menu.values",
-          route: "#",
+          route: "/pages/company/values",
         },
       ],
     },
@@ -83,7 +83,7 @@ export default {
         },
         {
           translationKey: "menu.customdev",
-          route: "#",
+          route: "/pages/support/custom-development",
         },
         {
           translationKey: "menu.sponsor",
