@@ -68,7 +68,7 @@ function ContactUs() {
           mr={{ xs: "auto", lg: 6 }}
         >
           <MKBox
-            bgColor={isDark ? "dark" : "white"}
+            bgColor={isDark ? "#1b1f30" : "white"}
             borderRadius="xl"
             shadow="lg"
             display="flex"
@@ -77,6 +77,10 @@ function ContactUs() {
             mt={{ xs: 20, sm: 18, md: 20 }}
             mb={{ xs: 20, sm: 18, md: 20 }}
             mx={3}
+            sx={{
+              backdropFilter: isDark ? "saturate(200%) blur(30px)" : "none",
+              backgroundColor: isDark ? "rgba(27, 31, 48, 0.85)" : "white",
+            }}
           >
             <MKBox
               variant="gradient"
@@ -92,7 +96,7 @@ function ContactUs() {
               </MKTypography>
             </MKBox>
             <MKBox p={3}>
-              <MKTypography variant="body2" color="text" mb={3}>
+              <MKTypography variant="body2" color={isDark ? "white" : "text"} opacity={isDark ? 0.8 : 1} mb={3}>
                 For further questions, including partnership opportunities, please email
                 hello@creative-tim.com or contact using our contact form.
               </MKTypography>
@@ -102,8 +106,17 @@ function ContactUs() {
                     <MKInput
                       variant="standard"
                       label="Full Name"
-                      InputLabelProps={{ shrink: true }}
+                      InputLabelProps={{ shrink: true, style: { color: isDark ? "white" : "inherit" } }}
                       fullWidth
+                      sx={{
+                        "& .MuiInputBase-root": {
+                          color: isDark ? "white" : "inherit",
+                        },
+                        "& .MuiInputBase-input": {
+                          color: isDark ? "white !important" : "inherit",
+                          WebkitTextFillColor: isDark ? "white !important" : "inherit",
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12} md={6}>
@@ -111,8 +124,17 @@ function ContactUs() {
                       type="email"
                       variant="standard"
                       label="Email"
-                      InputLabelProps={{ shrink: true }}
+                      InputLabelProps={{ shrink: true, style: { color: isDark ? "white" : "inherit" } }}
                       fullWidth
+                      sx={{
+                        "& .MuiInputBase-root": {
+                          color: isDark ? "white" : "inherit",
+                        },
+                        "& .MuiInputBase-input": {
+                          color: isDark ? "white !important" : "inherit",
+                          WebkitTextFillColor: isDark ? "white !important" : "inherit",
+                        },
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -120,10 +142,23 @@ function ContactUs() {
                       variant="standard"
                       label="What can we help you?"
                       placeholder="Describe your problem in at least 250 characters"
-                      InputLabelProps={{ shrink: true }}
+                      InputLabelProps={{ shrink: true, style: { color: isDark ? "white" : "inherit" } }}
                       multiline
                       fullWidth
                       rows={6}
+                      sx={{
+                        "& .MuiInputBase-root": {
+                          color: isDark ? "white" : "inherit",
+                        },
+                        "& .MuiInputBase-input": {
+                          color: isDark ? "white !important" : "inherit",
+                          WebkitTextFillColor: isDark ? "white !important" : "inherit",
+                        },
+                        "& textarea": {
+                          color: isDark ? "white !important" : "inherit",
+                          WebkitTextFillColor: isDark ? "white !important" : "inherit",
+                        },
+                      }}
                     />
                   </Grid>
                 </Grid>
