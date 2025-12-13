@@ -20,13 +20,18 @@ import PropTypes from "prop-types";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
+import { useThemeMode } from "context/ThemeModeContext";
+
 function ListItem({ title, children }) {
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
   return (
     <MKBox p={2}>
-      <MKTypography variant="h5" mb={1}>
+      <MKTypography variant="h5" mb={1} color={isDark ? "white" : "dark"}>
         {title}
       </MKTypography>
-      <MKTypography variant="body2" color="text" mb={2}>
+      <MKTypography variant="body2" color={isDark ? "white" : "text"} opacity={isDark ? 0.8 : 1} mb={2}>
         {children}
       </MKTypography>
     </MKBox>

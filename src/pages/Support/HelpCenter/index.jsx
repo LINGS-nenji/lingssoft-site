@@ -40,7 +40,11 @@ import footerRoutes from "footer.routes";
 // Images
 import bgImage from "assets/images/bg3.jpg";
 
+import { useThemeMode } from "context/ThemeModeContext";
+
 function HelpCenter() {
+  const { mode } = useThemeMode();
+
   return (
     <>
       <DefaultNavbar
@@ -93,16 +97,16 @@ function HelpCenter() {
         </Container>
       </MKBox>
       <Card
-        sx={{
+        sx={({ palette: { white }, functions: { rgba }, boxShadows: { xxl } }) => ({
           p: 2,
           mx: { xs: 2, lg: 3 },
           mt: -8,
           mb: 4,
-          backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba(white.main, 0.8),
+          backgroundColor: mode === "dark" ? "rgba(27, 31, 48, 0.85)" : rgba(white.main, 0.8),
           backdropFilter: "saturate(200%) blur(30px)",
-          boxShadow: ({ boxShadows: { xxl } }) => xxl,
+          boxShadow: xxl,
           overflow: "hidden",
-        }}
+        })}
       >
         <SocialAnalytics />
         <Faq />

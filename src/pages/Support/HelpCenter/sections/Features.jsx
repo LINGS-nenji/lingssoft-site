@@ -33,7 +33,12 @@ import ListItem from "pages/Support/HelpCenter/components/ListItem";
 import bgImage1 from "assets/images/examples/color1.jpg";
 import bgImage2 from "assets/images/examples/color3.jpg";
 
+import { useThemeMode } from "context/ThemeModeContext";
+
 function Features() {
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
   return (
     <MKBox component="section" py={12}>
       <Container>
@@ -63,10 +68,10 @@ function Features() {
               settings
             </Icon>
           </MKBox>
-          <MKTypography variant="h3" mt={3}>
+          <MKTypography variant="h3" mt={3} color={isDark ? "white" : "dark"}>
             How To Handle Them
           </MKTypography>
-          <MKTypography variant="body2" color="text">
+          <MKTypography variant="body2" color={isDark ? "white" : "text"} opacity={isDark ? 0.8 : 1}>
             We&apos;re constantly trying to express ourselves and actualize our dreams. Don&apos;t
             stop.
           </MKTypography>

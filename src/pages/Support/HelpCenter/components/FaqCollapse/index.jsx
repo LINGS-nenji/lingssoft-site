@@ -27,8 +27,12 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 PRO React components
 import borders from "assets/theme/base/borders";
 
+import { useThemeMode } from "context/ThemeModeContext";
+
 function FaqCollapse({ title, open, children, ...rest }) {
   const { borderWidth, borderColor } = borders;
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
 
   return (
     <MKBox mb={2}>
@@ -41,18 +45,18 @@ function FaqCollapse({ title, open, children, ...rest }) {
         borderBottom={`${borderWidth[1]} solid ${borderColor}`}
         sx={{ cursor: "pointer" }}
       >
-        <MKTypography variant="h5" color={open ? "dark" : "text"} sx={{ userSelect: "none" }}>
+        <MKTypography variant="h5" color={isDark ? "white" : (open ? "dark" : "text")} sx={{ userSelect: "none" }}>
           {title}
         </MKTypography>
-        <MKBox color={open ? "dark" : "text"}>
-          <Icon sx={{ fontWeight: "bold" }} fontSize="small">
+        <MKBox color={open || isDark ? "white" : "text"}>
+          <Icon sx={{ fontWeight: "bold", color: isDark ? "white" : (open ? "dark" : "text") }} fontSize="small">
             {open ? "remove" : "add"}
           </Icon>
         </MKBox>
       </MKBox>
       <Collapse timeout={400} in={open}>
         <MKBox py={2} lineHeight={1}>
-          <MKTypography variant="button" color="text" opacity={0.8} fontWeight="regular">
+          <MKTypography variant="button" color={isDark ? "white" : "text"} opacity={isDark ? 0.8 : 1} fontWeight="regular">
             {children}
           </MKTypography>
         </MKBox>

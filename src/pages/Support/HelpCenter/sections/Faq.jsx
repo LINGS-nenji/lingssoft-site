@@ -26,19 +26,23 @@ import MKTypography from "components/MKTypography";
 // HelpCenter page components
 import FaqCollapse from "pages/Support/HelpCenter/components/FaqCollapse";
 
+import { useThemeMode } from "context/ThemeModeContext";
+
 function Faq() {
   const [collapse, setCollapse] = useState(false);
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
 
   return (
     <MKBox component="section" py={12}>
       <Container>
         <Grid container justifyContent="center">
           <Grid item xs={12} md={6} my={6}>
-            <MKTypography variant="h2" align="center" fontWeight="bold" gutterBottom>
+            <MKTypography variant="h2" align="center" fontWeight="bold" gutterBottom color={isDark ? "white" : "dark"}>
               Frequently Asked Questions
             </MKTypography>
             <MKBox mb={2}>
-              <MKTypography variant="body2" align="center" color="text">
+              <MKTypography variant="body2" align="center" color={isDark ? "white" : "text"} opacity={isDark ? 0.8 : 1}>
                 A lot of people don&apos;t appreciate the moment until it&apos;s passed. I&apos;m
                 not trying my hardest, and I&apos;m not trying to do
               </MKTypography>
