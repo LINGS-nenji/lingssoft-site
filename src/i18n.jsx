@@ -66,6 +66,7 @@ i18n
       "values",
       "solutions",
       "customdev",
+      "sponsorships"
     ],
     defaultNS: "common",
     backend: {

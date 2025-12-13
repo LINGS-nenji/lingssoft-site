@@ -87,7 +87,7 @@ export default {
         },
         {
           translationKey: "menu.sponsor",
-          route: "#",
+          route: "/pages/support/sponsorships",
         },
       ],
     },
