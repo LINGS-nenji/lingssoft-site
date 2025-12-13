@@ -32,8 +32,12 @@ import footerRoutes from "footer.routes";
 
 // Image
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
+import { useThemeMode } from "context/ThemeModeContext";
 
 function ContactUs() {
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
   return (
     <>
       <MKBox position="fixed" top="0.5rem" width="100%">
@@ -64,7 +68,7 @@ function ContactUs() {
           mr={{ xs: "auto", lg: 6 }}
         >
           <MKBox
-            bgColor="white"
+            bgColor={isDark ? "dark" : "white"}
             borderRadius="xl"
             shadow="lg"
             display="flex"

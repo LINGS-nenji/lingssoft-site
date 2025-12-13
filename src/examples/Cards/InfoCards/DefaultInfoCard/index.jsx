@@ -23,6 +23,8 @@ import Icon from "@mui/material/Icon";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
+import { useThemeMode } from "context/ThemeModeContext";
+
 function DefaultInfoCard({
   color = "info",
   icon,
@@ -31,6 +33,9 @@ function DefaultInfoCard({
   direction = "left",
   small = false,
 }) {
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
   return (
     <MKBox lineHeight={1} p={direction === "center" ? 2 : 0} textAlign={direction}>
       {typeof icon === "string" ? (
@@ -52,15 +57,17 @@ function DefaultInfoCard({
         fontWeight="bold"
         mt={direction === "center" ? 1 : 2}
         mb={1.5}
+        color={isDark ? "white" : "dark"}
       >
         {title}
       </MKTypography>
       <MKTypography
         display="block"
         variant={small ? "button" : "body2"}
-        color="text"
+        color={isDark ? "white" : "text"}
         pr={direction === "left" ? 6 : 0}
         pl={direction === "right" ? 6 : 0}
+        opacity={isDark ? 0.8 : 1}
       >
         {description}
       </MKTypography>

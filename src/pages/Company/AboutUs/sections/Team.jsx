@@ -26,6 +26,8 @@ import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 
+import { useThemeMode } from "../../../../context/ThemeModeContext";
+
 // Images
 import team1 from "assets/images/team-5.jpg";
 import team2 from "assets/images/bruce-mars.jpg";
@@ -41,6 +43,10 @@ const memberImages = {
 
 function Team() {
   const { t, i18n } = useTranslation("about");
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+  // const isDark = true; // Hardcoded debug
+
   const content = useMemo(() => t("team", { returnObjects: true }) || {}, [t, i18n.language]);
   const members = Array.isArray(content.members) ? content.members : [];
 
@@ -48,7 +54,7 @@ function Team() {
     <MKBox
       component="section"
       variant="gradient"
-      bgColor="dark"
+      bgColor={isDark ? "dark" : "light"}
       position="relative"
       py={6}
       px={{ xs: 2, lg: 0 }}
@@ -57,10 +63,10 @@ function Team() {
       <Container>
         <Grid container>
           <Grid item xs={12} md={8} sx={{ mb: 6 }}>
-            <MKTypography variant="h3" color="white">
+            <MKTypography variant="h3" color={isDark ? "white" : "dark"}>
               {content.title || "The Executive Team"}
             </MKTypography>
-            <MKTypography variant="body2" color="white" opacity={0.8}>
+            <MKTypography variant="body2" color={isDark ? "white" : "text"} opacity={0.8}>
               {content.description ||
                 "There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill."}
             </MKTypography>

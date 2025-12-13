@@ -28,8 +28,13 @@ import macbook from "assets/images/macbook.png";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 
+import { useThemeMode } from "../../../../context/ThemeModeContext";
+
 function Newsletter() {
   const { t, i18n } = useTranslation("about");
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
   const content = useMemo(() => t("newsletter", { returnObjects: true }) || {}, [t, i18n.language]);
 
   return (
@@ -37,10 +42,10 @@ function Newsletter() {
       <Container>
         <Grid container alignItems="center">
           <Grid item xs={12} md={6} sx={{ ml: { xs: 0, lg: 3 }, mb: { xs: 12, md: 0 } }}>
-            <MKTypography variant="h4">
+            <MKTypography variant="h4" color={isDark ? "white" : "dark"}>
               {content.title || "Be the first to see the news"}
             </MKTypography>
-            <MKTypography variant="body2" color="text" mb={3}>
+            <MKTypography variant="body2" color={isDark ? "white" : "text"} mb={3}>
               {content.description ||
                 "Your company may not be in the software business, but eventually, a software company will be in your business."}
             </MKTypography>

@@ -23,10 +23,14 @@ import Grid from "@mui/material/Grid";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import { useThemeMode } from "../../../../context/ThemeModeContext";
 
 function HorizontalTeamCard({ image, name, position, description }) {
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
   return (
-    <Card sx={{ mt: 3 }}>
+    <Card sx={{ mt: 3, bgcolor: isDark ? "#1b1f30" : "white" }}>
       <Grid container>
         <Grid item xs={12} md={6} lg={4} sx={{ mt: -6 }}>
           <MKBox width="100%" pt={2} pb={1} px={2}>
@@ -42,11 +46,11 @@ function HorizontalTeamCard({ image, name, position, description }) {
         </Grid>
         <Grid item xs={12} md={6} lg={8} sx={{ my: "auto" }}>
           <MKBox pt={{ xs: 1, lg: 2.5 }} pb={2.5} pr={4} pl={{ xs: 4, lg: 1 }} lineHeight={1}>
-            <MKTypography variant="h5">{name}</MKTypography>
+            <MKTypography variant="h5" color={isDark ? "white" : "dark"}>{name}</MKTypography>
             <MKTypography variant="h6" color={position.color} mb={1}>
               {position.label}
             </MKTypography>
-            <MKTypography variant="body2" color="text">
+            <MKTypography variant="body2" color={isDark ? "white" : "text"} opacity={isDark ? 0.8 : 1}>
               {description}
             </MKTypography>
           </MKBox>
