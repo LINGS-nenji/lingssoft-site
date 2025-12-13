@@ -27,10 +27,14 @@ import MKTypography from "components/MKTypography";
 // Pricing page components
 import FaqCollapse from "pages/Company/Pricing/components/FaqCollapse";
 import { useTranslation } from "react-i18next";
+import { useThemeMode } from "context/ThemeModeContext";
 
 function Faq() {
   const [collapse, setCollapse] = useState(false);
   const { t } = useTranslation("pricing");
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
   const title = t("faq.title");
   const updated = t("faq.updated");
   const items = t("faq.items", { returnObjects: true }) || [];
@@ -57,7 +61,11 @@ function Faq() {
       <Container>
         <Grid container justifyContent="center">
           <Grid item xs={12} md={10}>
-            <Card>
+            <Card sx={{
+              backgroundColor: isDark ? "rgba(255, 255, 255, 0.05)" : "#ffffff",
+              color: isDark ? "white" : "inherit",
+              boxShadow: isDark ? "none" : undefined,
+            }}>
               <MKBox
                 variant="gradient"
                 bgColor="error"

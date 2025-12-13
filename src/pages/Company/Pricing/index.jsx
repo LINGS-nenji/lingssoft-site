@@ -13,11 +13,12 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// @mui material components
-// import Card from "@mui/material/Card";
+import { useState, useEffect } from "react";
 
-// @mui material hooks
-import { useTheme } from "@mui/material/styles";
+// @mui material components
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
@@ -25,12 +26,8 @@ import MKBox from "components/MKBox";
 // Material Kit 2 PRO React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
-import { useThemeMode } from "context/ThemeModeContext";
 
 // Pricing page sections
-// React hooks
-import { useEffect } from "react";
-
 import Header from "pages/Company/Pricing/sections/Header";
 import AboutUs from "pages/Company/Pricing/sections/AboutUs";
 import PricingSection from "pages/Company/Pricing/sections/Pricing";
@@ -43,12 +40,14 @@ import Faq from "pages/Company/Pricing/sections/Faq";
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
-function Pricing() {
-  const theme = useTheme();
-  const { mode } = useThemeMode();
-  const isDark = mode === "dark" || theme.palette.mode === "dark";
+// Context
+import { useThemeMode } from "context/ThemeModeContext";
 
-  // Debug: log when the Pricing page mounts so we can confirm route rendering in the browser console
+function Pricing() {
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
+  // Debug: log when the Pricing page mounts
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.log("[DEBUG] Pricing component mounted");
@@ -62,14 +61,26 @@ function Pricing() {
         light
       />
       <Header />
-      <MKBox p={3} color={isDark ? "white" : "dark"}>
-        <AboutUs />
-        <PricingSection />
-        <LifetimeMembership />
-        <Testimonials />
-        <Trust />
-        <Faq />
-      </MKBox>
+      <Card
+        sx={{
+          p: 2,
+          mx: { xs: 2, lg: 3 },
+          mt: -8,
+          mb: 4,
+          boxShadow: ({ boxShadows: { xxl } }) => xxl,
+          backgroundColor: isDark ? "rgba(12,10,24,0.85)" : "#ffffff", // Dynamic background
+          color: isDark ? "#ffffff" : "inherit", // Dynamic text color base
+        }}
+      >
+        <MKBox component="section" py={{ xs: 0, lg: 7 }}>
+          <AboutUs />
+          <PricingSection />
+          <LifetimeMembership />
+          <Testimonials />
+          <Trust />
+          <Faq />
+        </MKBox>
+      </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
       </MKBox>

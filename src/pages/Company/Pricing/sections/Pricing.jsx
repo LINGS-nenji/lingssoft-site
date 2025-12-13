@@ -30,38 +30,17 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 PRO React examples
 import DefaultPricingCard from "examples/Cards/PricingCards/DefaultPricingCard";
 import { useTranslation } from "react-i18next";
+import { useThemeMode } from "context/ThemeModeContext";
 
 // Imags
 const bgImage =
   "https://images.unsplash.com/photo-1467541473380-93479a5a3ffa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2246&amp;q=80";
 
-const plansConfig = [
-  {
-    id: "starter",
-    badgeColor: "light",
-    price: { currency: "$", type: "mo", monthly: 59, annual: 119 },
-    actionColor: "dark",
-    specIncludes: [true, true, false, false, false, false],
-  },
-  {
-    id: "premium",
-    badgeColor: "info",
-    cardColor: "dark",
-    price: { currency: "$", type: "mo", monthly: 89, annual: 159 },
-    actionColor: "info",
-    specIncludes: [true, true, true, true, false, false],
-  },
-  {
-    id: "enterprise",
-    badgeColor: "light",
-    price: { currency: "$", type: "mo", monthly: 399, annual: 99 },
-    actionColor: "dark",
-    specIncludes: [true, true, true, true, true, true],
-  },
-];
-
 function Pricing() {
   const { t } = useTranslation("pricing");
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
   const [activeTab, setActiveTab] = useState(0);
   const [tabType, setTabType] = useState("monthly");
   const badgeLabel = t("pricing.badge");
@@ -74,6 +53,33 @@ function Pricing() {
     setActiveTab(newValue);
     setTabType(currentTarget.id);
   };
+
+  const plansConfig = [
+    {
+      id: "starter",
+      badgeColor: isDark ? "info" : "light", // Unify with premium (Info/Blue) in dark mode
+      price: { currency: "$", type: "mo", monthly: 59, annual: 119 },
+      actionColor: isDark ? "info" : "dark",
+      cardColor: isDark ? "dark" : "white",
+      specIncludes: [true, true, false, false, false, false],
+    },
+    {
+      id: "premium",
+      badgeColor: "info",
+      cardColor: "dark", // Always dark to avoid bright white in dark mode
+      price: { currency: "$", type: "mo", monthly: 89, annual: 159 },
+      actionColor: "info",
+      specIncludes: [true, true, true, true, false, false],
+    },
+    {
+      id: "enterprise",
+      badgeColor: isDark ? "info" : "light", // Unify with premium (Info/Blue) in dark mode
+      price: { currency: "$", type: "mo", monthly: 399, annual: 99 },
+      actionColor: isDark ? "info" : "dark",
+      cardColor: isDark ? "dark" : "white",
+      specIncludes: [true, true, true, true, true, true],
+    },
+  ];
 
   return (
     <MKBox component="section" py={{ xs: 0, lg: 7 }}>
@@ -119,8 +125,20 @@ function Pricing() {
         <Container>
           <Grid container sx={{ mb: 6 }}>
             <Grid item xs={7} md={6} lg={4} sx={{ mx: "auto", textAlign: "center" }}>
-              <AppBar position="static">
-                <Tabs value={activeTab} onChange={handleTabType}>
+              <AppBar position="static" sx={{ bgcolor: isDark ? "#1b1f30" : "white" }}>
+                <Tabs value={activeTab} onChange={handleTabType}
+                  sx={{
+                    "& .MuiTabs-indicator": {
+                      backgroundColor: "info.main", // Use info color for the indicator
+                    },
+                    "& .MuiTab-root": {
+                      color: isDark ? "rgba(255,255,255,0.7)" : "inherit",
+                      "&.Mui-selected": {
+                        color: isDark ? "white" : "inherit",
+                      }
+                    }
+                  }}
+                >
                   <Tab
                     id="monthly"
                     label={

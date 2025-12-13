@@ -30,8 +30,12 @@ import pinterest from "assets/images/logos/gray-logos/logo-pinterest.svg";
 import spotify from "assets/images/logos/gray-logos/logo-spotify.svg";
 import vodafone from "assets/images/logos/gray-logos/logo-vodafone.svg";
 
+import { useThemeMode } from "context/ThemeModeContext";
+
 function Trust() {
   const { t } = useTranslation("pricing");
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
   const title = t("trust.title");
 
   return (
@@ -44,7 +48,7 @@ function Trust() {
           xs={8}
           sx={{ mx: "auto", textAlign: "center" }}
         >
-          <MKTypography variant="h6" opacity={0.5}>
+          <MKTypography variant="h6" opacity={0.5} color={isDark ? "white" : "dark"}>
             {title}
           </MKTypography>
         </Grid>
