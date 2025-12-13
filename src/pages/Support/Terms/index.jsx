@@ -66,29 +66,44 @@ function Terms() {
   return (
     <>
       <DefaultNavbar routes={routes} sticky />
-      <MKBox component="section" pt={20} pb={12}>
+      <MKBox
+        minHeight="50vh"
+        width="100%"
+        sx={{
+          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
+            `${linearGradient(
+              rgba(gradients.dark.main, 0.6),
+              rgba(gradients.dark.state, 0.6)
+            )}, url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "grid",
+          placeItems: "center",
+        }}
+      />
+      <MKBox component="section" pt={6} pb={6} mt={-24}>
         <Container>
           <Grid container justifyContent="center">
             <Grid item xs={12}>
               <Card
                 sx={({ palette, boxShadows }) => ({
                   backgroundColor:
-                    palette.mode === "dark" ? palette.background.paper : palette.background.default,
-                  color: palette.mode === "dark" ? palette.grey[100] : palette.text.primary,
-                  boxShadow: palette.mode === "dark" ? boxShadows.md : boxShadows.xxl,
-                  border: `1px solid ${
-                    palette.mode === "dark" ? palette.grey[800] : palette.grey[200]
-                  }`,
+                    palette.mode === "dark" ? "rgba(27, 31, 48, 0.85)" : "rgba(255, 255, 255, 0.85)",
+                  backdropFilter: "saturate(200%) blur(30px)",
+                  color: palette.mode === "dark" ? "white" : palette.text.primary,
+                  boxShadow: boxShadows.xxl,
+                  border: "none",
                 })}
               >
                 <MKBox
                   variant="gradient"
-                  bgColor="dark"
+                  bgColor="info"
                   borderRadius="lg"
-                  coloredShadow="dark"
+                  coloredShadow="info"
                   p={3}
                   mt={-3}
                   mx={2}
+                  textAlign="center"
                 >
                   <MKTypography variant="h3" color="white">
                     {title}
@@ -97,17 +112,18 @@ function Terms() {
                     {updated}
                   </MKTypography>
                 </MKBox>
-                <MKBox pb={6} px={{ xs: 3, md: 6 }}>
+                <MKBox pb={6} px={{ xs: 3, md: 6 }} pt={4}>
                   {sections.map((section, index) => (
-                    <MKBox key={section.title || `section-${index}`} mt={index === 0 ? 6 : 4}>
-                      <MKTypography variant="h5" mb={2}>
+                    <MKBox key={section.title || `section-${index}`} mt={index === 0 ? 0 : 4}>
+                      <MKTypography variant="h5" mb={2} color={sections.titleColor || "inherit"}>
                         {section.title}
                       </MKTypography>
                       {section.paragraphs?.map((_, paragraphIdx) => (
                         <MKTypography
                           key={`${section.title || index}-paragraph-${paragraphIdx}`}
                           variant="body2"
-                          color="text"
+                          color="inherit"
+                          opacity={0.8}
                           mb={1.5}
                         >
                           <Trans
@@ -126,7 +142,7 @@ function Terms() {
                               key={`${section.title || index}-bullet-${bulletIdx}`}
                               mb={1}
                             >
-                              <MKTypography variant="body2" color="text">
+                              <MKTypography variant="body2" color="inherit" opacity={0.8}>
                                 <Trans
                                   ns="terms"
                                   i18nKey={`sections.${index}.bullets.${bulletIdx}`}
