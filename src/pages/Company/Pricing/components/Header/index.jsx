@@ -26,9 +26,15 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 // Material Kit 2 PRO React examples
+// Material Kit 2 PRO React examples
 import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
+import { useThemeMode } from "context/ThemeModeContext";
+
 function Header({ image, label, title, description, cards, actionLabel }) {
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
   return (
     <>
       <MKBox
@@ -84,6 +90,9 @@ function Header({ image, label, title, description, cards, actionLabel }) {
           mt: -8,
           mb: 4,
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
+          backgroundColor: ({ palette: { white }, functions: { rgba } }) =>
+            isDark ? "rgba(27, 31, 48, 0.85)" : rgba(white.main, 0.8),
+          backdropFilter: "saturate(200%) blur(30px)",
         }}
       >
         <Grid container spacing={2}>

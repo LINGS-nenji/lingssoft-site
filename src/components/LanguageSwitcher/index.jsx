@@ -1,28 +1,47 @@
-import React from "react";
-import FormControl from "@mui/material/FormControl";
+import React, { useState } from "react";
+// @mui material components
+import IconButton from "@mui/material/IconButton";
+import Icon from "@mui/material/Icon";
+import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
+import Tooltip from "@mui/material/Tooltip";
+
+// react-router components
 import { useLocation, useNavigate } from "react-router-dom";
 import i18n from "../../i18n";
+import { useThemeMode } from "context/ThemeModeContext";
 
 const langs = [
-  { code: "en", label: "ENGLISH" },
-  { code: "ko", label: "한국어" },
-  { code: "ja", label: "日本語" },
-  { code: "zh", label: "中文" },
+  { code: "en", label: "English", flag: "🇺🇸" },
+  { code: "ko", label: "한국어", flag: "🇰🇷" },
+  { code: "ja", label: "日本語", flag: "🇯🇵" },
+  { code: "zh", label: "中文", flag: "🇨🇳" },
 ];
 
 export default function LanguageSwitcher() {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
   const location = useLocation();
   const navigate = useNavigate();
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
 
-  const change = (e) => {
-    const lng = e.target.value;
+  const handleOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const changeLanguage = (lng) => {
     const parts = location.pathname.split("/").filter(Boolean);
 
+    // If current path starts with a language code, replace it
     if (langs.some((l) => l.code === parts[0])) {
       parts[0] = lng;
     } else {
+      // Otherwise, prepend the language code (fallback logic)
       parts.unshift(lng);
     }
 
@@ -31,79 +50,62 @@ export default function LanguageSwitcher() {
 
     i18n.changeLanguage(lng);
     navigate(`${newPath}${suffix}`, { replace: true });
+    handleClose();
   };
 
-  // Determine current language: prefer URL path, then i18n language (normalized), then 'en'
-  const parts = location.pathname.split("/").filter(Boolean);
-  const langFromPath = langs.some((l) => l.code === parts[0]) ? parts[0] : null;
-  const i18nLang = (i18n.language || i18n.resolvedLanguage || "").split("-")[0] || null;
-  const currentLang = langFromPath || i18nLang || "en";
-
   return (
-    <FormControl
-      size="small"
-      sx={{
-        minWidth: { xs: 80, md: 110 },
-        maxWidth: { xs: "40%", md: 140 },
-        width: { xs: "40%", md: "auto" },
-      }}
-    >
-      <Select
-        value={currentLang}
-        onChange={change}
-        displayEmpty
-        variant="outlined"
-        sx={(theme) => ({
-          fontSize: 13,
-          fontWeight: 600,
-          height: 34,
-          borderRadius: theme.shape.borderRadius,
-          backgroundColor:
-            theme.palette.mode === "dark" ? theme.palette.grey[900] : "rgba(255, 255, 255, 0.9)",
-          color:
-            theme.palette.mode === "dark" ? theme.palette.grey[100] : theme.palette.text.primary,
-          width: "100%",
-          "& .MuiSelect-select": {
-            py: 0.5,
-            pl: 1.25,
-            pr: 1.25,
-            fontWeight: 600,
-            textAlign: "center",
-          },
-          "& .MuiOutlinedInput-notchedOutline": {
-            borderColor:
-              theme.palette.mode === "dark" ? theme.palette.grey[700] : "rgba(255, 255, 255, 0.6)",
-          },
-          "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor:
-              theme.palette.mode === "dark" ? theme.palette.grey[500] : theme.palette.info.main,
-          },
-          "& .MuiSelect-icon": {
-            color:
-              theme.palette.mode === "dark" ? theme.palette.grey[100] : theme.palette.text.primary,
-          },
-        })}
-        MenuProps={{
-          PaperProps: {
-            sx: (theme) => ({
-              backgroundColor:
-                theme.palette.mode === "dark"
-                  ? theme.palette.grey[900]
-                  : theme.palette.background.default,
-            }),
+    <>
+      <Tooltip title="Select Language">
+        <IconButton
+          onClick={handleOpen}
+          size="small"
+          sx={({ palette }) => ({
+            ml: 1,
+            color: isDark ? palette.white.main : palette.dark.main,
+            transition: "all 0.3s ease",
+            "&:hover": {
+              backgroundColor: isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.05)",
+              transform: "scale(1.1)",
+            },
+          })}
+        >
+          <Icon fontSize="medium">language</Icon>
+        </IconButton>
+      </Tooltip>
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        transformOrigin={{ horizontal: "right", vertical: "top" }}
+        anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+        sx={{
+          "& .MuiPaper-root": {
+            backgroundColor: isDark ? "#1b1f30" : "#ffffff",
+            color: isDark ? "#ffffff" : "#344767",
+            boxShadow: "0 8px 16px rgba(0,0,0,0.15)",
+            borderRadius: "12px",
+            minWidth: "160px",
           },
         }}
       >
         {langs.map((l) => (
           <MenuItem
             key={l.code}
-            value={l.code}
-            sx={{ fontSize: 13, fontWeight: 600, justifyContent: "left" }}
+            onClick={() => changeLanguage(l.code)}
+            sx={{
+              fontSize: "14px",
+              fontWeight: 500,
+              padding: "10px 20px",
+              "&:hover": {
+                backgroundColor: isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.05)",
+              },
+            }}
           >
+            <span style={{ marginRight: "10px", fontSize: "16px" }}>{l.flag}</span>
             {l.label}
           </MenuItem>
         ))}
-      </Select>
-    </FormControl>
+      </Menu>
+    </>
   );
 }
