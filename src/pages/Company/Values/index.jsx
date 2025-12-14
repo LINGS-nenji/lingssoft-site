@@ -25,6 +25,8 @@ import footerRoutes from "footer.routes";
 import { useTranslation } from "react-i18next";
 import { useThemeMode } from "context/ThemeModeContext";
 
+import valuesHero from "assets/images/values-hero.png";
+
 const canopyPalette = {
   light: {
     background: "#f6f4ff",
@@ -77,7 +79,7 @@ function Values() {
       <DefaultNavbar
         routes={routes}
         transparent
-        light={isDark}
+        light
       />
       <MKBox
         component="header"
@@ -86,41 +88,31 @@ function Values() {
           position: "relative",
           display: "flex",
           alignItems: "center",
-          backgroundColor: colors.background,
+          backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
+            `${linearGradient(
+              rgba(gradients.dark.main, 0.8),
+              rgba(gradients.dark.state, 0.8)
+            )}, url(${valuesHero})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           overflow: "hidden",
           pt: 10,
         }}
       >
-        <MKBox
-          sx={{
-            position: "absolute",
-            inset: 0,
-            pointerEvents: "none",
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              top: "-20%",
-              right: "-10%",
-              width: "60%",
-              height: "70%",
-              background: `radial-gradient(circle, ${colors.accentSoft}, transparent 70%)`,
-            },
-          }}
-        />
         <Container sx={{ position: "relative", zIndex: 1 }}>
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={7}>
-              <MKTypography variant="button" fontWeight="bold" sx={{ color: colors.textSecondary }}>
+              <MKTypography variant="button" fontWeight="bold" color="white" sx={{ opacity: 0.8 }}>
                 {hero.eyebrow || "Company values"}
               </MKTypography>
-              <MKTypography variant="h2" mt={1} mb={1.5} sx={{ color: colors.textPrimary }}>
+              <MKTypography variant="h2" mt={1} mb={1.5} color="white">
                 {hero.title || "We grow with purpose"}
               </MKTypography>
-              <MKTypography variant="body1" sx={{ color: colors.textSecondary, maxWidth: 520, lineHeight: 1.7 }}>
+              <MKTypography variant="body1" color="white" sx={{ opacity: 0.8, maxWidth: 520, lineHeight: 1.7 }}>
                 {hero.description ||
                   "Inspired by evergreen culture pillars, we translate bold ideas into dependable systems."}
               </MKTypography>
-              <MKTypography variant="subtitle2" mt={2} sx={{ color: colors.accent }}>
+              <MKTypography variant="subtitle2" mt={2} sx={{ color: "#a5b4fc" }}>
                 {hero.tagline || "Every release should feel like care."}
               </MKTypography>
               <MKBox
@@ -132,11 +124,13 @@ function Values() {
                 sx={{
                   p: 2,
                   borderRadius: "16px",
-                  backgroundColor: colors.surface,
+                  backgroundColor: "rgba(255, 255, 255, 0.1)", // Glass effect
+                  backdropFilter: "blur(10px)",
                   boxShadow: ({ boxShadows: { md } }) => md,
+                  border: "1px solid rgba(255, 255, 255, 0.2)",
                 }}
               >
-                <MKTypography variant="button" sx={{ color: colors.textPrimary }} textTransform="uppercase">
+                <MKTypography variant="button" color="white" textTransform="uppercase">
                   {toggleLabel}
                 </MKTypography>
                 <ToggleButtonGroup
