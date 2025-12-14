@@ -20,6 +20,8 @@ import footerRoutes from "footer.routes";
 import { useTranslation } from "react-i18next";
 import { useThemeMode } from "context/ThemeModeContext";
 
+import historyHero from "assets/images/history-hero.png";
+
 const canopyPalette = {
   light: {
     background: "#f5f6f0",
@@ -83,14 +85,20 @@ function History() {
       <DefaultNavbar
         routes={routes}
         transparent
-        light={isDark}
+        light
       />
       <MKBox
         component="header"
         minHeight="75vh"
         sx={{
-          backgroundColor: colors.background,
-          color: colors.textPrimary,
+          backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
+            `${linearGradient(
+              rgba(gradients.dark.main, 0.8),
+              rgba(gradients.dark.state, 0.8)
+            )}, url(${historyHero})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          color: "white",
           position: "relative",
           overflow: "hidden",
           pt: 12,
@@ -98,34 +106,19 @@ function History() {
           alignItems: "center",
         }}
       >
-        <MKBox
-          sx={{
-            position: "absolute",
-            inset: 0,
-            pointerEvents: "none",
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              top: "-20%",
-              left: "-10%",
-              width: "140%",
-              height: "70%",
-              background: `radial-gradient(circle, ${colors.canopy} 0%, transparent 60%)`,
-            },
-          }}
-        />
         <Container sx={{ position: "relative", zIndex: 1 }}>
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={7}>
-              <MKTypography variant="button" color="text" fontWeight="bold" textTransform="uppercase">
+              <MKTypography variant="button" color="white" fontWeight="bold" textTransform="uppercase">
                 {hero.eyebrow || "Company history"}
               </MKTypography>
-              <MKTypography variant="h2" mt={1} mb={2} sx={{ color: colors.textPrimary }}>
+              <MKTypography variant="h2" mt={1} mb={2} color="white">
                 {hero.title || "Roots of trust, branches of innovation"}
               </MKTypography>
               <MKTypography
                 variant="body1"
-                sx={{ color: colors.textSecondary, maxWidth: 520, lineHeight: 1.7 }}
+                color="white"
+                sx={{ opacity: 0.8, maxWidth: 520, lineHeight: 1.7 }}
               >
                 {hero.description ||
                   "Follow how each release, partnership, and award reshaped our canopy."}
@@ -139,14 +132,16 @@ function History() {
                 sx={{
                   p: 2,
                   borderRadius: "16px",
-                  backgroundColor: colors.surface,
+                  backgroundColor: "rgba(255, 255, 255, 0.1)", // Glass effect
+                  backdropFilter: "blur(10px)",
                   boxShadow: ({ boxShadows: { md } }) => md,
+                  border: "1px solid rgba(255, 255, 255, 0.2)",
                 }}
               >
                 <MKTypography
                   variant="button"
                   fontWeight="bold"
-                  sx={{ color: colors.textPrimary }}
+                  sx={{ color: "white" }}
                   textTransform="uppercase"
                 >
                   {toggleLabel}
@@ -180,8 +175,9 @@ function History() {
               <MKBox
                 sx={{
                   borderRadius: "28px",
-                  border: `1px solid ${colors.accentSoft}`,
-                  background: `linear-gradient(180deg, ${colors.accentSoft}, transparent)`,
+                  border: `1px solid rgba(255, 255, 255, 0.2)`,
+                  background: `linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent)`,
+                  backdropFilter: "blur(10px)",
                   p: 3,
                 }}
               >
@@ -189,24 +185,25 @@ function History() {
                   variant="subtitle2"
                   textTransform="uppercase"
                   mb={1}
-                  sx={{ color: colors.textSecondary }}
+                  color="white"
+                  sx={{ opacity: 0.8 }}
                 >
                   {hero.latestLabel || "Latest chapter"}
                 </MKTypography>
                 <MKBox display="flex" alignItems="flex-start" gap={2}>
                   <Icon
                     sx={{
-                      color: colors.accent,
+                      color: "#bbf7d0", // Light green accent
                       fontSize: "2.5rem",
                     }}
                   >
                     eco
                   </Icon>
-                  <MKTypography variant="h4" sx={{ color: colors.textPrimary }}>
+                  <MKTypography variant="h4" color="white">
                     {timeline[0]?.title || timeline[0]?.year || "2025"}
                   </MKTypography>
                 </MKBox>
-                <MKTypography variant="body2" mt={2} sx={{ color: colors.textSecondary }}>
+                <MKTypography variant="body2" mt={2} color="white" sx={{ opacity: 0.8 }}>
                   {timeline[0]?.description ||
                     "A new milestone is sprouting together with our partners across the region."}
                 </MKTypography>
