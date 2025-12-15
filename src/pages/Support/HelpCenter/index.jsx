@@ -44,6 +44,7 @@ import { useThemeMode } from "context/ThemeModeContext";
 
 function HelpCenter() {
   const { mode } = useThemeMode();
+  const isDark = mode === "dark";
 
   return (
     <>
