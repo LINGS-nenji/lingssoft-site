@@ -60,7 +60,7 @@ function DefaultNavbarDropdown({
         display="flex"
         alignItems="baseline"
         color={light ? "white" : "dark"}
-        opacity={light || active ? 1 : 0.6}
+        opacity={1}
         sx={{ cursor: "pointer", userSelect: "none" }}
         {...(route && routeComponent)}
         {...(href && linkComponent)}
