@@ -111,8 +111,9 @@ function AboutUsContent() {
         <>
             <DefaultNavbar
                 routes={routes}
-                transparent
-                light
+                sticky
+                light={isDark}
+                transparent={false}
             />
             <MKBox
                 ref={headerRef}

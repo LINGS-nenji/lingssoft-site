@@ -51,8 +51,9 @@ function Solutions() {
         <>
             <DefaultNavbar
                 routes={routes}
-                transparent
-                light
+                sticky
+                light={isDark}
+                transparent={false}
             />
             <MKBox
                 minHeight="75vh"

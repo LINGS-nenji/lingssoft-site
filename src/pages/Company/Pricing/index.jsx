@@ -57,8 +57,9 @@ function Pricing() {
     <>
       <DefaultNavbar
         routes={routes}
-        transparent
-        light
+        sticky
+        light={isDark}
+        transparent={false}
       />
       <Header />
       <Card

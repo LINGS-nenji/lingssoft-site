@@ -78,8 +78,9 @@ function Values() {
     <>
       <DefaultNavbar
         routes={routes}
-        transparent
-        light
+        sticky
+        light={isDark}
+        transparent={false}
       />
       <MKBox
         component="header"
