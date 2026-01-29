@@ -17,7 +17,7 @@ Coded by www.creative-tim.com
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 // Routes
-import routes from "routes";
+import routes from "routes/routes";
 
 function NavbarBlur() {
   return (

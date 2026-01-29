@@ -15,8 +15,8 @@ import MKTypography from "components/MKTypography";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 
-import routes from "routes";
-import footerRoutes from "footer.routes";
+import routes from "routes/routes";
+import footerRoutes from "routes/footer.routes";
 import { useTranslation } from "react-i18next";
 import { useThemeMode } from "context/ThemeModeContext";
 

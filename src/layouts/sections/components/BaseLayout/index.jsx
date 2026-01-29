@@ -30,7 +30,7 @@ import CenteredFooter from "examples/Footers/CenteredFooter";
 import Breadcrumbs from "examples/Breadcrumbs";
 
 // Routes
-import routes from "routes";
+import routes from "routes/routes";
 
 function BaseLayout({ breadcrumb, title, children }) {
   return (

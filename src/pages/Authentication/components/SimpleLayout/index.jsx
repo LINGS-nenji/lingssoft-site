@@ -28,7 +28,7 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import CenteredFooter from "examples/Footers/CenteredFooter";
 
 // Material kit 2 PRO React page layout routes
-import routes from "routes";
+import routes from "routes/routes";
 
 function SimpleLayout({ children }) {
   return (

@@ -27,7 +27,7 @@ import MKTypography from "components/MKTypography";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 // Material Kit 2 PRO React page layout routes
-import routes from "routes";
+import routes from "routes/routes";
 
 function IllustrationLayout({
   header = "",

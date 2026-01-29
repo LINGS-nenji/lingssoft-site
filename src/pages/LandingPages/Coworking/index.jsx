@@ -35,8 +35,8 @@ import AboutUs from "pages/LandingPages/Coworking/sections/AboutUs";
 import Places from "pages/LandingPages/Coworking/sections/Places";
 
 // Routes
-import routes from "routes";
-import footerRoutes from "footer.routes";
+import routes from "routes/routes";
+import footerRoutes from "routes/footer.routes";
 
 // Images
 import bgImage from "assets/images/bg-coworking.jpeg";

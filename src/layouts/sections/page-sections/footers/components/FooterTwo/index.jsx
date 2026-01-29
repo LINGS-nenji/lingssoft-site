@@ -17,7 +17,7 @@ Coded by www.creative-tim.com
 import DefaultFooter from "examples/Footers/DefaultFooter";
 
 // routes
-import footerRoutes from "footer.routes";
+import footerRoutes from "routes/footer.routes";
 
 function FooterTwo() {
   return <DefaultFooter content={footerRoutes} />;

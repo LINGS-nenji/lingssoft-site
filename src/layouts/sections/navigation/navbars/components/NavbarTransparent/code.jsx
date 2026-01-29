@@ -2,7 +2,7 @@ const navbarTransparentCode = `// Material Kit 2 PRO React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 // Routes
-import routes from "routes";
+import routes from "routes/routes";
 
 function NavbarTransparent() {
   return (

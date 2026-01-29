@@ -34,8 +34,8 @@ import Security from "pages/Company/Solutions/sections/Security";
 import Education from "pages/Company/Solutions/sections/Education";
 
 // Routes
-import routes from "routes";
-import footerRoutes from "footer.routes";
+import routes from "routes/routes";
+import footerRoutes from "routes/footer.routes";
 
 // Images
 import bgImage from "assets/images/solutions_bg_data_sovereignty.png";

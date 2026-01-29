@@ -37,8 +37,8 @@ import Trust from "pages/Company/Pricing/sections/Trust";
 import Faq from "pages/Company/Pricing/sections/Faq";
 
 // Routes
-import routes from "routes";
-import footerRoutes from "footer.routes";
+import routes from "routes/routes";
+import footerRoutes from "routes/footer.routes";
 
 // Context
 import { useThemeMode } from "context/ThemeModeContext";

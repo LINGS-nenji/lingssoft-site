@@ -34,8 +34,8 @@ import Faq from "pages/LandingPages/Rental/sections/Faq";
 import Contact from "pages/LandingPages/Rental/sections/Contact";
 
 // Routes
-import routes from "routes";
-import footerRoutes from "footer.routes";
+import routes from "routes/routes";
+import footerRoutes from "routes/footer.routes";
 
 // Images
 import bgImage from "assets/images/bg-rental.jpeg";

@@ -33,7 +33,7 @@ import SimpleInfoCard from "examples/Cards/InfoCards/SimpleInfoCard";
 import FaqCollapse from "pages/Support/Faq/components/FaqCollapse";
 
 // Routes
-import routes from "routes";
+import routes from "routes/routes";
 
 function Faq() {
   const [collapse, setCollapse] = useState(false);

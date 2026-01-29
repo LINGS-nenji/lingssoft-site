@@ -33,8 +33,8 @@ import Donation from "./sections/Donation";
 import Contact from "../HelpCenter/sections/Contact";
 
 // Routes
-import routes from "routes";
-import footerRoutes from "footer.routes";
+import routes from "routes/routes";
+import footerRoutes from "routes/footer.routes";
 
 // Images
 import bgImage from "assets/images/sponsorships-hero.png";

@@ -13,7 +13,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 const Presentation = lazy(() => import("layouts/pages/presentation"));
 
 // Material Kit 2 PRO React routes
-import routes from "routes";
+import routes from "routes/routes";
 // import Header from "components/Header";
 import { useThemeMode } from "context/ThemeModeContext";
 

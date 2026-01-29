@@ -28,7 +28,7 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import SimpleFooter from "examples/Footers/SimpleFooter";
 
 // Material kit 2 PRO React page layout routes
-import routes from "routes";
+import routes from "routes/routes";
 
 function CoverLayout({ coverHeight = "35vh", image, children }) {
   return (

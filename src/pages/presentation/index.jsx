@@ -32,8 +32,8 @@ import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 import { useThemeMode } from "context/ThemeModeContext";
 
 // Routes
-import routes from "routes";
-import footerRoutes from "footer.routes";
+import routes from "routes/routes";
+import footerRoutes from "routes/footer.routes";
 
 // Images
 import bgImage from "assets/images/nastuh.jpg";

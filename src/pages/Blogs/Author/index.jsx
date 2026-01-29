@@ -29,7 +29,7 @@ import Contact from "pages/Blogs/Author/sections/Contact";
 import Footer from "pages/Blogs/Author/sections/Footer";
 
 // Routes
-import routes from "routes";
+import routes from "routes/routes";
 
 // Images
 import bgImage from "assets/images/city-profile.jpg";

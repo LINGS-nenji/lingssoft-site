@@ -5,7 +5,7 @@ import MKBox from "components/MKBox";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 // Routes
-import routes from "routes";
+import routes from "routes/routes";
 
 function NavbarDark() {
   return (

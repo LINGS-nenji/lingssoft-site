@@ -33,8 +33,8 @@ import WhyChooseUs from "./sections/WhyChooseUs";
 import Contact from "../HelpCenter/sections/Contact"; // Reusing Contact from HelpCenter -> verify if suitable or create new? Contact from HelpCenter is "ContactUs" with "We are here for you".
 
 // Routes
-import routes from "routes";
-import footerRoutes from "footer.routes";
+import routes from "routes/routes";
+import footerRoutes from "routes/footer.routes";
 
 // Images
 import bgImage from "assets/images/custom-dev-hero.png";

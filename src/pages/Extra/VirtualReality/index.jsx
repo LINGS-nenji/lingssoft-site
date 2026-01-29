@@ -37,8 +37,8 @@ import MediaPlayer from "pages/Extra/VirtualReality/components/MediaPlayer";
 import Messages from "pages/Extra/VirtualReality/components/Messages";
 
 // Routes
-import routes from "routes";
-import footerRoutes from "footer.routes";
+import routes from "routes/routes";
+import footerRoutes from "routes/footer.routes";
 
 // Images
 import bgImage from "assets/images/vr-bg.jpg";

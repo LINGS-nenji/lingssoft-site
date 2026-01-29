@@ -34,8 +34,8 @@ import Testimonials from "pages/Apps/DesktopApp/sections/Testimonials";
 import Pricing from "pages/Apps/DesktopApp/sections/Pricing";
 
 // Routes
-import routes from "routes";
-import footerRoutes from "footer.routes";
+import routes from "routes/routes";
+import footerRoutes from "routes/footer.routes";
 
 function DesktopApp() {
   return (
