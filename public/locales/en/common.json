@@ -20,7 +20,8 @@
     "license": "Licenses (EULA)",
     "all_products": "All Products",
     "ai_devops": "ECO AI DevOps",
-    "security": "Enterprise Security"
+    "security": "Enterprise Security",
+    "education": "EduTech Platform"
   },
   "site": { "title": "LINGSSOFT" },
   "theme": {

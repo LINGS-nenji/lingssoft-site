@@ -54,6 +54,10 @@ export default {
           route: "/pages/items/security",
         },
         {
+          translationKey: "menu.education",
+          route: "/pages/items/education",
+        },
+        {
           translationKey: "menu.pricing",
           route: "/pages/company/pricing",
         },

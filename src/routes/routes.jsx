@@ -56,6 +56,7 @@ const CustomDev = lazy(() => import("layouts/pages/support/custom-development"))
 const Sponsorships = lazy(() => import("layouts/pages/support/sponsorships"));
 const EcoAIDevOpsPlatform = lazy(() => import("pages/Items/DevOps"));
 const EnterpriseSecuritySuite = lazy(() => import("pages/Items/Security"));
+const EduTechPlatform = lazy(() => import("pages/Items/Education"));
 
 const routes = [
   {
@@ -81,6 +82,11 @@ const routes = [
             translationKey: "menu.security",
             route: "/pages/items/security",
             component: EnterpriseSecuritySuite,
+          },
+          {
+            translationKey: "menu.education",
+            route: "/pages/items/education",
+            component: EduTechPlatform,
           },
         ],
       },
