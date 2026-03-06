@@ -18,22 +18,20 @@ import DefaultFooter from "examples/Footers/DefaultFooter";
 import routes from "routes/routes";
 import footerRoutes from "routes/footer.routes";
 
+import { useThemeMode } from "context/ThemeModeContext";
+
 const EnterpriseSecuritySuite = () => {
   const { t } = useTranslation("solutions");
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
 
   return (
     <>
       <DefaultNavbar
         routes={routes}
-        action={{
-          type: "internal",
-          route: "/pages/support/contact-us",
-          label: "Contact Us",
-          color: "default",
-        }}
-        transparent
-        light
         sticky
+        light={isDark}
+        transparent={false}
       />
       <MKBox
         minHeight="75vh"
@@ -84,6 +82,8 @@ const EnterpriseSecuritySuite = () => {
           mt: -8,
           mb: 4,
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
+          backgroundColor: isDark ? "rgba(12,10,24,0.85)" : "#ffffff", // Dynamic background
+          color: isDark ? "#ffffff" : "inherit", // Dynamic text color base
         }}
       >
         <MKBox component="section" py={6}>
@@ -91,7 +91,7 @@ const EnterpriseSecuritySuite = () => {
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {(t("security.features", { returnObjects: true }) || []).map((feature, index) => (
                 <div key={index} className="pt-6">
-                  <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8 shadow-sm h-full hover:shadow-md transition-shadow duration-300">
+                  <div className={`flow-root ${isDark ? 'bg-gray-800' : 'bg-gray-50'} rounded-lg px-6 pb-8 shadow-sm h-full hover:shadow-md transition-shadow duration-300`}>
                     <div className="-mt-6">
                       <div className="inline-flex items-center justify-center p-3 bg-emerald-600 rounded-md shadow-lg">
                         <svg
@@ -109,7 +109,7 @@ const EnterpriseSecuritySuite = () => {
                           />
                         </svg>
                       </div>
-                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                      <h3 className={`mt-8 text-lg font-medium ${isDark ? 'text-white' : 'text-gray-900'} tracking-tight`}>
                         {feature}
                       </h3>
                     </div>
@@ -128,3 +128,4 @@ const EnterpriseSecuritySuite = () => {
 };
 
 export default EnterpriseSecuritySuite;
+
