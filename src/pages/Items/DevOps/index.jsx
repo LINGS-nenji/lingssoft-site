@@ -82,6 +82,8 @@ const EcoAIDevOpsPlatform = () => {
           mt: -8,
           mb: 4,
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
+          backgroundColor: isDark ? "rgba(12,10,24,0.85)" : "#ffffff", // Dynamic background
+          color: isDark ? "#ffffff" : "inherit", // Dynamic text color base
         }}
       >
         <MKBox component="section" py={6}>
@@ -89,7 +91,7 @@ const EcoAIDevOpsPlatform = () => {
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {(t('ai.features', { returnObjects: true }) || []).map((feature, index) => (
                 <div key={index} className="pt-6">
-                  <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8 shadow-sm h-full hover:shadow-md transition-shadow duration-300">
+                  <div className={`flow-root ${isDark ? 'bg-gray-800' : 'bg-gray-50'} rounded-lg px-6 pb-8 shadow-sm h-full hover:shadow-md transition-shadow duration-300`}>
                     <div className="-mt-6">
                       <div className="inline-flex items-center justify-center p-3 bg-indigo-600 rounded-md shadow-lg">
                         {/* Lightning icon for DevOps/Speed */}
@@ -97,7 +99,7 @@ const EcoAIDevOpsPlatform = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                       </div>
-                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">{feature}</h3>
+                      <h3 className={`mt-8 text-lg font-medium ${isDark ? 'text-white' : 'text-gray-900'} tracking-tight`}>{feature}</h3>
                     </div>
                   </div>
                 </div>
