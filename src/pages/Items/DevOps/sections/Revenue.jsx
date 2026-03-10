@@ -21,7 +21,7 @@ function Revenue() {
     const revenueItems = t("ai.revenue.items", { returnObjects: true }) || [];
 
     return (
-        <MKBox component="section" py={12} bgColor={isDark ? "dark" : "grey-100"}>
+        <MKBox component="section" py={12} bgColor={isDark ? "transparent" : "grey-100"}>
             <Container>
                 <Grid container justifyContent="center" sx={{ textAlign: "center", mb: 6 }}>
                     <Grid item xs={12} md={8}>
@@ -38,9 +38,10 @@ function Revenue() {
                                 textAlign="center"
                                 sx={{
                                     height: "100%",
-                                    backgroundColor: isDark ? "rgba(255,255,255,0.05)" : "white",
+                                    backgroundColor: isDark ? "rgba(255,255,255,0.03)" : "white",
                                     borderRadius: "xl",
-                                    boxShadow: ({ boxShadows: { md } }) => md
+                                    boxShadow: isDark ? "none" : ({ boxShadows: { md } }) => md,
+                                    border: isDark ? "1px solid rgba(255,255,255,0.1)" : "none",
                                 }}
                             >
                                 <MKBox
