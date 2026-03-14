@@ -15,9 +15,9 @@
                     "title": "A New Standard for Energy Efficiency",
                     "description": "Minimize power consumption and realize digital carbon neutrality with cutting-edge technology.",
                                             "cards": [
-                                                { "title": "Idle mode control algorithm", "description": "Intelligent allocation of resources" },
-                                                { "title": "Resource scheduling", "description": "Reduce operating costs" },
-                                                { "title": "Process scheduling", "description": "Support sustainable management" }
+                                                { "title": "Idle mode control algorithm", "description": "Detects real-time usage to eliminate unnecessary power consumption and intelligently reallocates computing resources." },
+                                                { "title": "Resource scheduling", "description": "Allocates hardware resources optimized for workloads to reduce overhead and maximize operational cost savings." },
+                                                { "title": "Process scheduling", "description": "Effectively distributes system load to enhance processing performance and support low-carbon, sustainable business management." }
                                             ]                },
                 {
                     "id": "security",
