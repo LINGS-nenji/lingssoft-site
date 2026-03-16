@@ -86,12 +86,79 @@
     },
     "security": {
         "title": "Enterprise Security Suite",
-        "description": "From process monitoring to document security. Protect all corporate digital assets seamlessly. All logs and monitoring data remain safely isolated up within your organization.",
-        "features": [
-            "Real-time Process & Internet Monitoring",
-            "Enterprise-grade DRM & Document Security",
-            "Integrated Log Analysis & Threat Detection"
-        ]
+        "description": "From process monitoring to document security. Protect all corporate digital assets seamlessly. All logs and monitoring data remain safely isolated within your organization.",
+        "header": {
+            "slides": [
+                {
+                    "id": "monitoring",
+                    "label": "Real-time Protection",
+                    "title": "Perfect Process Monitoring",
+                    "description": "Monitor all computing resources and network flows in real-time to detect abnormal behavior immediately.",
+                    "cards": [
+                        { "title": "Process Management", "description": "Block unauthorized processes" },
+                        { "title": "Network Analysis", "description": "Monitor external communication" },
+                        { "title": "Threat Detection", "description": "Real-time security alerts" }
+                    ]
+                },
+                {
+                    "id": "drm",
+                    "label": "Document Security Innovation",
+                    "title": "Enterprise-grade DRM",
+                    "description": "Provide strong encryption and access control throughout the lifecycle of critical documents.",
+                    "cards": [
+                        { "title": "Document Encryption", "description": "Prevent data leakage" },
+                        { "title": "Access Control", "description": "Granular user permissions" },
+                        { "title": "Traceability", "description": "Transparent history management" }
+                    ]
+                },
+                {
+                    "id": "logging",
+                    "label": "Data Sovereignty",
+                    "title": "Integrated Log Analysis",
+                    "description": "Centralize all security logs internally to maximize compliance and post-analysis efficiency.",
+                    "cards": [
+                        { "title": "Log Integration", "description": "Collect distributed security data" },
+                        { "title": "Internal Isolation", "description": "Block log external leakage" },
+                        { "title": "Detailed Analysis", "description": "Data for post-investigation" }
+                    ]
+                }
+            ]
+        },
+        "themes": {
+           "monitoring": {
+               "title": "Intelligent Real-time Monitoring",
+               "description": "Proactively detect unknown threats through AI-based pattern analysis. Trace all process activities to eliminate security blind spots."
+           },
+           "protection": {
+               "title": "Integrity Document Security (DRM)",
+               "description": "Control all document-related actions such as editing, printing, and capturing. Provide a strong shield for data ownership."
+           },
+           "compliance": {
+               "title": "Compliance & Governance",
+               "description": "Build an integrated management system that complies with privacy laws and security regulations. Protect data value completely."
+           }
+        },
+        "revenue": {
+           "title": "Value Beyond Security",
+           "items": [
+                {
+                    "title": "Thorough Internal Control",
+                    "description": "Physically and logically block all unauthorized access to protect core technical competitiveness."
+                },
+                {
+                    "title": "Custom Security Design",
+                    "description": "Build custom security systems that don't hinder productivity by analyzing unique business environments."
+                },
+                {
+                    "title": "Rapid Incident Response",
+                    "description": "Visualize all data for immediate analysis and support systematic post-incident measures."
+                },
+                {
+                    "title": "Continuous Security Upgrades",
+                    "description": "Maintain the highest security levels through regular updates and expert consulting against evolving threats."
+                }
+           ]
+        }
     },
     "education": {
         "title": "EduTech Platform",

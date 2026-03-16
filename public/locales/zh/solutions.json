@@ -87,11 +87,78 @@
     "security": {
         "title": "Enterprise Security Suite",
         "description": "从进程监控到文档安全。无缝保护所有企业数字资产。所有日志和监控数据安全隔离在组织内部。",
-        "features": [
-            "实时进程和互联网监控",
-            "企业级 DRM 和文档安全",
-            "集成日志分析和威胁检测"
-        ]
+        "header": {
+            "slides": [
+                {
+                    "id": "monitoring",
+                    "label": "实时资源保护",
+                    "title": "完善的进程监视",
+                    "description": "实时监控公司内部的所有计算资源和网络流，立即发现异常行为。",
+                    "cards": [
+                        { "title": "进程管理", "description": "拦截未经授权的进程" },
+                        { "title": "网络分析", "description": "监控不必要的外部通信" },
+                        { "title": "威胁检测", "description": "实时安全威胁通知" }
+                    ]
+                },
+                {
+                    "id": "drm",
+                    "label": "文档安全创新",
+                    "title": "企业级 DRM",
+                    "description": "为重要文档从创建、流转到销毁的全生命周期提供强大的加密和权限控制。",
+                    "cards": [
+                        { "title": "文档加密", "description": "源头防止数据泄露" },
+                        { "title": "权限控制", "description": "细粒度的用户访问权限" },
+                        { "title": "历史追踪", "description": "透明管理文档使用历史" }
+                    ]
+                },
+                {
+                    "id": "logging",
+                    "label": "保障数据主权",
+                    "title": "统一日志分析系统",
+                    "description": "在组织内部统一管理所有安全日志，极大提高合规性和事后分析效率。",
+                    "cards": [
+                        { "title": "日志集成", "description": "收集分散的安全数据" },
+                        { "title": "内部隔离", "description": "从源头拦截日志外泄" },
+                        { "title": "详细分析", "description": "为事后调查提供数据支持" }
+                    ]
+                }
+            ]
+        },
+        "themes": {
+           "monitoring": {
+               "title": "智能化实时监控",
+               "description": "通过基于人工智能的模式分析，主动发现未知威胁。追踪所有进程活动，消除安全盲点。"
+           },
+           "protection": {
+               "title": "完整性文档安全 (DRM)",
+               "description": "控制编辑、打印、截屏等所有与文档相关的行为。提供强大防护，确保即使在外部协作时也不丢失数据所有权。"
+           },
+           "compliance": {
+               "title": "合规与治理",
+               "description": "构建符合个人信息保护法及各种安全法规的统一管理体系。提高企业透明度，完好守护数据价值。"
+           }
+        },
+        "revenue": {
+           "title": "安全之外的价值",
+           "items": [
+                {
+                    "title": "严密的内部控制",
+                    "description": "从物理和逻辑层面拦截所有未经授权的访问，从内部坚实保护企业的技术竞争力。"
+                },
+                {
+                    "title": "定制化安全设计",
+                    "description": "分析各企业不同的业务环境和安全策略，量身定制既不影响生产力又强大的安全体系。"
+                },
+                {
+                    "title": "快速事故响应",
+                    "description": "使安全事故发生时的即时分析和响应成为可能，可视化所有数据并支持建立系统的善后措施。"
+                },
+                {
+                    "title": "持续的安全升级",
+                    "description": "应对不断变化的网络威胁，通过定期更新和专家咨询，持续保持最高水平的安全防护。"
+                }
+           ]
+        }
     },
     "education": {
         "title": "EduTech Platform",

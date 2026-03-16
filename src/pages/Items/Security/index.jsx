@@ -1,5 +1,5 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -20,8 +20,13 @@ import footerRoutes from "routes/footer.routes";
 
 import { useThemeMode } from "context/ThemeModeContext";
 
+// Security sections
+import Themes from "pages/Items/Security/sections/Themes";
+import Revenue from "pages/Items/Security/sections/Revenue";
+import Header from "pages/Items/Security/sections/Header";
+
 const EnterpriseSecuritySuite = () => {
-  const { t } = useTranslation("solutions");
+  const { t } = useTranslation('solutions');
   const { mode } = useThemeMode();
   const isDark = mode === "dark";
 
@@ -33,48 +38,7 @@ const EnterpriseSecuritySuite = () => {
         light={isDark}
         transparent={false}
       />
-      <MKBox
-        minHeight="75vh"
-        width="100%"
-        sx={{
-          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
-            `${linearGradient(
-              rgba(gradients.dark.main, 0.6),
-              rgba(gradients.dark.state, 0.6)
-            )}, url(https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "grid",
-          placeItems: "center",
-        }}
-      >
-        <Container>
-          <Grid container item xs={12} lg={7} justifyContent="center" mx="auto">
-            <MKTypography
-              variant="h1"
-              color="white"
-              mt={-6}
-              mb={1}
-              sx={({ breakpoints, typography: { size } }) => ({
-                [breakpoints.down("md")]: {
-                  fontSize: size["3xl"],
-                },
-              })}
-            >
-              {t("security.title")}
-            </MKTypography>
-            <MKTypography
-              variant="body1"
-              color="white"
-              textAlign="center"
-              px={{ xs: 6, lg: 12 }}
-              mt={1}
-            >
-              {t("security.description")}
-            </MKTypography>
-          </Grid>
-        </Container>
-      </MKBox>
+      <Header />
       <Card
         sx={{
           p: 2,
@@ -86,39 +50,8 @@ const EnterpriseSecuritySuite = () => {
           color: isDark ? "#ffffff" : "inherit", // Dynamic text color base
         }}
       >
-        <MKBox component="section" py={6}>
-          <Container>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {(t("security.features", { returnObjects: true }) || []).map((feature, index) => (
-                <div key={index} className="pt-6">
-                  <div className={`flow-root ${isDark ? 'bg-gray-800' : 'bg-gray-50'} rounded-lg px-6 pb-8 shadow-sm h-full hover:shadow-md transition-shadow duration-300`}>
-                    <div className="-mt-6">
-                      <div className="inline-flex items-center justify-center p-3 bg-emerald-600 rounded-md shadow-lg">
-                        <svg
-                          className="h-6 w-6 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z"
-                          />
-                        </svg>
-                      </div>
-                      <h3 className={`mt-8 text-lg font-medium ${isDark ? 'text-white' : 'text-gray-900'} tracking-tight`}>
-                        {feature}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </MKBox>
+        <Themes />
+        <Revenue />
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />
@@ -128,4 +61,3 @@ const EnterpriseSecuritySuite = () => {
 };
 
 export default EnterpriseSecuritySuite;
-
