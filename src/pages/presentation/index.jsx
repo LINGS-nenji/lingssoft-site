@@ -36,7 +36,7 @@ import routes from "routes/routes";
 import footerRoutes from "routes/footer.routes";
 
 // Images
-import bgImage from "assets/images/nastuh.jpg";
+import bgImage from "assets/images/bg-presentation-social.png";
 import aiLabImage from "assets/images/examples/studio-5.jpg";
 import securityOpsImage from "assets/images/examples/content-2.jpg";
 import classroomImage from "assets/images/examples/content-4.jpg";
