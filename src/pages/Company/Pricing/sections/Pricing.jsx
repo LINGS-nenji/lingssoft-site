@@ -109,7 +109,7 @@ function Pricing() {
               badgeContent={badgeLabel}
               variant="gradient"
               container
-              color="dark"
+              color={isDark ? "info" : "dark"}
               sx={{ mb: 1 }}
             />
             <MKTypography variant="h3" color="white" mb={2}>
