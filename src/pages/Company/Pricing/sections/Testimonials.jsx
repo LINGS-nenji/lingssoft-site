@@ -42,6 +42,7 @@ import review2 from "assets/images/examples/studio-3.jpg";
 import logoSpotify from "assets/images/logos/small-logos/logo-spotify.svg";
 import logoSlack from "assets/images/logos/small-logos/logo-slack.svg";
 import { useTranslation } from "react-i18next";
+import { useThemeMode } from "context/ThemeModeContext";
 
 const slidesConfig = [
   { id: "spotify", image: review1, logo: logoSpotify },
@@ -50,6 +51,8 @@ const slidesConfig = [
 
 function Testimonials() {
   const { t } = useTranslation("pricing");
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
   const slidesContent = t("testimonials.slides", { returnObjects: true }) || [];
   const slides = slidesConfig.map((slide) => {
     const content = slidesContent.find(({ id }) => id === slide.id) || {};
@@ -118,7 +121,7 @@ function Testimonials() {
         ))}
         <MKTypography
           variant="h2"
-          color="dark"
+          color={isDark ? "white" : "dark"}
           sx={{
             ...navigationStyles,
             left: 0,
@@ -129,7 +132,7 @@ function Testimonials() {
         </MKTypography>
         <MKTypography
           variant="h2"
-          color="dark"
+          color={isDark ? "white" : "dark"}
           sx={{
             ...navigationStyles,
             right: 0,

@@ -22,6 +22,7 @@ import Icon from "@mui/material/Icon";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import { useTranslation } from "react-i18next";
+import { useThemeMode } from "context/ThemeModeContext";
 
 const featuresConfig = [
   { id: "globalPayments", icon: "credit_card" },
@@ -34,6 +35,9 @@ const featuresConfig = [
 
 function AboutUs() {
   const { t } = useTranslation("pricing");
+  const { mode } = useThemeMode();
+  const isDark = mode === "dark";
+
   const title = t("about.title");
   const description = t("about.description");
   const featuresContent = t("about.features", { returnObjects: true }) || [];
@@ -47,8 +51,8 @@ function AboutUs() {
     <MKBox component="section" py={12} px={1}>
       <Container>
         <Grid container item xs={12} lg={8}>
-          <MKTypography variant="h3">{title}</MKTypography>
-          <MKTypography variant="body2" fontWeight="regular" color="text">
+          <MKTypography variant="h3" color={isDark ? "white" : "dark"}>{title}</MKTypography>
+          <MKTypography variant="body2" fontWeight="regular" color={isDark ? "white" : "text"} opacity={isDark ? 0.7 : 1}>
             {description}
           </MKTypography>
         </Grid>
@@ -59,7 +63,7 @@ function AboutUs() {
                 <MKTypography variant="h3" color="info">
                   <Icon>{icon}</Icon>
                 </MKTypography>
-                <MKTypography variant="h5" mt={2} mb={3}>
+                <MKTypography variant="h5" mt={2} mb={3} color={isDark ? "white" : "dark"}>
                   {featureTitle}
                 </MKTypography>
                 {items.map((item) => (
@@ -68,7 +72,7 @@ function AboutUs() {
                       <Icon sx={{ fontWeight: "bold" }}>done</Icon>
                     </MKTypography>
                     <MKBox pl={2}>
-                      <MKTypography variant="button" color="text" fontWeight="bold">
+                      <MKTypography variant="button" color={isDark ? "white" : "text"} fontWeight="bold" opacity={isDark ? 0.9 : 1}>
                         {item}
                       </MKTypography>
                     </MKBox>
