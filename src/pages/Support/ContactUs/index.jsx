@@ -31,7 +31,7 @@ import routes from "routes/routes";
 import footerRoutes from "routes/footer.routes";
 
 // Image
-import bgImage from "assets/images/illustrations/illustration-reset.jpg";
+import bgImage from "assets/images/illustrations/contact-us-hero-bg.png";
 import { useThemeMode } from "context/ThemeModeContext";
 import { useTranslation } from "react-i18next";
 
