@@ -73,7 +73,11 @@ function Features() {
           <MKTypography variant="h3" mt={3} color={isDark ? "white" : "dark"}>
             {t("features.title")}
           </MKTypography>
-          <MKTypography variant="body2" color={isDark ? "white" : "text"} opacity={isDark ? 0.8 : 1}>
+          <MKTypography
+            variant="body2"
+            color={isDark ? "white" : "text"}
+            opacity={isDark ? 0.8 : 1}
+          >
             {t("features.subtitle")}
           </MKTypography>
         </Grid>

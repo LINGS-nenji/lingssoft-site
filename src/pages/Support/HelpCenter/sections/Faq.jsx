@@ -40,11 +40,22 @@ function Faq() {
       <Container>
         <Grid container justifyContent="center">
           <Grid item xs={12} md={6} my={6}>
-            <MKTypography variant="h2" align="center" fontWeight="bold" gutterBottom color={isDark ? "white" : "dark"}>
+            <MKTypography
+              variant="h2"
+              align="center"
+              fontWeight="bold"
+              gutterBottom
+              color={isDark ? "white" : "dark"}
+            >
               {t("faq.title")}
             </MKTypography>
             <MKBox mb={2}>
-              <MKTypography variant="body2" align="center" color={isDark ? "white" : "text"} opacity={isDark ? 0.8 : 1}>
+              <MKTypography
+                variant="body2"
+                align="center"
+                color={isDark ? "white" : "text"}
+                opacity={isDark ? 0.8 : 1}
+              >
                 {t("faq.description")}
               </MKTypography>
             </MKBox>
@@ -55,7 +66,9 @@ function Faq() {
                 key={index}
                 title={item.question}
                 open={collapse === index + 1}
-                onClick={() => (collapse === index + 1 ? setCollapse(false) : setCollapse(index + 1))}
+                onClick={() =>
+                  collapse === index + 1 ? setCollapse(false) : setCollapse(index + 1)
+                }
               >
                 {item.answer}
               </FaqCollapse>
