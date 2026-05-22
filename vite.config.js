@@ -5,7 +5,7 @@ import { fileURLToPath, URL } from "url";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/lingssoft-site/",
+  base: "/",
   resolve: {
     alias: {
       components: fileURLToPath(new URL("./src/components", import.meta.url)),
