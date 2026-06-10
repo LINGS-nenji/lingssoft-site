@@ -36,6 +36,7 @@ import { useTheme } from "@mui/material/styles";
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import AIChatbotDrawer from "components/AIChatbotDrawer";
 import LanguageSwitcher from "components/LanguageSwitcher";
 import ThemeSwitcher from "components/ThemeSwitcher";
 import { useThemeMode } from "context/ThemeModeContext";
@@ -583,6 +584,7 @@ function DefaultNavbar({
           <MKBox ml={{ xs: "auto", lg: 0 }} display="flex" alignItems="center" gap={1.5}>
             <ThemeSwitcher />
             <LanguageSwitcher />
+            <AIChatbotDrawer />
           </MKBox>
           <MKBox
             display={{ xs: "inline-block", lg: "none" }}
