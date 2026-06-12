@@ -15,6 +15,7 @@ export default function AIChatbotDrawer() {
   const [open, setOpen] = useState(false);
   const { mode } = useThemeMode();
   const isDark = mode === "dark";
+  const quickQuestions = ["서비스 문의", "도입 상담", "기술 지원"];
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -71,7 +72,58 @@ export default function AIChatbotDrawer() {
               <Icon fontSize="small">close</Icon>
             </IconButton>
           </MKBox>
-          <MKBox flex={1} px={3} py={2} overflow="auto" />
+          <MKBox flex={1} px={3} py={2} overflow="auto">
+            <MKBox
+              maxWidth="86%"
+              px={2}
+              py={1.5}
+              borderRadius="lg"
+              sx={({ palette }) => ({
+                backgroundColor: isDark ? palette.grey[900] : palette.grey[100],
+              })}
+            >
+              <MKTypography
+                display="block"
+                variant="button"
+                fontWeight="bold"
+                color={isDark ? "white" : "dark"}
+                mb={0.75}
+              >
+                안녕하세요. LINGSSOFT AI 챗봇입니다.
+              </MKTypography>
+              <MKTypography variant="caption" color={isDark ? "text" : "secondary"}>
+                궁금한 내용을 입력하시거나 아래 항목을 선택해 주세요.
+              </MKTypography>
+            </MKBox>
+            <MKBox display="flex" flexWrap="wrap" gap={1} mt={2}>
+              {quickQuestions.map((question) => (
+                <MKBox
+                  key={question}
+                  component="button"
+                  type="button"
+                  px={1.5}
+                  py={0.75}
+                  borderRadius="lg"
+                  sx={({ palette }) => ({
+                    border: `1px solid ${isDark ? palette.grey[800] : palette.grey[300]}`,
+                    backgroundColor: "transparent",
+                    color: isDark ? palette.white.main : palette.dark.main,
+                    cursor: "pointer",
+                    font: "inherit",
+                    fontSize: "0.8125rem",
+                    fontWeight: 600,
+                    lineHeight: 1.4,
+                    transition: "all 0.2s ease",
+                    "&:hover": {
+                      backgroundColor: isDark ? palette.grey[900] : palette.grey[100],
+                    },
+                  })}
+                >
+                  {question}
+                </MKBox>
+              ))}
+            </MKBox>
+          </MKBox>
           <MKBox
             px={2}
             py={2}
