@@ -6,6 +6,7 @@ import Icon from "@mui/material/Icon";
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
 import Tooltip from "@mui/material/Tooltip";
+import Switch from "@mui/material/Switch";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -15,12 +16,26 @@ import { useThemeMode } from "context/ThemeModeContext";
 
 export default function AIChatbotDrawer() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      role: "bot",
-      content: "안녕하세요. LINGSSOFT AI 챗봇입니다.\n궁금한 내용을 입력하시거나 아래 항목을 선택해 주세요.",
-    },
-  ]);
+  const [saveHistory, setSaveHistory] = useState(() => {
+    const saved = localStorage.getItem("ai_chat_save_history");
+    return saved ? JSON.parse(saved) : true;
+  });
+  const [messages, setMessages] = useState(() => {
+    const savedHistoryStr = localStorage.getItem("ai_chat_save_history");
+    const isSavedHistory = savedHistoryStr ? JSON.parse(savedHistoryStr) : true;
+    if (isSavedHistory) {
+      const savedMessages = localStorage.getItem("ai_chat_messages");
+      if (savedMessages) {
+        return JSON.parse(savedMessages);
+      }
+    }
+    return [
+      {
+        role: "bot",
+        content: "안녕하세요. LINGSSOFT AI 챗봇입니다.\n궁금한 내용을 입력하시거나 아래 항목을 선택해 주세요.",
+      },
+    ];
+  });
   const [input, setInput] = useState("");
   const [showSettings, setShowSettings] = useState(false);
   const [apiUrl, setApiUrl] = useState("");
@@ -45,6 +60,15 @@ export default function AIChatbotDrawer() {
       scrollToBottom();
     }
   }, [messages, open, showSettings]);
+
+  useEffect(() => {
+    localStorage.setItem("ai_chat_save_history", JSON.stringify(saveHistory));
+    if (!saveHistory) {
+      localStorage.removeItem("ai_chat_messages");
+    } else {
+      localStorage.setItem("ai_chat_messages", JSON.stringify(messages));
+    }
+  }, [saveHistory, messages]);
 
   const handleSend = () => {
     if (!input.trim()) return;
@@ -145,6 +169,15 @@ export default function AIChatbotDrawer() {
                   value={apiUrl}
                   onChange={(e) => setApiUrl(e.target.value)}
                   placeholder="https://api.example.com/chat"
+                />
+              </MKBox>
+              <MKBox mb={3} display="flex" alignItems="center" justifyContent="space-between">
+                <MKTypography variant="button" color={isDark ? "white" : "dark"} fontWeight="medium">
+                  메시지 기록 유지
+                </MKTypography>
+                <Switch
+                  checked={saveHistory}
+                  onChange={(e) => setSaveHistory(e.target.checked)}
                 />
               </MKBox>
               <MKButton variant="gradient" color="info" fullWidth onClick={() => setShowSettings(false)}>
