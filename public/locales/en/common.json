@@ -18,10 +18,10 @@
     "privacy": "Privacy Policy",
     "gdpr": "GDPR Policy",
     "license": "Licenses (EULA)",
-    "all_products": "All Products",
+    "all_products": "All Product",
     "ai_devops": "ECO AI DevOps",
-    "security": "Enterprise Security",
-    "education": "EduTech Platform"
+    "security": "ECO AI Security",
+    "education": "ECO AI EduTech"
   },
   "site": { "title": "LINGSSOFT" },
   "theme": {
